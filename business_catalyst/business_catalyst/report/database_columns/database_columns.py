@@ -10,13 +10,13 @@ def execute(filters=None):
 	columns = [
 		{
 			'fieldname':'label',
-			'Label':'Label Name',
+			'label':'Label Name',
 			'fieldtype':'Data',
 			"width":200
 		},
 		{
 			'fieldname':'fieldname',
-			'Label':'Column Name',
+			'label':'Column Name',
 			'fieldtype':'Data',
 			"width":200
 		}

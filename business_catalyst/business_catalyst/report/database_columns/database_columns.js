@@ -5,7 +5,7 @@
 frappe.query_reports["Database Columns"] = {
 	"filters": [
 		{
-			'Lael':'Document',
+			'label':'Document',
 			'fieldname':"doctype",
 			'fieldtype':'Link',
 			'options':'DocType'
