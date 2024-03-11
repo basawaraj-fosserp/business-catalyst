@@ -16,7 +16,7 @@ def execute(filters=None):
 		},
 		{
 			'fieldname':'fieldname',
-			'label':'Column Name',
+			'label':'Column Name in DB',
 			'fieldtype':'Data',
 			"width":200
 		}
