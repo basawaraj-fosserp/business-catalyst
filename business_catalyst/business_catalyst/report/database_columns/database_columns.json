@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2024-03-08 17:55:42.906375",
+ "modified": "2024-03-12 10:29:14.045793",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Database Columns",
@@ -24,6 +24,12 @@
   },
   {
    "role": "Administrator"
+  },
+  {
+   "role": "Advisor"
+  },
+  {
+   "role": "Support Executive"
   }
  ]
 }
