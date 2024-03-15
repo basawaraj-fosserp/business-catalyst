@@ -22,7 +22,6 @@ def execute(filters=None):
 		}
 	]
 
-
 	if filters.get('doctype'):
 		data = frappe.db.sql(f"""
 							
@@ -46,4 +45,18 @@ def execute(filters=None):
 									hidden = 0 and dt = '{filters.get('doctype')}'
 								 """, as_dict = 1)
 		data.extend(custom_field)
+
+		property_setter = frappe.db.sql(f""" 
+				Select doc_type, field_name, property, value
+				From `tabProperty Setter` 
+				Where property = 'label' and doc_type = '{filters.get('doctype')}'
+		""",as_dict = 1)
+
+		ps_map = {}
+		for row in property_setter:
+			ps_map[row.field_name] = row
+		for row in data:
+			if ps_map.get(row.get('fieldname')):
+				row.update({'label':ps_map.get(row.get('fieldname')).get('value')})
+
 	return columns, data
