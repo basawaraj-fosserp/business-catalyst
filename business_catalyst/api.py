@@ -13,3 +13,10 @@ def validate_address(self, method):
     if self.custom_state1:
         self.custom_region = frappe.db.get_value("State", self.custom_state1, 'region')
     
+
+@frappe.whitelist()
+def get_regional_head(region):
+    data = frappe.db.get_list('Region Head' , {'region':region})
+    if data:
+        return data[0].name
+    return

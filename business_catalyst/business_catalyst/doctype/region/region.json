@@ -1,43 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:ad_name",
- "creation": "2024-03-18 12:04:25.418881",
+ "autoname": "field:region",
+ "creation": "2024-03-18 12:05:02.671059",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "ad_name",
-  "user",
-  "region_head"
+  "region"
  ],
  "fields": [
   {
-   "fieldname": "ad_name",
+   "fieldname": "region",
    "fieldtype": "Data",
-   "label": "AD Name",
+   "label": "Region",
    "unique": 1
-  },
-  {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "User",
-   "options": "User"
-  },
-  {
-   "fieldname": "region_head",
-   "fieldtype": "Link",
-   "label": "Region Head",
-   "options": "Region Head"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-18 13:02:38.859636",
+ "modified": "2024-03-18 12:09:42.489085",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
- "name": "Advisor",
+ "name": "Region",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -54,7 +40,6 @@
    "write": 1
   }
  ],
- "search_fields": "region_head",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

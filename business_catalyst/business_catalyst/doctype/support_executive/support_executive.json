@@ -1,32 +1,46 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
- "creation": "2024-02-28 18:54:57.926785",
+ "autoname": "field:se_name",
+ "creation": "2024-03-18 12:02:48.509669",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "email"
+  "se_name",
+  "user",
+  "column_break_grbev",
+  "region_head"
  ],
  "fields": [
   {
-   "fieldname": "name1",
+   "fieldname": "se_name",
    "fieldtype": "Data",
-   "label": "Name",
+   "label": "SE Name",
    "unique": 1
   },
   {
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email"
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_grbev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "region_head",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Region Head",
+   "options": "Region Head"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-28 18:56:11.900227",
+ "modified": "2024-03-18 12:45:55.362999",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Support Executive",
@@ -46,6 +60,7 @@
    "write": 1
   }
  ],
+ "search_fields": "region_head",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
