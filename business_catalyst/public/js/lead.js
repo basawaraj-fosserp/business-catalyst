@@ -14,39 +14,6 @@ frappe.ui.form.on('Lead', {
             })
         }
 	},
-    refresh:function(frm){
-        frm.set_query('custom_tagged_se_salesperson', function () {
-            return {
-                filters: {
-                    region_head: frm.doc.custom_region_head,
-                },
-            }
-        })
-        frm.set_query('custom_tagged_advisor_sales_person', function () {
-            return {
-                filters: {
-                    region_head: frm.doc.custom_region_head,
-                },
-            }
-        })
-    },
-    custom_region_head:function(frm){
-        frm.set_query('custom_tagged_se_salesperson', function () {
-            return {
-                filters: {
-                    region_head: frm.doc.custom_region_head,
-                },
-            }
-        })
-    },
-    custom_region_head:function(frm){
-        frm.set_query('custom_tagged_advisor_sales_person', function () {
-            return {
-                filters: {
-                    region_head: frm.doc.custom_region_head,
-                },
-            }
-        })
-    },
+    
 
 })

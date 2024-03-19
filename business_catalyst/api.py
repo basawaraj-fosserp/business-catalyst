@@ -12,6 +12,8 @@ def validate_address(self, method):
 
     if self.custom_state1:
         self.custom_region = frappe.db.get_value("State", self.custom_state1, 'region')
+    if self.custom_region:
+        self.custom_region_head = get_regional_head(self.custom_region)
     
 
 @frappe.whitelist()
