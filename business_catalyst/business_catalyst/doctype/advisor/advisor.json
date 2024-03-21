@@ -10,6 +10,7 @@
  "field_order": [
   "ad_name",
   "user",
+  "column_break_up86t",
   "region_head"
  ],
  "fields": [
@@ -27,14 +28,18 @@
   },
   {
    "fieldname": "region_head",
-   "fieldtype": "Link",
+   "fieldtype": "Table MultiSelect",
    "label": "Region Head",
-   "options": "Region Head"
+   "options": "Region Head Table"
+  },
+  {
+   "fieldname": "column_break_up86t",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-18 13:02:38.859636",
+ "modified": "2024-03-21 15:54:40.285699",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Advisor",
@@ -54,7 +59,6 @@
    "write": 1
   }
  ],
- "search_fields": "region_head",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

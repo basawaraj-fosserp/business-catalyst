@@ -22,3 +22,28 @@ def get_regional_head(region):
     if data:
         return data[0].name
     return
+
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def get_support_executive(doctype, txt, searchfield, start, page_len, filters):
+    data = frappe.db.sql(f"""
+        Select se.name
+        From `tabSupport Executive` as se
+        Left Join `tabRegion Head Table` as rht ON rht.parent = se.name
+        Where rht.region_head = "{filters.get('region_head')}"
+    """)
+    
+    return data
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def get_advisor_list(doctype, txt, searchfield, start, page_len, filters):
+    data = frappe.db.sql(f"""
+        Select se.name
+        From `tabAdvisor` as se
+        Left Join `tabRegion Head Table` as rht ON rht.parent = se.name
+        Where rht.region_head = "{filters.get('region_head')}"
+    """)
+    
+    return data

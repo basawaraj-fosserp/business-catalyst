@@ -14,6 +14,18 @@ frappe.ui.form.on('Lead', {
             })
         }
 	},
-    
+      
 
 })
+cur_frm.set_query("custom_tagged_se_salesperson", function(doc) {
+    return {
+        query: "business_catalyst.api.get_support_executive",
+        filters: {'region_head': doc.custom_region_head }
+    }
+});
+cur_frm.set_query("custom_tagged_advisor_sales_person", function(doc) {
+    return {
+        query: "business_catalyst.api.get_advisor_list",
+        filters: {'region_head': doc.custom_region_head }
+    }
+});

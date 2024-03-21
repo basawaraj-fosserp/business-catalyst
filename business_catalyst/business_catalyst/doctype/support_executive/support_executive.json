@@ -32,15 +32,14 @@
   },
   {
    "fieldname": "region_head",
-   "fieldtype": "Link",
-   "in_list_view": 1,
+   "fieldtype": "Table MultiSelect",
    "label": "Region Head",
-   "options": "Region Head"
+   "options": "Region Head Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-18 12:45:55.362999",
+ "modified": "2024-03-21 14:37:03.792190",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Support Executive",
@@ -60,7 +59,6 @@
    "write": 1
   }
  ],
- "search_fields": "region_head",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
