@@ -1,0 +1,116 @@
+{
+ "allow_comments": 1,
+ "allow_delete": 0,
+ "allow_edit": 1,
+ "allow_incomplete": 0,
+ "allow_multiple": 1,
+ "allow_print": 0,
+ "anonymous": 0,
+ "apply_document_permissions": 1,
+ "button_label": "Save",
+ "condition_json": "[]",
+ "creation": "2024-04-10 12:57:40.501049",
+ "doc_type": "GST Registration Documentation",
+ "docstatus": 0,
+ "doctype": "Web Form",
+ "idx": 0,
+ "is_standard": 1,
+ "list_columns": [
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Attach",
+   "label": "PAN"
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "address_proof",
+   "fieldtype": "Attach",
+   "label": "Address Proof"
+  }
+ ],
+ "login_required": 1,
+ "max_attachment_size": 0,
+ "modified": "2024-04-19 14:20:51.417945",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "gst-registration-form",
+ "owner": "Administrator",
+ "published": 1,
+ "route": "gst-registration-form",
+ "show_attachments": 0,
+ "show_list": 1,
+ "show_sidebar": 1,
+ "title": "GST Registration Form",
+ "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Company Name",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "pan",
+   "fieldtype": "Attach",
+   "hidden": 0,
+   "label": "PAN",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "hidden": 0,
+   "label": "Aadhar Card",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "address_proof",
+   "fieldtype": "Attach",
+   "hidden": 0,
+   "label": "Address Proof",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "gst_registration_documentation_details",
+   "fieldtype": "Table",
+   "hidden": 0,
+   "label": "GST Registration Documentation Details",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "GST Registration Documentation Details",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  }
+ ]
+}
