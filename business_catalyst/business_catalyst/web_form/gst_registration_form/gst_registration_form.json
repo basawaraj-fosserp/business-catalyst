@@ -39,7 +39,7 @@
  ],
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2024-04-19 14:20:51.417945",
+ "modified": "2024-05-15 18:06:02.178605",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "gst-registration-form",
@@ -51,6 +51,18 @@
  "show_sidebar": 1,
  "title": "GST Registration Form",
  "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "GST Registeration",
+   "fieldtype": "Attach",
+   "hidden": 0,
+   "label": "Service",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "company_name",

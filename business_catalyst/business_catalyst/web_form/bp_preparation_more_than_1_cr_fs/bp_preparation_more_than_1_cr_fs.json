@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-13 11:08:21.171560",
+ "modified": "2024-05-16 10:38:28.947555",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "bp-preparation-more-than-1-cr-fs",
@@ -30,6 +30,20 @@
  "show_sidebar": 0,
  "title": "BP Preparation More than 1 Cr (FS)",
  "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "BP Preparation More than 1 Cr",
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Service",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email",

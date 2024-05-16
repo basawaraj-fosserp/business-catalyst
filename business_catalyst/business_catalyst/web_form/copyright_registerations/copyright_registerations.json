@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "allow_comments": 0,
  "allow_delete": 0,
  "allow_edit": 0,
@@ -18,8 +19,8 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-14 16:31:27.629382",
- "modified_by": "Administrator",
+ "modified": "2024-05-15 16:18:46.526389",
+ "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "copyright-registerations",
  "owner": "Administrator",
@@ -32,14 +33,15 @@
  "web_form_fields": [
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "email",
-   "fieldtype": "Data",
+   "default": "Copyright  Registerations",
+   "fieldname": "service",
+   "fieldtype": "Link",
    "hidden": 0,
-   "label": "Email ID",
+   "label": "Service",
    "max_length": 0,
    "max_value": 0,
-   "options": "Email",
-   "read_only": 0,
+   "options": "Item",
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -63,6 +65,19 @@
    "label": "Name of the Business",
    "max_length": 0,
    "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Email ID",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Email",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0

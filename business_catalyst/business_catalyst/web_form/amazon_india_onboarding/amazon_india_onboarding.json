@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-13 11:30:21.821558",
+ "modified": "2024-05-16 10:46:25.831364",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "amazon-india-onboarding",
@@ -30,6 +30,20 @@
  "show_sidebar": 0,
  "title": "Amazon India Onboarding",
  "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "Amazon India Onboarding",
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Service",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id",

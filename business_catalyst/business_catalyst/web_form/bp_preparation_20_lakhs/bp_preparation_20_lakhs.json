@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-13 11:05:33.726008",
+ "modified": "2024-05-16 10:40:25.554859",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "bp-preparation-20-lakhs",
@@ -30,6 +30,20 @@
  "show_sidebar": 0,
  "title": "BP Preparation 20 Lakhs(FS)",
  "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "BP Preparation 20 Lakhs",
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "hidden": 0,
+   "label": "Service",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Item",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email",
