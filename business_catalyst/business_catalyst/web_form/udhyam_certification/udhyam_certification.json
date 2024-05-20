@@ -10,7 +10,7 @@
  "button_label": "Save",
  "condition_json": "[]",
  "creation": "2024-05-09 14:52:30.586929",
- "doc_type": "Legal Compliance",
+ "doc_type": "Udyam Registrations",
  "docstatus": 0,
  "doctype": "Web Form",
  "idx": 0,
@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-15 16:28:23.665351",
+ "modified": "2024-05-19 14:41:03.148027",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "udhyam-certification",
@@ -119,10 +119,10 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "type_of_firm",
+   "fieldname": "type_of_firm_ur",
    "fieldtype": "Select",
    "hidden": 0,
-   "label": "Type of Firm",
+   "label": "Type of Firm?",
    "max_length": 0,
    "max_value": 0,
    "options": "Proprietorship\nPartnership\nCompany",
@@ -132,7 +132,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_proprietormanaging_partnerauthorized_signatory",
+   "fieldname": "aadhar_proprietormanaging_partnerauthorized_signatory_ur",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar (Proprietor/Managing Partner/Authorized Signatory)",
@@ -144,7 +144,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "company_pan",
+   "fieldname": "company_pan_ur",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Company PAN",
@@ -156,7 +156,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "mobile_no",
+   "fieldname": "mobile_no_ur",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Mobile No",
@@ -168,7 +168,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "email_id",
+   "fieldname": "email_id_ur",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Email ID",
@@ -181,7 +181,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "gst_certificate",
+   "fieldname": "gst_certificate_ur",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "GST Certificate",
@@ -193,7 +193,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "social_categorygendercast",
+   "fieldname": "social_categorygendercast_ur",
    "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Social Category(Gender/cast)",
@@ -205,7 +205,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "address_of_the_plant",
+   "fieldname": "address_of_the_plant_ur",
    "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Address of the Plant",
@@ -217,7 +217,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "address_of_the_corporate_office_or_registered_office",
+   "fieldname": "address_of_the_corporate_office_or_registered_office_ur",
    "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Address of the corporate office or Registered office",
@@ -229,10 +229,10 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "date_of_registrationincorporation",
+   "fieldname": "date_of_registrationincorporation_ur",
    "fieldtype": "Date",
    "hidden": 0,
-   "label": "Date of registration/Incorporation (Partnership deed/Incorporation certificate)",
+   "label": "Date of registration/Incorporation ",
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
@@ -241,7 +241,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "date_of_commencement_of_business",
+   "fieldname": "date_of_commencement_of_business_ur",
    "fieldtype": "Date",
    "hidden": 0,
    "label": "Date of commencement of business",
@@ -253,7 +253,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "bank_account_details",
+   "fieldname": "bank_account_details_ur",
    "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Bank Account Details",
@@ -265,7 +265,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "cancelled_cheque",
+   "fieldname": "cancelled_cheque_ur",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Cancelled Cheque",
@@ -277,7 +277,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "list_of_products_manufactured_or_services_provided",
+   "fieldname": "list_of_products_manufactured_or_services_provided_ur",
    "fieldtype": "Text",
    "hidden": 0,
    "label": "List of Products Manufactured or services provided",
@@ -289,7 +289,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "number_of_persons_employed_details_separately_for_each_gender",
+   "fieldname": "number_of_persons_employed_details_separately_for_gender_ur",
    "fieldtype": "Text",
    "hidden": 0,
    "label": "Number of persons employed (Details separately for male, Female and others)",
@@ -301,7 +301,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "investment_in_plant_and_machinery_or_equipment",
+   "fieldname": "investment_in_plant_and_machinery_or_equipment_ur",
    "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Investment in Plant and machinery or equipment",
@@ -313,7 +313,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "turnover_total_turnover_and_export_turnover",
+   "fieldname": "turnover_total_turnover_and_export_turnover_ur",
    "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Turnover (Total turnover and export turnover)",

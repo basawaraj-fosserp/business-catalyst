@@ -1,0 +1,240 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 10:21:36.156625",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "pan_registration_section",
+  "what_type_of_firm",
+  "company_details_section",
+  "incorporation_certificate",
+  "certificate_of_registration_issued_by_register_of_companies",
+  "aadhar_card__authorized_signatory",
+  "pan_card_authorized_signatory",
+  "mobile_number_authorized_signatory",
+  "email_address_authorized_signatory",
+  "electricity__municipal_tax__own_building",
+  "partnership_details_section",
+  "partnership_deed",
+  "certification_of_registration_of_partnership_firm",
+  "contact_details",
+  "aadhar_card__partners",
+  "pan_card__partners",
+  "photo_partners",
+  "mobile_number_partners",
+  "email_id_partners",
+  "digital_signature_managing_partner",
+  "electricity__municipal_tax_own_building",
+  "proprietorship_details_section",
+  "aadhar_card",
+  "photo",
+  "proof_of_date_of_birth_aadhar_matriculation_certificate_etc"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "pan_registration_section",
+   "fieldtype": "Section Break",
+   "label": "PAN Registration"
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of firm?",
+   "options": "Company\nPartnership\nProprietorship"
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "incorporation_certificate",
+   "fieldtype": "Attach",
+   "label": "Incorporation Certificate"
+  },
+  {
+   "fieldname": "certificate_of_registration_issued_by_register_of_companies",
+   "fieldtype": "Attach",
+   "label": "Certificate of registration issued by Register of companies"
+  },
+  {
+   "fieldname": "aadhar_card__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card -  Authorized Signatory"
+  },
+  {
+   "fieldname": "pan_card_authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "mobile_number_authorized_signatory",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Authorized Signatory"
+  },
+  {
+   "fieldname": "email_address_authorized_signatory",
+   "fieldtype": "Data",
+   "label": "Email Address - Authorized Signatory"
+  },
+  {
+   "fieldname": "electricity__municipal_tax__own_building",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "partnership_details_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Details"
+  },
+  {
+   "fieldname": "partnership_deed",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed"
+  },
+  {
+   "fieldname": "certification_of_registration_of_partnership_firm",
+   "fieldtype": "Attach",
+   "label": "Certification of Registration of Partnership Firm"
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Small Text",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "aadhar_card__partners",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Partners"
+  },
+  {
+   "fieldname": "pan_card__partners",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Partners"
+  },
+  {
+   "fieldname": "photo_partners",
+   "fieldtype": "Attach",
+   "label": "Photo - Partners"
+  },
+  {
+   "fieldname": "mobile_number_partners",
+   "fieldtype": "Attach",
+   "label": "Mobile Number - Partners"
+  },
+  {
+   "fieldname": "email_id_partners",
+   "fieldtype": "Data",
+   "label": "Email ID - Partners"
+  },
+  {
+   "fieldname": "digital_signature_managing_partner",
+   "fieldtype": "Attach",
+   "label": "Digital Signature Managing - Partner"
+  },
+  {
+   "fieldname": "electricity__municipal_tax_own_building",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "proprietorship_details_section",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship Details"
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "proof_of_date_of_birth_aadhar_matriculation_certificate_etc",
+   "fieldtype": "Attach",
+   "label": "Proof of Date of Birth (Aadhar/ Matriculation Certificate, etc.)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:13:02.885910",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "PAN Registrations",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

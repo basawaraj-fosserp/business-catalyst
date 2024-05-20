@@ -1,0 +1,218 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 13:36:41.196285",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email_id",
+  "name_of_the_person",
+  "name_of_the_buisness",
+  "mobile_number",
+  "website_name_and_link",
+  "social_media_account_links",
+  "gst_certificate",
+  "cancelled_cheque",
+  "trademark_certificate",
+  "fssai",
+  "business_details_section",
+  "type_of_business_module",
+  "applicable_igst_on_products",
+  "brand_name",
+  "how_old_is_the_brand",
+  "brand_present_in_offline_online_both",
+  "monthly_revenue_online",
+  "monthly_revenue_offline",
+  "how_many_skus_are_available_in_the_brand_for_the_launch",
+  "any_marketing_budget",
+  "origin_of_brand_indian_international",
+  "authorisation_letter",
+  "any_other_additional_documents_that_is_not_asked_above",
+  "please_upload_the_filled_listings_data_here",
+  "product_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CUST-EC.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email ID",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_the_person",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_the_buisness",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Buisness",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "website_name_and_link",
+   "fieldtype": "Small Text",
+   "label": "Website name and link"
+  },
+  {
+   "fieldname": "social_media_account_links",
+   "fieldtype": "Small Text",
+   "label": "Social media account links"
+  },
+  {
+   "fieldname": "gst_certificate",
+   "fieldtype": "Attach",
+   "label": "GST Certificate"
+  },
+  {
+   "fieldname": "cancelled_cheque",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque"
+  },
+  {
+   "fieldname": "trademark_certificate",
+   "fieldtype": "Attach",
+   "label": "Trademark Certificate"
+  },
+  {
+   "fieldname": "fssai",
+   "fieldtype": "Attach",
+   "label": "FSSAI"
+  },
+  {
+   "fieldname": "business_details_section",
+   "fieldtype": "Section Break",
+   "label": "Business Details"
+  },
+  {
+   "fieldname": "type_of_business_module",
+   "fieldtype": "Small Text",
+   "label": "Type of Business Module"
+  },
+  {
+   "fieldname": "applicable_igst_on_products",
+   "fieldtype": "Data",
+   "label": "Applicable IGST on products  (in %)"
+  },
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "Brand name"
+  },
+  {
+   "fieldname": "how_old_is_the_brand",
+   "fieldtype": "Select",
+   "label": "How old is the brand?",
+   "options": "1\n2\n3"
+  },
+  {
+   "fieldname": "brand_present_in_offline_online_both",
+   "fieldtype": "Select",
+   "label": "Brand present in Offline/Online/Both?",
+   "options": "\nOffline\nOnline\nBoth\nOther"
+  },
+  {
+   "fieldname": "monthly_revenue_online",
+   "fieldtype": "Data",
+   "label": "Monthly Revenue - Online"
+  },
+  {
+   "fieldname": "monthly_revenue_offline",
+   "fieldtype": "Data",
+   "label": "Monthly Revenue - Offline"
+  },
+  {
+   "fieldname": "how_many_skus_are_available_in_the_brand_for_the_launch",
+   "fieldtype": "Small Text",
+   "label": "How many SKUs are available in the brand for the launch?"
+  },
+  {
+   "fieldname": "any_marketing_budget",
+   "fieldtype": "Select",
+   "label": "Any marketing budget?",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "origin_of_brand_indian_international",
+   "fieldtype": "Select",
+   "label": "Origin of brand (Indian/International)",
+   "options": "Indian\nInternational\nOther"
+  },
+  {
+   "fieldname": "authorisation_letter",
+   "fieldtype": "Attach",
+   "label": "Authorisation Letter"
+  },
+  {
+   "fieldname": "any_other_additional_documents_that_is_not_asked_above",
+   "fieldtype": "Attach",
+   "label": "Any other additional documents that is not asked above"
+  },
+  {
+   "fieldname": "please_upload_the_filled_listings_data_here",
+   "fieldtype": "Attach",
+   "label": "Please upload the filled listings data here"
+  },
+  {
+   "fieldname": "product_details",
+   "fieldtype": "Table",
+   "label": "Product Details ",
+   "options": "Product Details With Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 13:36:41.196285",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "NetMed Onboarding",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,5 +1,5 @@
 {
- "_liked_by": "[\"soundarya@fosscrm.com\"]",
+ "_liked_by": "[]",
  "allow_comments": 0,
  "allow_delete": 0,
  "allow_edit": 0,
@@ -11,7 +11,7 @@
  "button_label": "Save",
  "condition_json": "[]",
  "creation": "2024-05-15 12:22:54.031747",
- "doc_type": "Legal Compliance",
+ "doc_type": "PAN Registrations",
  "docstatus": 0,
  "doctype": "Web Form",
  "idx": 0,
@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-15 16:19:38.183704",
+ "modified": "2024-05-20 10:27:44.987749",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "pan-registrations",
@@ -379,7 +379,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card6",
+   "fieldname": "aadhar_card",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card",

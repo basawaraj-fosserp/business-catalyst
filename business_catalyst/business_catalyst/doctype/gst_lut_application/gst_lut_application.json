@@ -1,0 +1,465 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 11:54:12.451605",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "gst_lut_section",
+  "what_type_of_firm",
+  "proprietorship_details_section",
+  "pan_card___proprietor",
+  "aadhar_card_proprietor",
+  "photo__proprietor",
+  "electricity__property_tax_receipt_own_building",
+  "noc_from_landlord_that_he_has_no_objection_address_for_gst",
+  "tradename",
+  "service_list",
+  "first_page_of_pass_book_bank_statement",
+  "cancelled_cheque",
+  "copy_of_gst_registration_certificate",
+  "copy_of_iec_code",
+  "cover_letter_for_request",
+  "personal_ids_of_two_witness",
+  "self_declaration_on_letter_head_for_eligibility",
+  "partnership_detailts_section",
+  "partnership_deed__registration_certificate_glp",
+  "firm_pan_glp",
+  "pan_card_all_partners_glp",
+  "aadhar_card_all_partners_glp",
+  "photo_all_partners_glp",
+  "mobile_number_all_partners_glp",
+  "email_id_all_partners_glp",
+  "pan_card_partner_glp",
+  "aadhar_card_partner_glp",
+  "photo_partner_glp",
+  "mobile_number_partner_glp",
+  "email_id_partner_glp",
+  "electricity__property_tax_receipt_municipal_khata_copy_own_glp",
+  "noc_from_landlord_that_he_has_no_objection_for_glp",
+  "tradename_glp",
+  "services_list_glp",
+  "first_page_of_pass_book_bank_statement_glp",
+  "cancelled_cheque_glp",
+  "copy_of_gst_registration_certificate_glp",
+  "copy_of_iec_code_glp",
+  "cover_letter_for_requesting_glp",
+  "personal_ids_of_two_witness_glp",
+  "board_resolution_letter_authorizing_director_to_file_glp",
+  "self_declaration_on_letter_head_for_eligibility_of_glp",
+  "company_details_section",
+  "partnership_deed__registration_certificate_glc",
+  "firm_pan_glc",
+  "pan_card__partner_glc",
+  "aadhar_card_partner_glc",
+  "photo_partner_glc",
+  "mobile_number_glc",
+  "email_id_glc",
+  "electricity__property_tax_receipt_own_building_glc",
+  "noc_from_landlord_that_he_has_no_objection_glc",
+  "tradename_glc",
+  "services_list_glc",
+  "first_page_of_pass_book_bank_statement_glc",
+  "cancelled_cheque_glc",
+  "copy_of_gst_registration_certificate_glc",
+  "copy_of_iec_code_glc",
+  "cover_letter_for_requesting_lut_glc",
+  "personal_ids_of_two_witness_glc",
+  "board_resolutionauthorization_letter_authorizing_director_glc",
+  "self_declaration_on_letter_head__glc"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "gst_lut_section",
+   "fieldtype": "Section Break",
+   "label": "GST LUT"
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of firm?",
+   "options": "Proprietorship\nPartnership\nCompany"
+  },
+  {
+   "fieldname": "proprietorship_details_section",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship Details "
+  },
+  {
+   "fieldname": "pan_card___proprietor",
+   "fieldtype": "Attach",
+   "label": "PAN Card -  Proprietor"
+  },
+  {
+   "fieldname": "aadhar_card_proprietor",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Proprietor"
+  },
+  {
+   "fieldname": "photo__proprietor",
+   "fieldtype": "Attach",
+   "label": "Photo - Proprietor"
+  },
+  {
+   "fieldname": "electricity__property_tax_receipt_own_building",
+   "fieldtype": "Attach",
+   "label": "Electricity / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "noc_from_landlord_that_he_has_no_objection_address_for_gst",
+   "fieldtype": "Attach",
+   "label": "NOC from Landlord that he has no objection in using that address for GST Registration(Rented)"
+  },
+  {
+   "fieldname": "tradename",
+   "fieldtype": "Data",
+   "label": "Tradename"
+  },
+  {
+   "fieldname": "service_list",
+   "fieldtype": "Data",
+   "label": "Service list"
+  },
+  {
+   "fieldname": "first_page_of_pass_book_bank_statement",
+   "fieldtype": "Data",
+   "label": "First page of Pass book/ Bank statement"
+  },
+  {
+   "fieldname": "cancelled_cheque",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque"
+  },
+  {
+   "fieldname": "copy_of_gst_registration_certificate",
+   "fieldtype": "Attach",
+   "label": "Copy of GST registration Certificate"
+  },
+  {
+   "fieldname": "copy_of_iec_code",
+   "fieldtype": "Attach",
+   "label": "Copy of IEC Code"
+  },
+  {
+   "fieldname": "cover_letter_for_request",
+   "fieldtype": "Attach",
+   "label": "Cover Letter for requesting LUT"
+  },
+  {
+   "fieldname": "personal_ids_of_two_witness",
+   "fieldtype": "Attach",
+   "label": "Personal IDs of Two witness"
+  },
+  {
+   "fieldname": "self_declaration_on_letter_head_for_eligibility",
+   "fieldtype": "Attach",
+   "label": "Self - Declaration on letter head for eligibility of LUT"
+  },
+  {
+   "fieldname": "partnership_detailts_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Details"
+  },
+  {
+   "fieldname": "partnership_deed__registration_certificate_glp",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed / Registration Certificate"
+  },
+  {
+   "fieldname": "firm_pan_glp",
+   "fieldtype": "Attach",
+   "label": "Firm PAN"
+  },
+  {
+   "fieldname": "pan_card_all_partners_glp",
+   "fieldtype": "Attach",
+   "label": "PAN Card - All Partners"
+  },
+  {
+   "fieldname": "aadhar_card_all_partners_glp",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - All Partners"
+  },
+  {
+   "fieldname": "photo_all_partners_glp",
+   "fieldtype": "Attach",
+   "label": "Photo - All Partners"
+  },
+  {
+   "fieldname": "mobile_number_all_partners_glp",
+   "fieldtype": "Data",
+   "label": "Mobile Number - All Partners"
+  },
+  {
+   "fieldname": "email_id_all_partners_glp",
+   "fieldtype": "Data",
+   "label": "Email ID - All Partners",
+   "options": "Email"
+  },
+  {
+   "fieldname": "pan_card_partner_glp",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Partner"
+  },
+  {
+   "fieldname": "aadhar_card_partner_glp",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Partner"
+  },
+  {
+   "fieldname": "photo_partner_glp",
+   "fieldtype": "Attach",
+   "label": "Photo - Partner"
+  },
+  {
+   "fieldname": "mobile_number_partner_glp",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Partner"
+  },
+  {
+   "fieldname": "email_id_partner_glp",
+   "fieldtype": "Data",
+   "label": "Email ID - Partner",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity__property_tax_receipt_municipal_khata_copy_own_glp",
+   "fieldtype": "Attach",
+   "label": "Electricity / Property Tax Receipt/ Municipal Khata Copy - Own Building OR  Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "noc_from_landlord_that_he_has_no_objection_for_glp",
+   "fieldtype": "Attach",
+   "label": "NOC from Landlord that he has no objection in using that address for GST Registration(Rented)"
+  },
+  {
+   "fieldname": "tradename_glp",
+   "fieldtype": "Data",
+   "label": "Tradename"
+  },
+  {
+   "fieldname": "services_list_glp",
+   "fieldtype": "Small Text",
+   "label": "Services list"
+  },
+  {
+   "fieldname": "first_page_of_pass_book_bank_statement_glp",
+   "fieldtype": "Attach",
+   "label": "First page of Pass book/ Bank statement"
+  },
+  {
+   "fieldname": "cancelled_cheque_glp",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque"
+  },
+  {
+   "fieldname": "copy_of_gst_registration_certificate_glp",
+   "fieldtype": "Attach",
+   "label": "Copy of GST registration Certificate"
+  },
+  {
+   "fieldname": "copy_of_iec_code_glp",
+   "fieldtype": "Attach",
+   "label": "Copy of IEC Code"
+  },
+  {
+   "fieldname": "cover_letter_for_requesting_glp",
+   "fieldtype": "Attach",
+   "label": "Cover Letter for requesting LUT"
+  },
+  {
+   "fieldname": "personal_ids_of_two_witness_glp",
+   "fieldtype": "Attach",
+   "label": "Personal ID's of Two witness"
+  },
+  {
+   "fieldname": "board_resolution_letter_authorizing_director_to_file_glp",
+   "fieldtype": "Attach",
+   "label": "Board Resolution/Authorization Letter authorizing director to file LUT application"
+  },
+  {
+   "fieldname": "self_declaration_on_letter_head_for_eligibility_of_glp",
+   "fieldtype": "Attach",
+   "label": "Self - Declaration on letter head for eligibility of LUT"
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "partnership_deed__registration_certificate_glc",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed / Registration Certificate "
+  },
+  {
+   "fieldname": "firm_pan_glc",
+   "fieldtype": "Attach",
+   "label": "Firm PAN "
+  },
+  {
+   "fieldname": "pan_card__partner_glc",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Partner"
+  },
+  {
+   "fieldname": "aadhar_card_partner_glc",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Partner"
+  },
+  {
+   "fieldname": "photo_partner_glc",
+   "fieldtype": "Attach",
+   "label": "Photo - Partner "
+  },
+  {
+   "fieldname": "mobile_number_glc",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Partner"
+  },
+  {
+   "fieldname": "email_id_glc",
+   "fieldtype": "Data",
+   "label": "Email ID - Partner",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity__property_tax_receipt_own_building_glc",
+   "fieldtype": "Attach",
+   "label": "Electricity / Property Tax Receipt/ Municipal Khata Copy - Own Building OR  Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "noc_from_landlord_that_he_has_no_objection_glc",
+   "fieldtype": "Attach",
+   "label": "NOC from Landlord that he has no objection in using that address for GST Registration(Rented)"
+  },
+  {
+   "fieldname": "tradename_glc",
+   "fieldtype": "Data",
+   "label": "Tradename "
+  },
+  {
+   "fieldname": "services_list_glc",
+   "fieldtype": "Small Text",
+   "label": "Services list "
+  },
+  {
+   "fieldname": "first_page_of_pass_book_bank_statement_glc",
+   "fieldtype": "Attach",
+   "label": "First page of Pass book/ Bank statement "
+  },
+  {
+   "fieldname": "cancelled_cheque_glc",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque "
+  },
+  {
+   "fieldname": "copy_of_gst_registration_certificate_glc",
+   "fieldtype": "Attach",
+   "label": "Copy of GST registration Certificate "
+  },
+  {
+   "fieldname": "copy_of_iec_code_glc",
+   "fieldtype": "Attach",
+   "label": "Copy of IEC Code "
+  },
+  {
+   "fieldname": "cover_letter_for_requesting_lut_glc",
+   "fieldtype": "Attach",
+   "label": "Cover Letter for requesting LUT "
+  },
+  {
+   "fieldname": "personal_ids_of_two_witness_glc",
+   "fieldtype": "Attach",
+   "label": "Personal ID's of Two witness "
+  },
+  {
+   "fieldname": "board_resolutionauthorization_letter_authorizing_director_glc",
+   "fieldtype": "Attach",
+   "label": "Board Resolution/Authorization Letter authorizing director to file LUT application"
+  },
+  {
+   "fieldname": "self_declaration_on_letter_head__glc",
+   "fieldtype": "Attach",
+   "label": "Self-Declaration on letter head for eligibility of LUT"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:03:06.553048",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "GST LUT Application",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

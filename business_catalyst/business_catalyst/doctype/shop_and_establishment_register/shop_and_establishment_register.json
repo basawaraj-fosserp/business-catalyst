@@ -1,0 +1,356 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 10:53:48.843118",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "shop__establishment_section",
+  "what_type_of_firm",
+  "company_details__shop__establishment_section",
+  "incorporation_certificate_sec",
+  "certificate_of_registration_issued_by_register_of_companies_sec",
+  "moa__aoa_of_the_company_sec",
+  "pan_of_the_company_sec",
+  "pan_card__director_sec",
+  "aadhar_card_director_sec",
+  "photo_director_sec",
+  "mobile_number_director_sec",
+  "email_id_director_sec",
+  "electricity_own_building_or_rentallease_agreement_rented_sec",
+  "a_front_view_photograph_of_the_shopestablishment_sec",
+  "copy_of__board_resolution_sec",
+  "details_of_existing_employees_sec",
+  "photo_of_exteriors_sec",
+  "photo_of_interiors_sec",
+  "employer_details_sec",
+  "number_of_employees_sec",
+  "partnership_details__shop__establishment_section",
+  "partnership_deed_sep",
+  "certification_of_registration_of_partnership_firm_sep",
+  "pan_of_the_firm_sep",
+  "pan_card_partners_sep",
+  "aadhar_card_partners_sep",
+  "photo_partners_sep",
+  "mobile_number_partners_sep",
+  "email_id_partners_sep",
+  "electricity__municipal_tax_own_building_sep",
+  "a_front_view_photograph_of_the_shopestablishment_sep",
+  "copy_of_partners_consent_sep",
+  "photo_of_exteriors_with_the_sign_of_the_company_sep",
+  "photo_of_interiors_sep",
+  "employer_details_sep",
+  "number_of_employees_male_and_female_breakup_sep",
+  "proprietorship_details__shop__establishment_section",
+  "pan_card",
+  "electricity__municipal_tax__own_building_or_rental_agreement",
+  "a_front_view_photograph_of_the_shopestablishment",
+  "photo_of_exteriors",
+  "photo_of_interiors",
+  "employer_details",
+  "number_of_employees_male_and_female_breakup"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "shop__establishment_section",
+   "fieldtype": "Section Break",
+   "label": "Shop & Establishment"
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of Firm?",
+   "options": "Company\nPartnership\nProprietorship"
+  },
+  {
+   "fieldname": "company_details__shop__establishment_section",
+   "fieldtype": "Section Break",
+   "label": "Company details - Shop & Establishment"
+  },
+  {
+   "fieldname": "incorporation_certificate_sec",
+   "fieldtype": "Attach",
+   "label": "Incorporation Certificate"
+  },
+  {
+   "fieldname": "certificate_of_registration_issued_by_register_of_companies_sec",
+   "fieldtype": "Attach",
+   "label": "Certificate of registration issued by Register of companies"
+  },
+  {
+   "fieldname": "moa__aoa_of_the_company_sec",
+   "fieldtype": "Attach",
+   "label": "MOA  & AOA of the Company"
+  },
+  {
+   "fieldname": "pan_of_the_company_sec",
+   "fieldtype": "Attach",
+   "label": "PAN of the Company"
+  },
+  {
+   "fieldname": "pan_card__director_sec",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Director"
+  },
+  {
+   "fieldname": "aadhar_card_director_sec",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Director"
+  },
+  {
+   "fieldname": "photo_director_sec",
+   "fieldtype": "Attach",
+   "label": "Photo - Director"
+  },
+  {
+   "fieldname": "mobile_number_director_sec",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Director"
+  },
+  {
+   "fieldname": "email_id_director_sec",
+   "fieldtype": "Data",
+   "label": "Email ID - Director",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity_own_building_or_rentallease_agreement_rented_sec",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "a_front_view_photograph_of_the_shopestablishment_sec",
+   "fieldtype": "Attach",
+   "label": "A front view photograph of the shop/establishment, with a visible board with the name of the business in local language"
+  },
+  {
+   "fieldname": "copy_of__board_resolution_sec",
+   "fieldtype": "Attach",
+   "label": "Copy of  Board Resolution"
+  },
+  {
+   "fieldname": "details_of_existing_employees_sec",
+   "fieldtype": "Attach",
+   "label": "Details of existing Employees"
+  },
+  {
+   "fieldname": "photo_of_exteriors_sec",
+   "fieldtype": "Attach",
+   "label": "Photo of exteriors"
+  },
+  {
+   "fieldname": "photo_of_interiors_sec",
+   "fieldtype": "Attach",
+   "label": "Photo of interiors"
+  },
+  {
+   "fieldname": "employer_details_sec",
+   "fieldtype": "Text",
+   "label": "Employer details"
+  },
+  {
+   "fieldname": "number_of_employees_sec",
+   "fieldtype": "Text",
+   "label": "Number of employees"
+  },
+  {
+   "fieldname": "partnership_details__shop__establishment_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership details - Shop & Establishment"
+  },
+  {
+   "fieldname": "partnership_deed_sep",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed"
+  },
+  {
+   "fieldname": "certification_of_registration_of_partnership_firm_sep",
+   "fieldtype": "Attach",
+   "label": "Certification of Registration of Partnership Firm"
+  },
+  {
+   "fieldname": "pan_of_the_firm_sep",
+   "fieldtype": "Attach",
+   "label": "PAN of the Firm"
+  },
+  {
+   "fieldname": "pan_card_partners_sep",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Partners"
+  },
+  {
+   "fieldname": "aadhar_card_partners_sep",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Partners"
+  },
+  {
+   "fieldname": "photo_partners_sep",
+   "fieldtype": "Attach",
+   "label": "Photo - Partners"
+  },
+  {
+   "fieldname": "mobile_number_partners_sep",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Partners"
+  },
+  {
+   "fieldname": "email_id_partners_sep",
+   "fieldtype": "Data",
+   "label": "Email ID - Partners",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity__municipal_tax_own_building_sep",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "a_front_view_photograph_of_the_shopestablishment_sep",
+   "fieldtype": "Attach",
+   "label": "A front view photograph of the shop/establishment, with a visible board with the name of the business in local language"
+  },
+  {
+   "fieldname": "copy_of_partners_consent_sep",
+   "fieldtype": "Attach",
+   "label": "Copy of Partners consent"
+  },
+  {
+   "fieldname": "photo_of_exteriors_with_the_sign_of_the_company_sep",
+   "fieldtype": "Attach",
+   "label": "Photo of exteriors with the sign of the Company"
+  },
+  {
+   "fieldname": "photo_of_interiors_sep",
+   "fieldtype": "Attach",
+   "label": "Photo of interiors"
+  },
+  {
+   "fieldname": "employer_details_sep",
+   "fieldtype": "Text",
+   "label": "Employer details"
+  },
+  {
+   "fieldname": "number_of_employees_male_and_female_breakup_sep",
+   "fieldtype": "Text",
+   "label": "Number of employees (Male and Female breakup)"
+  },
+  {
+   "fieldname": "proprietorship_details__shop__establishment_section",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship details - Shop & Establishment"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Attach",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "electricity__municipal_tax__own_building_or_rental_agreement",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "a_front_view_photograph_of_the_shopestablishment",
+   "fieldtype": "Attach",
+   "label": "A front view photograph of the shop/establishment, with a visible board with the name of the business in local language"
+  },
+  {
+   "fieldname": "photo_of_exteriors",
+   "fieldtype": "Attach",
+   "label": "Photo of exteriors"
+  },
+  {
+   "fieldname": "photo_of_interiors",
+   "fieldtype": "Attach",
+   "label": "Photo of interiors"
+  },
+  {
+   "fieldname": "employer_details",
+   "fieldtype": "Text",
+   "label": "Employer details"
+  },
+  {
+   "fieldname": "number_of_employees_male_and_female_breakup",
+   "fieldtype": "Text",
+   "label": "Number of employees (Male and Female breakup)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:12:51.345914",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Shop and Establishment Register",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:CUST-FS.##",
+ "creation": "2024-05-17 14:51:34.601915",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile",
+  "pan_card",
+  "upload_banking_statements_for_last_6_months",
+  "gst_certificate",
+  "aadhar_card",
+  "passport_size_photo"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CUST-FS.####"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of a Person",
+   "unique": 1
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile "
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Attach",
+   "label": "Upload PAN CARD"
+  },
+  {
+   "fieldname": "upload_banking_statements_for_last_6_months",
+   "fieldtype": "Attach",
+   "label": "Upload Banking Statements for last 6 months"
+  },
+  {
+   "fieldname": "gst_certificate",
+   "fieldtype": "Attach",
+   "label": "GST Certificate"
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "passport_size_photo",
+   "fieldtype": "Attach",
+   "label": "Passport Size Photo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:19:50.075454",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Unsecured Term Loan",
+ "name_case": "Title Case",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

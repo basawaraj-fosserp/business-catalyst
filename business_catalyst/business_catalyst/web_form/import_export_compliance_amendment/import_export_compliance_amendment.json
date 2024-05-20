@@ -10,7 +10,7 @@
  "button_label": "Save",
  "condition_json": "[]",
  "creation": "2024-05-13 12:23:18.391987",
- "doc_type": "Legal Compliance",
+ "doc_type": "Import or Export Compliance Amendment",
  "docstatus": 0,
  "doctype": "Web Form",
  "idx": 0,
@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-15 16:18:30.505791",
+ "modified": "2024-05-20 00:15:02.992942",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "import-export-compliance-amendment",
@@ -49,7 +49,7 @@
    "fieldname": "name_of_a_person",
    "fieldtype": "Data",
    "hidden": 0,
-   "label": "Name of a Person",
+   "label": "Name of the Person",
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
@@ -122,7 +122,7 @@
    "fieldname": "what_type_of_firm",
    "fieldtype": "Select",
    "hidden": 0,
-   "label": "What type of firm",
+   "label": "What type of firm?",
    "max_length": 0,
    "max_value": 0,
    "options": "Proprietorship\nPartnership\nCompany",
@@ -146,20 +146,19 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card__proprietor",
+   "fieldname": "pan_card__proprietor_iea",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card-Proprietor",
    "max_length": 0,
    "max_value": 0,
-   "options": "",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card_proprietor",
+   "fieldname": "aadhar_card_proprietor_iea",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card-Proprietor",
@@ -171,7 +170,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "photo_proprietor",
+   "fieldname": "photo_proprietor_iea",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Photo-Proprietor",
@@ -183,7 +182,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "gstin_proprietor",
+   "fieldname": "gstin_proprietor_iea",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "GSTIN -Proprietor",
@@ -195,7 +194,19 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "cancelled_cheque2",
+   "fieldname": "electricity_bill_own_or_rental_agreement_electricity_bill_iea",
+   "fieldtype": "Attach",
+   "hidden": 0,
+   "label": " Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "cancelled_cheque_iea",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Cancelled Cheque",
@@ -221,7 +232,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "partnership_deed__registration_certificate",
+   "fieldname": "partnership_deed__registration_certificate_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Partnership Deed / Registration Certificate",
@@ -233,7 +244,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "firm_pan",
+   "fieldname": "firm_pan_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Firm PAN",
@@ -245,7 +256,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "gst_certificate",
+   "fieldname": "gst_certificate_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "GST Certificate",
@@ -257,7 +268,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card_all_partners",
+   "fieldname": "pan_card_all_partners_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card - All Partners",
@@ -269,7 +280,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card_all_partners",
+   "fieldname": "aadhar_card_all_partners_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card - All Partners",
@@ -281,7 +292,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "photo_all_partners",
+   "fieldname": "photo_all_partners_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Photo-All Partners",
@@ -293,7 +304,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "mobile_no_all_partners",
+   "fieldname": "mobile_no_all_partners_ieap",
    "fieldtype": "Text",
    "hidden": 0,
    "label": "Mobile No - All Partners",
@@ -305,7 +316,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "email_id_all_partners",
+   "fieldname": "email_id_all_partners_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Email ID - All Partners",
@@ -317,7 +328,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "proof_of_appointment",
+   "fieldname": "proof_of_appointment_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Proof of Appointment",
@@ -329,7 +340,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card_authorized_signatory",
+   "fieldname": "pan_card_authorized_signatory_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card- Authorized Signatory",
@@ -341,7 +352,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card__authorized_signatory",
+   "fieldname": "aadhar_card__authorized_signatory_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card - Authorized Signatory",
@@ -353,7 +364,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "photo__authorized_signatory",
+   "fieldname": "photo__authorized_signatory_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Photo - Authorized Signatory",
@@ -365,7 +376,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "mobile_number__authorized_signatory",
+   "fieldname": "mobile_number__authorized_signatory_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Mobile Number - Authorized Signatory",
@@ -377,7 +388,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "email_id_authorized_signatory",
+   "fieldname": "email_id_authorized_signatory_ieap",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Email ID - Authorized Signatory",
@@ -390,7 +401,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "electricity_bill_own_rentallease_agreement_electricity_bill",
+   "fieldname": "electricity_bill_own_rentallease_agreement_electricity_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": " Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building",
@@ -402,7 +413,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "cancelled_cheque",
+   "fieldname": "cancelled_cheque_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Cancelled Cheque",
@@ -414,7 +425,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "additional_documents_required_lut",
+   "fieldname": "additional_documents_required_lut_ieap",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Additional Documents Required LUT",
@@ -440,7 +451,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "certificate_of_incorporation_memorandum_of_association",
+   "fieldname": "certificate_of_incorporation_memorandum_of_association_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Certificate of Incorporation, Memorandum of Association & Articles of Association",
@@ -452,7 +463,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "company_pan",
+   "fieldname": "company_pan_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Company PAN",
@@ -464,7 +475,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "gst",
+   "fieldname": "gst_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "GST",
@@ -476,7 +487,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card__all_partners",
+   "fieldname": "pan_card__all_partners_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card - All Partners",
@@ -488,7 +499,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card__director",
+   "fieldname": "aadhar_card__director_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card - Director",
@@ -500,7 +511,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "photo__director",
+   "fieldname": "photo__director_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Photo - Director",
@@ -512,7 +523,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "mobile_number__director",
+   "fieldname": "mobile_number__director_ieac",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Mobile Number - Director",
@@ -524,7 +535,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "email_id__director",
+   "fieldname": "email_id__director_ieac",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Email ID - Director",
@@ -537,7 +548,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "din__director",
+   "fieldname": "din__director_ieac",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "DIN - Director",
@@ -549,7 +560,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "proof_of_appointment__authorized_signatory",
+   "fieldname": "proof_of_appointment__authorized_signatory_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Proof of Appointment  Authorized Signatory",
@@ -561,7 +572,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card_authorized_signatory",
+   "fieldname": "pan_card_authorized_signatory_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card - Authorized Signatory",
@@ -573,10 +584,10 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card__authorized_signatory",
+   "fieldname": "aadhar_card_authorized_signatory_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
-   "label": "Aadhar Card -  Authorized Signatory",
+   "label": "Aadhar Card - Authorized Signatory",
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
@@ -585,10 +596,10 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "photo__authorized_signatory",
+   "fieldname": "photo__authorized_signatory_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
-   "label": "Photo - Authorized Signatory",
+   "label": "Photo  - Authorized Signatory",
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
@@ -597,7 +608,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "mobile_number_authorized_signatory",
+   "fieldname": "mobile_number_authorized_signatory_ieac",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Mobile Number - Authorized Signatory",
@@ -609,10 +620,10 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "email_id_authorized_signatory",
+   "fieldname": "email_id_authorized_signatory_ieac",
    "fieldtype": "Data",
    "hidden": 0,
-   "label": "Email ID - Authorized Signatory",
+   "label": "Email ID -  Authorized Signatory",
    "max_length": 0,
    "max_value": 0,
    "options": "Email",
@@ -622,7 +633,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "electricity__municipal_tax__own_or_rentallease_agreement_rented",
+   "fieldname": "electricity__municipal_tax__own_or_rentallease_agreement_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "  Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill- Rented Building",
@@ -634,7 +645,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "rental_agreement_rental_building_or_rent_free_affidavit__if_own",
+   "fieldname": "rental_agreement_rental_building_or_rent_free_affidavit_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Rental agreement - In case of Rental building OR Rent Free Affidavit - In case of Own building",
@@ -646,7 +657,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "first_page_of_pass_book_bank_statement",
+   "fieldname": "first_page_of_pass_book_bank_statement_ieac",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "First page of Pass book/ Bank statement",

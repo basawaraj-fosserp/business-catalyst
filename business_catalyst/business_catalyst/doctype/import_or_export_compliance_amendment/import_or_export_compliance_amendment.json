@@ -1,0 +1,369 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 00:03:17.110679",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "import_export_code_iec_registration_section",
+  "what_type_of_firm",
+  "proprietorship_details_section_",
+  "pan_card__proprietor_iea",
+  "aadhar_card_proprietor_iea",
+  "photo_proprietor_iea",
+  "gstin_proprietor_iea",
+  "electricity_bill_own_or_rental_agreement_electricity_bill_iea",
+  "cancelled_cheque_iea",
+  "partnership_details_section",
+  "partnership_deed__registration_certificate_ieap",
+  "firm_pan_ieap",
+  "gst_certificate_ieap",
+  "pan_card_all_partners_ieap",
+  "aadhar_card_all_partners_ieap",
+  "photo_all_partners_ieap",
+  "mobile_no_all_partners_ieap",
+  "email_id_all_partners_ieap",
+  "proof_of_appointment_ieap",
+  "pan_card_authorized_signatory_ieap",
+  "aadhar_card__authorized_signatory_ieap",
+  "photo__authorized_signatory_ieap",
+  "mobile_number__authorized_signatory_ieap",
+  "email_id_authorized_signatory_ieap",
+  "electricity_bill_own_rentallease_agreement_electricity_ieap",
+  "cancelled_cheque_ieap",
+  "additional_documents_required_lut_ieap",
+  "company_details_section",
+  "certificate_of_incorporation_memorandum_of_association_ieac",
+  "company_pan_ieac",
+  "gst_ieac",
+  "pan_card__all_partners_ieac",
+  "aadhar_card__director_ieac",
+  "photo__director_ieac",
+  "mobile_number__director_ieac",
+  "email_id__director_ieac",
+  "din__director_ieac",
+  "proof_of_appointment__authorized_signatory_ieac",
+  "pan_card_authorized_signatory_ieac",
+  "aadhar_card_authorized_signatory_ieac",
+  "photo__authorized_signatory_ieac",
+  "mobile_number_authorized_signatory_ieac",
+  "email_id_authorized_signatory_ieac",
+  "electricity__municipal_tax__own_or_rentallease_agreement_ieac",
+  "rental_agreement_rental_building_or_rent_free_affidavit_ieac",
+  "first_page_of_pass_book_bank_statement_ieac"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of a Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "import_export_code_iec_registration_section",
+   "fieldtype": "Section Break",
+   "label": "Import Export Code (IEC) Registration / IEC Registration Amendment"
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of firm?",
+   "options": "Proprietorship\nPartnership\nCompany"
+  },
+  {
+   "fieldname": "proprietorship_details_section_",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship Details"
+  },
+  {
+   "fieldname": "pan_card__proprietor_iea",
+   "fieldtype": "Attach",
+   "label": "PAN Card-Proprietor"
+  },
+  {
+   "fieldname": "aadhar_card_proprietor_iea",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card-Proprietor"
+  },
+  {
+   "fieldname": "photo_proprietor_iea",
+   "fieldtype": "Attach",
+   "label": "Photo-Proprietor"
+  },
+  {
+   "fieldname": "gstin_proprietor_iea",
+   "fieldtype": "Attach",
+   "label": "GSTIN -Proprietor"
+  },
+  {
+   "fieldname": "electricity_bill_own_or_rental_agreement_electricity_bill_iea",
+   "fieldtype": "Attach",
+   "label": " Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "cancelled_cheque_iea",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque"
+  },
+  {
+   "fieldname": "partnership_details_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Details"
+  },
+  {
+   "fieldname": "partnership_deed__registration_certificate_ieap",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed / Registration Certificate"
+  },
+  {
+   "fieldname": "firm_pan_ieap",
+   "fieldtype": "Attach",
+   "label": "Firm PAN"
+  },
+  {
+   "fieldname": "gst_certificate_ieap",
+   "fieldtype": "Attach",
+   "label": "GST Certificate"
+  },
+  {
+   "fieldname": "pan_card_all_partners_ieap",
+   "fieldtype": "Attach",
+   "label": "PAN Card - All Partners"
+  },
+  {
+   "fieldname": "aadhar_card_all_partners_ieap",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - All Partners"
+  },
+  {
+   "fieldname": "photo_all_partners_ieap",
+   "fieldtype": "Attach",
+   "label": "Photo-All Partners"
+  },
+  {
+   "fieldname": "mobile_no_all_partners_ieap",
+   "fieldtype": "Text",
+   "label": "Mobile No - All Partners"
+  },
+  {
+   "fieldname": "email_id_all_partners_ieap",
+   "fieldtype": "Attach",
+   "label": "Email ID - All Partners"
+  },
+  {
+   "fieldname": "proof_of_appointment_ieap",
+   "fieldtype": "Attach",
+   "label": "Proof of Appointment"
+  },
+  {
+   "fieldname": "pan_card_authorized_signatory_ieap",
+   "fieldtype": "Attach",
+   "label": "PAN Card- Authorized Signatory"
+  },
+  {
+   "fieldname": "aadhar_card__authorized_signatory_ieap",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "photo__authorized_signatory_ieap",
+   "fieldtype": "Attach",
+   "label": "Photo - Authorized Signatory"
+  },
+  {
+   "fieldname": "mobile_number__authorized_signatory_ieap",
+   "fieldtype": "Attach",
+   "label": "Mobile Number - Authorized Signatory"
+  },
+  {
+   "fieldname": "email_id_authorized_signatory_ieap",
+   "fieldtype": "Data",
+   "label": "Email ID - Authorized Signatory",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity_bill_own_rentallease_agreement_electricity_ieap",
+   "fieldtype": "Attach",
+   "label": " Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "cancelled_cheque_ieap",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque"
+  },
+  {
+   "fieldname": "additional_documents_required_lut_ieap",
+   "fieldtype": "Attach",
+   "label": "Additional Documents Required LUT"
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "certificate_of_incorporation_memorandum_of_association_ieac",
+   "fieldtype": "Attach",
+   "label": "Certificate of Incorporation, Memorandum of Association & Articles of Association"
+  },
+  {
+   "fieldname": "company_pan_ieac",
+   "fieldtype": "Attach",
+   "label": "Company PAN"
+  },
+  {
+   "fieldname": "gst_ieac",
+   "fieldtype": "Attach",
+   "label": "GST"
+  },
+  {
+   "fieldname": "pan_card__all_partners_ieac",
+   "fieldtype": "Attach",
+   "label": "PAN Card - All Partners"
+  },
+  {
+   "fieldname": "aadhar_card__director_ieac",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Director"
+  },
+  {
+   "fieldname": "photo__director_ieac",
+   "fieldtype": "Attach",
+   "label": "Photo - Director"
+  },
+  {
+   "fieldname": "mobile_number__director_ieac",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Director"
+  },
+  {
+   "fieldname": "email_id__director_ieac",
+   "fieldtype": "Data",
+   "label": "Email ID - Director",
+   "options": "Email"
+  },
+  {
+   "fieldname": "din__director_ieac",
+   "fieldtype": "Data",
+   "label": "DIN - Director"
+  },
+  {
+   "fieldname": "proof_of_appointment__authorized_signatory_ieac",
+   "fieldtype": "Attach",
+   "label": "Proof of Appointment  Authorized Signatory"
+  },
+  {
+   "fieldname": "pan_card_authorized_signatory_ieac",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "aadhar_card_authorized_signatory_ieac",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "photo__authorized_signatory_ieac",
+   "fieldtype": "Attach",
+   "label": "Photo  - Authorized Signatory"
+  },
+  {
+   "fieldname": "mobile_number_authorized_signatory_ieac",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Authorized Signatory"
+  },
+  {
+   "fieldname": "email_id_authorized_signatory_ieac",
+   "fieldtype": "Data",
+   "label": "Email ID -  Authorized Signatory",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity__municipal_tax__own_or_rentallease_agreement_ieac",
+   "fieldtype": "Attach",
+   "label": "  Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill- Rented Building"
+  },
+  {
+   "fieldname": "rental_agreement_rental_building_or_rent_free_affidavit_ieac",
+   "fieldtype": "Attach",
+   "label": "Rental agreement - In case of Rental building OR Rent Free Affidavit - In case of Own building"
+  },
+  {
+   "fieldname": "first_page_of_pass_book_bank_statement_ieac",
+   "fieldtype": "Attach",
+   "label": "First page of Pass book/ Bank statement"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:13:32.692045",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Import or Export Compliance Amendment",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

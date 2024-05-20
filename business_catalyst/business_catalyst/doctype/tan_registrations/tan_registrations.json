@@ -1,0 +1,282 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 00:36:57.037306",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "tan_registration_section",
+  "what_type_of_firm",
+  "company_details_section",
+  "incorporation_certificate",
+  "certificate_of_registration_issued_by_register_of_companies",
+  "pan_of_the_company",
+  "gstin_of_the_company",
+  "aadhar_card__authorized_signatory",
+  "pan_card___authorized_signatory",
+  "mobile_number_authorized_signatory",
+  "email_address___authorized_signatory",
+  "digital_signature__authorized_signatory",
+  "electricity__municipal_tax_own_building_trc",
+  "partnership_details_section",
+  "partnership_deed",
+  "certification_of_registration_of_partnership_firm",
+  "pan_of_the_firm",
+  "gstin_of_the_firm",
+  "contact_details",
+  "aadhar_card__partners",
+  "pan_card__partners",
+  "aadhar_card_managing_partner",
+  "pan_card_managing_partner",
+  "mobile_number_managing_partner",
+  "email_address_managing_partner",
+  "photo_managing_partner",
+  "digital_signature_managing_partner",
+  "electricity__municipal_tax__own_building_trp",
+  "proprietorship_details_section",
+  "aadhar_card",
+  "pan_card",
+  "electricity__municipal_tax__own_building_tr"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "tan_registration_section",
+   "fieldtype": "Section Break",
+   "label": "TAN Registration"
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of firm?",
+   "options": "Company\nPartnership\nProprietorship"
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details "
+  },
+  {
+   "fieldname": "incorporation_certificate",
+   "fieldtype": "Attach",
+   "label": "Incorporation Certificate"
+  },
+  {
+   "fieldname": "certificate_of_registration_issued_by_register_of_companies",
+   "fieldtype": "Attach",
+   "label": "Certificate of registration issued by Register of companies"
+  },
+  {
+   "fieldname": "pan_of_the_company",
+   "fieldtype": "Attach",
+   "label": "PAN of the Company"
+  },
+  {
+   "fieldname": "gstin_of_the_company",
+   "fieldtype": "Attach",
+   "label": "GSTIN of the company"
+  },
+  {
+   "fieldname": "aadhar_card__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "pan_card___authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "mobile_number_authorized_signatory",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Authorized Signatory"
+  },
+  {
+   "fieldname": "email_address___authorized_signatory",
+   "fieldtype": "Data",
+   "label": "Email Address - Authorized Signatory"
+  },
+  {
+   "fieldname": "digital_signature__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Digital Signature - Authorized Signatory"
+  },
+  {
+   "fieldname": "electricity__municipal_tax_own_building_trc",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "partnership_details_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Details "
+  },
+  {
+   "fieldname": "partnership_deed",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed"
+  },
+  {
+   "fieldname": "certification_of_registration_of_partnership_firm",
+   "fieldtype": "Attach",
+   "label": "Certification of Registration of Partnership Firm"
+  },
+  {
+   "fieldname": "pan_of_the_firm",
+   "fieldtype": "Attach",
+   "label": "PAN of the firm"
+  },
+  {
+   "fieldname": "gstin_of_the_firm",
+   "fieldtype": "Data",
+   "label": "GSTIN of the firm"
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Data",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "aadhar_card__partners",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Partners"
+  },
+  {
+   "fieldname": "pan_card__partners",
+   "fieldtype": "Attach",
+   "label": "Pan Card - Partners"
+  },
+  {
+   "fieldname": "aadhar_card_managing_partner",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Managing Partner"
+  },
+  {
+   "fieldname": "pan_card_managing_partner",
+   "fieldtype": "Attach",
+   "label": "Pan Card - Managing Partner"
+  },
+  {
+   "fieldname": "mobile_number_managing_partner",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Managing Partner"
+  },
+  {
+   "fieldname": "email_address_managing_partner",
+   "fieldtype": "Data",
+   "label": "Email Address - Managing Partner"
+  },
+  {
+   "fieldname": "photo_managing_partner",
+   "fieldtype": "Attach",
+   "label": "Photo - Managing Partner"
+  },
+  {
+   "fieldname": "digital_signature_managing_partner",
+   "fieldtype": "Attach",
+   "label": "Digital Signature - Managing Partner"
+  },
+  {
+   "fieldname": "electricity__municipal_tax__own_building_trp",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "proprietorship_details_section",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship Details "
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Attach",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "electricity__municipal_tax__own_building_tr",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:13:12.377370",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "TAN Registrations",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

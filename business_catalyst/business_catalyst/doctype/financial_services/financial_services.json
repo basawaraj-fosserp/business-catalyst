@@ -18,7 +18,8 @@
   "upload_banking_statements_for_last_6_months",
   "gst_certificate",
   "aadhar_card",
-  "passport_size_photo"
+  "passport_size_photo",
+  "test"
  ],
  "fields": [
   {
@@ -79,11 +80,16 @@
    "fieldname": "passport_size_photo",
    "fieldtype": "Attach",
    "label": "Passport Size Photo"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "label": "TEst"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-15 17:16:23.391392",
+ "modified": "2024-05-20 12:19:49.761333",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Financial Services",

@@ -1,5 +1,5 @@
 {
- "_liked_by": "[\"soundarya@fosscrm.com\"]",
+ "_liked_by": "[]",
  "allow_comments": 0,
  "allow_delete": 0,
  "allow_edit": 0,
@@ -11,7 +11,7 @@
  "button_label": "Save",
  "condition_json": "[]",
  "creation": "2024-05-14 23:17:58.454944",
- "doc_type": "Legal Compliance",
+ "doc_type": "TAN Registrations",
  "docstatus": 0,
  "doctype": "Web Form",
  "idx": 0,
@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-15 16:19:23.237337",
+ "modified": "2024-05-20 00:40:39.476920",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "tan-registrations",
@@ -120,7 +120,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "what_type_of_firm3",
+   "fieldname": "what_type_of_firm",
    "fieldtype": "Select",
    "hidden": 0,
    "label": "What type of firm?",
@@ -133,11 +133,11 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "depends_on": "eval:doc.what_type_of_firm3 == \"Company\";",
+   "depends_on": "eval:doc.what_type_of_firm == \"Company\";",
    "fieldname": "",
    "fieldtype": "Section Break",
    "hidden": 0,
-   "label": "Company Details - TAN Registration",
+   "label": "Company Details ",
    "max_length": 0,
    "max_value": 0,
    "options": "",
@@ -147,7 +147,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "incorporation_certificate3",
+   "fieldname": "incorporation_certificate",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Incorporation Certificate",
@@ -159,7 +159,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "certificate_of_registration_issued_by_register_of_companies3",
+   "fieldname": "certificate_of_registration_issued_by_register_of_companies",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Certificate of registration issued by Register of companies",
@@ -195,7 +195,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card__authorized_signatory2",
+   "fieldname": "aadhar_card__authorized_signatory",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card - Authorized Signatory",
@@ -207,7 +207,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card___authorized_signatory3",
+   "fieldname": "pan_card___authorized_signatory",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card - Authorized Signatory",
@@ -219,7 +219,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "mobile_number_authorized_signatory2",
+   "fieldname": "mobile_number_authorized_signatory",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Mobile Number - Authorized Signatory",
@@ -255,7 +255,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "electricity__municipal_tax_own_building_or",
+   "fieldname": "electricity__municipal_tax_own_building_trc",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building",
@@ -267,11 +267,11 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "depends_on": "eval:doc.what_type_of_firm3 == \"Partnership\";",
+   "depends_on": "eval:doc.what_type_of_firm == \"Partnership\";",
    "fieldname": "",
    "fieldtype": "Section Break",
    "hidden": 0,
-   "label": "Partnership Details - TAN Registration",
+   "label": "Partnership Details ",
    "max_length": 0,
    "max_value": 0,
    "options": "",
@@ -281,7 +281,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "partnership_deed2",
+   "fieldname": "partnership_deed",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Partnership Deed",
@@ -293,7 +293,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "certification_of_registration_of_partnership_firm3",
+   "fieldname": "certification_of_registration_of_partnership_firm",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Certification of Registration of Partnership Firm",
@@ -401,7 +401,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "digital_signature_managing_partner2",
+   "fieldname": "digital_signature_managing_partner",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Digital Signature - Managing Partner",
@@ -413,7 +413,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "electricity__municipal_tax_own_building",
+   "fieldname": "electricity__municipal_tax__own_building_trp",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building",
@@ -425,11 +425,11 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "depends_on": "eval:doc.what_type_of_firm3 == \"Proprietorship\";",
+   "depends_on": "eval:doc.what_type_of_firm == \"Proprietorship\";",
    "fieldname": "",
    "fieldtype": "Section Break",
    "hidden": 0,
-   "label": "Proprietorship Details - TAN Registration",
+   "label": "Proprietorship Details ",
    "max_length": 0,
    "max_value": 0,
    "options": "",
@@ -439,7 +439,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "aadhar_card5",
+   "fieldname": "aadhar_card",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Aadhar Card",
@@ -451,7 +451,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card4",
+   "fieldname": "pan_card",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "PAN Card",
@@ -463,7 +463,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "electricity__municipal_tax__own_building2",
+   "fieldname": "electricity__municipal_tax__own_building_tr",
    "fieldtype": "Attach",
    "hidden": 0,
    "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building",

@@ -1,0 +1,193 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-19 14:22:58.727420",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "documents_for_trademark_certificate_section",
+  "aadhar_card_tr",
+  "pan_card_tr",
+  "electricity_bill_if_own__or_rentallease_electricity_tr",
+  "noc_from_landlord_saying_no_objection_using_address_for_gst_tr",
+  "gstin_tr",
+  "copy_of_logobrand_name_tr",
+  "trademark_class_tr",
+  "description_of_goodsservices_tr",
+  "name_of_the_proprietor_firm_company_for_trade_mark_tr",
+  "type_of_owner_tr",
+  "nature_of_goods_services_to_be_mentioned_in_the_application_tr",
+  "address_of_the_proprietorfirmcompany_for_registration_tr",
+  "brand_name_trade_mark_to_be_applied_tr",
+  "date_from_which_entity_is_using_the_said_trademark_tr",
+  "digital_signature_certificate_esign_tr",
+  "power_of_attorney_tr"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CUST-LC.####"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of a Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "documents_for_trademark_certificate_section",
+   "fieldtype": "Section Break",
+   "label": "Documents for Trademark Certificate"
+  },
+  {
+   "fieldname": "aadhar_card_tr",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card "
+  },
+  {
+   "fieldname": "pan_card_tr",
+   "fieldtype": "Attach",
+   "label": "PAN Card "
+  },
+  {
+   "fieldname": "electricity_bill_if_own__or_rentallease_electricity_tr",
+   "fieldtype": "Attach",
+   "label": " Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "noc_from_landlord_saying_no_objection_using_address_for_gst_tr",
+   "fieldtype": "Attach",
+   "label": "NOC from Landlord saying no objection using address for GST "
+  },
+  {
+   "fieldname": "gstin_tr",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldname": "copy_of_logobrand_name_tr",
+   "fieldtype": "Attach",
+   "label": "Copy of Logo/Brand Name"
+  },
+  {
+   "fieldname": "trademark_class_tr",
+   "fieldtype": "Small Text",
+   "label": "Trademark Class"
+  },
+  {
+   "fieldname": "description_of_goodsservices_tr",
+   "fieldtype": "Small Text",
+   "label": "Description of Goods/Services"
+  },
+  {
+   "fieldname": "name_of_the_proprietor_firm_company_for_trade_mark_tr",
+   "fieldtype": "Data",
+   "label": "Name of the (Proprietor/ Firm/ Company) for Trade Mark"
+  },
+  {
+   "fieldname": "type_of_owner_tr",
+   "fieldtype": "Select",
+   "label": "Type of Owner",
+   "options": "Proprietorship\nPartnership\nLLP\nCompany\nSociety\nTrust"
+  },
+  {
+   "fieldname": "nature_of_goods_services_to_be_mentioned_in_the_application_tr",
+   "fieldtype": "Small Text",
+   "label": "Nature of (Goods/ Services) to be mentioned in the application"
+  },
+  {
+   "fieldname": "address_of_the_proprietorfirmcompany_for_registration_tr",
+   "fieldtype": "Small Text",
+   "label": "Address of the Proprietor/Firm/Company for registration"
+  },
+  {
+   "fieldname": "brand_name_trade_mark_to_be_applied_tr",
+   "fieldtype": "Data",
+   "label": "Brand Name/ Trade Mark to be applied"
+  },
+  {
+   "fieldname": "date_from_which_entity_is_using_the_said_trademark_tr",
+   "fieldtype": "Date",
+   "label": "Date from which Entity is using the said Trademark"
+  },
+  {
+   "fieldname": "digital_signature_certificate_esign_tr",
+   "fieldtype": "Attach",
+   "label": "Digital Signature certificate/ Esign"
+  },
+  {
+   "fieldname": "power_of_attorney_tr",
+   "fieldtype": "Attach",
+   "label": "Power of Attorney"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:13:57.701307",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Trademark Registerations",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

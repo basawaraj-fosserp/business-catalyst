@@ -1,0 +1,290 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-18 17:05:55.733038",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "name_of_a_person",
+  "name_of_the_business",
+  "email_id",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "what_type_of_firm",
+  "proprietorship_details_section",
+  "pan_card_proprietor",
+  "aadhar_card_proprietor",
+  "photo_proprietor",
+  "electricity_bill__property_tax_receipt_own_building",
+  "noc_from_landlord",
+  "tradename",
+  "services_list",
+  "date_of_commencement_of_business",
+  "first_page_of_pass_book_bank_statement",
+  "cancelled_cheque",
+  "please_confirm_if_proprietor_and_authorized_signatory",
+  "do_you_have_an_authorized_representative",
+  "partnership_details_section",
+  "partnership_deed__registration_certificate",
+  "firm_pan",
+  "pan_card___all_partners",
+  "aadhar_card___all_partners",
+  "photo__all_partners",
+  "mobile_number___all_partners",
+  "email_id___all_partners",
+  "pan_card___authorized_signatory",
+  "aadhar_card__authorized_signatory",
+  "photo__authorized_signatory",
+  "mobile_number_authorized_signatory",
+  "email_id__authorized_signatory",
+  "electricity_bill__property_tax_receipt_own_building_or_rental",
+  "noc_from_landlord_that_has_no_objection_using_that_address",
+  "tradename_partner",
+  "services_list_partner",
+  "first_page_of_pass_book_bank_statement_partner",
+  "cancelled_cheque_partner"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of firm?",
+   "options": "Proprietorship Firm\nPartnership Firm"
+  },
+  {
+   "fieldname": "proprietorship_details_section",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship Details"
+  },
+  {
+   "fieldname": "pan_card_proprietor",
+   "fieldtype": "Attach",
+   "label": "PAN Card-Proprietor"
+  },
+  {
+   "fieldname": "aadhar_card_proprietor",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card-Proprietor"
+  },
+  {
+   "fieldname": "photo_proprietor",
+   "fieldtype": "Attach",
+   "label": "Photo-Proprietor"
+  },
+  {
+   "fieldname": "electricity_bill__property_tax_receipt_own_building",
+   "fieldtype": "Attach",
+   "label": "Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "noc_from_landlord",
+   "fieldtype": "Attach",
+   "label": "NOC from Landlord that he has no objection in using that address for GST Registration (Rented)"
+  },
+  {
+   "fieldname": "tradename",
+   "fieldtype": "Data",
+   "label": "Tradename"
+  },
+  {
+   "fieldname": "services_list",
+   "fieldtype": "Small Text",
+   "label": "Services list"
+  },
+  {
+   "fieldname": "date_of_commencement_of_business",
+   "fieldtype": "Date",
+   "label": "Date of commencement of Business"
+  },
+  {
+   "fieldname": "first_page_of_pass_book_bank_statement",
+   "fieldtype": "Attach",
+   "label": "First page of Pass book/ Bank statement"
+  },
+  {
+   "fieldname": "cancelled_cheque",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque"
+  },
+  {
+   "fieldname": "please_confirm_if_proprietor_and_authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Confirm if Proprietor and Authorized Signatory is same? If Not- Upload PAN Card, Aadhar Card, Passport Size photo of Authorized Signatory"
+  },
+  {
+   "fieldname": "do_you_have_an_authorized_representative",
+   "fieldtype": "Attach",
+   "label": "Do you have Authorized Representative? If Yes - Upload PAN Card, Aadhar Card and Passport Size photo of the  Authorized Representative"
+  },
+  {
+   "fieldname": "partnership_details_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Details"
+  },
+  {
+   "fieldname": "partnership_deed__registration_certificate",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed / Registration Certificate"
+  },
+  {
+   "fieldname": "firm_pan",
+   "fieldtype": "Attach",
+   "label": "Firm PAN"
+  },
+  {
+   "fieldname": "pan_card___all_partners",
+   "fieldtype": "Attach",
+   "label": "PAN Card - All Partners"
+  },
+  {
+   "fieldname": "aadhar_card___all_partners",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - All Partners"
+  },
+  {
+   "fieldname": "photo__all_partners",
+   "fieldtype": "Attach",
+   "label": "Photo - All Partners"
+  },
+  {
+   "fieldname": "mobile_number___all_partners",
+   "fieldtype": "Data",
+   "label": "Mobile Number - All Partners"
+  },
+  {
+   "fieldname": "email_id___all_partners",
+   "fieldtype": "Data",
+   "label": "Email ID - All Partners",
+   "options": "Email"
+  },
+  {
+   "fieldname": "pan_card___authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "aadhar_card__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "photo__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Photo - Authorized Signatory"
+  },
+  {
+   "fieldname": "mobile_number_authorized_signatory",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Authorized Signatory"
+  },
+  {
+   "fieldname": "email_id__authorized_signatory",
+   "fieldtype": "Data",
+   "label": "Email ID - Authorized Signatory",
+   "options": "Email"
+  },
+  {
+   "fieldname": "electricity_bill__property_tax_receipt_own_building_or_rental",
+   "fieldtype": "Attach",
+   "label": "Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "noc_from_landlord_that_has_no_objection_using_that_address",
+   "fieldtype": "Attach",
+   "label": "NOC from Landlord that he has no objection in using that address for GST Registration(Rented)"
+  },
+  {
+   "fieldname": "tradename_partner",
+   "fieldtype": "Small Text",
+   "label": "Tradename "
+  },
+  {
+   "fieldname": "services_list_partner",
+   "fieldtype": "Text",
+   "label": "Services list "
+  },
+  {
+   "fieldname": "first_page_of_pass_book_bank_statement_partner",
+   "fieldtype": "Attach",
+   "label": "First page of Pass book/ Bank statement "
+  },
+  {
+   "fieldname": "cancelled_cheque_partner",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque "
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 12:14:27.073142",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "GST Registeration",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
