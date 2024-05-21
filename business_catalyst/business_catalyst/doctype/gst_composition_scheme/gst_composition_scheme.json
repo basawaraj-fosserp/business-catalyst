@@ -1,9 +1,8 @@
 {
- "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2024-05-20 14:41:30.204216",
+ "creation": "2024-05-21 11:48:16.255661",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -16,8 +15,7 @@
   "name_of_the_business",
   "mobile_number_aadhar_linked",
   "product_list_hsn_wise",
-  "activity_trading_manufacturing_administrative_job_worksetc",
-  "request_of_sales_and_purchase_invoice_from_msme"
+  "activity_trading_manufacturing_administrative_job_worksetc"
  ],
  "fields": [
   {
@@ -61,19 +59,14 @@
    "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
    "fieldtype": "Small Text",
    "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
-  },
-  {
-   "fieldname": "request_of_sales_and_purchase_invoice_from_msme",
-   "fieldtype": "Attach",
-   "label": "Request of sales and purchase invoice from MSME"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 14:54:23.659513",
+ "modified": "2024-05-21 12:39:29.326719",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
- "name": "GSTMonthly 4 annual recon and comp",
+ "name": "GST Composition Scheme",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [

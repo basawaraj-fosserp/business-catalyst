@@ -1,0 +1,366 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-21 12:23:46.683582",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "email",
+  "name_of_a_person",
+  "name_of_the_business",
+  "mobile_number_aadhar_linked",
+  "product_list_hsn_wise",
+  "activity_trading_manufacturing_administrative_job_worksetc",
+  "fssai_registration_section",
+  "what_type_of_firm",
+  "company_details_section",
+  "incorporation_certificate_frc",
+  "moa__aoa_of_the_company_frc",
+  "pan_of_the_company_frc",
+  "aadhar_card__authorized_signatory_frc",
+  "pan_card__authorized_signatory_frc",
+  "electricity__municipal_tax_own_building__frc",
+  "fssai_declaration_form_frc",
+  "certificate_of_trade_license_panchayath_license_frc",
+  "ie_code_import_export_code_certificate_frc",
+  "re_call_form_frc",
+  "fsms_declaration_frc",
+  "self_declaration_frc",
+  "merchant_exporter_frc",
+  "list_of_food_category_desired_to_be_manufactured_frc",
+  "partnership_details_section",
+  "self_declaration_frp",
+  "partnership_details_frp",
+  "merchant_exporter_frp",
+  "partnership_deed_frp",
+  "certification_of_registration_of_partnership_firm_frp",
+  "pan_of_the_firm_frp",
+  "aadhar_card__managing_partner_frp",
+  "pan_card__managing_partner_frp",
+  "mobile_number_managing_partner_frp",
+  "email_address_managing_partner_frp",
+  "photo_managing_partner_frp",
+  "electricity__municipal_tax__own_building_frp",
+  "fssai_declaration_form_frp",
+  "certificate_of_trade_license_shop__establishment_frp",
+  "ie_code_import_export_code_certificate_frp",
+  "proprietorship_details_section",
+  "merchant_exporter",
+  "self_declaration",
+  "fsms_declaration",
+  "proprietor_details",
+  "re_call_plan",
+  "aadhar_card",
+  "pan_card",
+  "photo",
+  "electricity__municipal_tax_own_building",
+  "certificate_of_trade_license_panchayath_license",
+  "ie_code_import_export_code_certificate",
+  "list_of_food_category_desired_to_be_manufactured"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "name_of_a_person",
+   "fieldtype": "Data",
+   "label": "Name of a Person"
+  },
+  {
+   "fieldname": "name_of_the_business",
+   "fieldtype": "Data",
+   "label": "Name of the Business"
+  },
+  {
+   "fieldname": "mobile_number_aadhar_linked",
+   "fieldtype": "Data",
+   "label": "Mobile number (Aadhar Linked)"
+  },
+  {
+   "fieldname": "product_list_hsn_wise",
+   "fieldtype": "Small Text",
+   "label": "Product List (HSN wise)"
+  },
+  {
+   "fieldname": "activity_trading_manufacturing_administrative_job_worksetc",
+   "fieldtype": "Small Text",
+   "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
+  },
+  {
+   "fieldname": "fssai_registration_section",
+   "fieldtype": "Section Break",
+   "label": "FSSAI Registration"
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details "
+  },
+  {
+   "fieldname": "incorporation_certificate_frc",
+   "fieldtype": "Attach",
+   "label": "Incorporation Certificate "
+  },
+  {
+   "fieldname": "moa__aoa_of_the_company_frc",
+   "fieldtype": "Attach",
+   "label": "MOA  & AOA of the Company "
+  },
+  {
+   "fieldname": "pan_of_the_company_frc",
+   "fieldtype": "Attach",
+   "label": "PAN of the Company "
+  },
+  {
+   "fieldname": "aadhar_card__authorized_signatory_frc",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card  - Authorized Signatory "
+  },
+  {
+   "fieldname": "pan_card__authorized_signatory_frc",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Authorized Signatory "
+  },
+  {
+   "fieldname": "electricity__municipal_tax_own_building__frc",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "fssai_declaration_form_frc",
+   "fieldtype": "Attach",
+   "label": "FSSAI Declaration form "
+  },
+  {
+   "fieldname": "certificate_of_trade_license_panchayath_license_frc",
+   "fieldtype": "Attach",
+   "label": "Certificate of Trade license/ Shop & Establishment/ Panchayath License/Corporation License/Municipality License"
+  },
+  {
+   "fieldname": "ie_code_import_export_code_certificate_frc",
+   "fieldtype": "Attach",
+   "label": "IE Code (Import Export Code) Certificate.(for the category of export and import IE code is compulsory)"
+  },
+  {
+   "fieldname": "re_call_form_frc",
+   "fieldtype": "Attach",
+   "label": "Re-call form "
+  },
+  {
+   "fieldname": "fsms_declaration_frc",
+   "fieldtype": "Attach",
+   "label": "FSMS Declaration "
+  },
+  {
+   "fieldname": "self_declaration_frc",
+   "fieldtype": "Attach",
+   "label": "Self Declaration "
+  },
+  {
+   "fieldname": "merchant_exporter_frc",
+   "fieldtype": "Attach",
+   "label": "Merchant Exporter "
+  },
+  {
+   "fieldname": "list_of_food_category_desired_to_be_manufactured_frc",
+   "fieldtype": "Small Text",
+   "label": "List of food category desired to be manufactured (In case of manufacturers)."
+  },
+  {
+   "fieldname": "partnership_details_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Details"
+  },
+  {
+   "fieldname": "self_declaration_frp",
+   "fieldtype": "Attach",
+   "label": "Self Declaration "
+  },
+  {
+   "fieldname": "partnership_details_frp",
+   "fieldtype": "Attach",
+   "label": "Partnership Details "
+  },
+  {
+   "fieldname": "merchant_exporter_frp",
+   "fieldtype": "Attach",
+   "label": "Merchant Exporter "
+  },
+  {
+   "fieldname": "partnership_deed_frp",
+   "fieldtype": "Attach",
+   "label": "Partnership Deed "
+  },
+  {
+   "fieldname": "certification_of_registration_of_partnership_firm_frp",
+   "fieldtype": "Attach",
+   "label": "Certification of Registration of Partnership Firm "
+  },
+  {
+   "fieldname": "pan_of_the_firm_frp",
+   "fieldtype": "Attach",
+   "label": "PAN of the Firm "
+  },
+  {
+   "fieldname": "aadhar_card__managing_partner_frp",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Managing Partner "
+  },
+  {
+   "fieldname": "pan_card__managing_partner_frp",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Managing Partner "
+  },
+  {
+   "fieldname": "mobile_number_managing_partner_frp",
+   "fieldtype": "Data",
+   "label": "Mobile Number - Managing Partner "
+  },
+  {
+   "fieldname": "email_address_managing_partner_frp",
+   "fieldtype": "Data",
+   "label": "Email Address - Managing Partner "
+  },
+  {
+   "fieldname": "photo_managing_partner_frp",
+   "fieldtype": "Attach",
+   "label": "Photo - Managing Partner "
+  },
+  {
+   "fieldname": "electricity__municipal_tax__own_building_frp",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "fssai_declaration_form_frp",
+   "fieldtype": "Attach",
+   "label": "FSSAI Declaration form "
+  },
+  {
+   "fieldname": "certificate_of_trade_license_shop__establishment_frp",
+   "fieldtype": "Attach",
+   "label": "Certificate of Trade license/ Shop & Establishment/ Panchayath License/Corporation License/Municipality License"
+  },
+  {
+   "fieldname": "ie_code_import_export_code_certificate_frp",
+   "fieldtype": "Attach",
+   "label": "IE Code (Import Export Code) Certificate.(for the category of export and import IE code is compulsory)"
+  },
+  {
+   "fieldname": "proprietorship_details_section",
+   "fieldtype": "Section Break",
+   "label": "Proprietorship Details"
+  },
+  {
+   "fieldname": "merchant_exporter",
+   "fieldtype": "Attach",
+   "label": "Merchant Exporter"
+  },
+  {
+   "fieldname": "self_declaration",
+   "fieldtype": "Attach",
+   "label": "Self Declaration"
+  },
+  {
+   "fieldname": "fsms_declaration",
+   "fieldtype": "Attach",
+   "label": "FSMS Declaration"
+  },
+  {
+   "fieldname": "proprietor_details",
+   "fieldtype": "Attach",
+   "label": "Proprietor Details"
+  },
+  {
+   "fieldname": "re_call_plan",
+   "fieldtype": "Attach",
+   "label": "Re-Call Plan"
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Attach",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "electricity__municipal_tax_own_building",
+   "fieldtype": "Attach",
+   "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "certificate_of_trade_license_panchayath_license",
+   "fieldtype": "Attach",
+   "label": "Certificate of Trade license/ Shop & Establishment/ Panchayath License/Corporation License/Municipality License/GST Certificate"
+  },
+  {
+   "fieldname": "ie_code_import_export_code_certificate",
+   "fieldtype": "Attach",
+   "label": "IE Code (Import Export Code) Certificate.(for the category of export and import IE code is compulsory)"
+  },
+  {
+   "fieldname": "list_of_food_category_desired_to_be_manufactured",
+   "fieldtype": "Attach",
+   "label": "List of food category desired to be manufactured (In case of manufacturers) "
+  },
+  {
+   "fieldname": "what_type_of_firm",
+   "fieldtype": "Select",
+   "label": "What type of firm?",
+   "options": "Company\nPartnership\nProprietorship"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-21 13:34:59.574033",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Basic FSSAI",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

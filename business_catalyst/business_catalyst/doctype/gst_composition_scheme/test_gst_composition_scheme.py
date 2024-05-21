@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestLegalCompliance(FrappeTestCase):
+class TestGSTCompositionScheme(FrappeTestCase):
 	pass
