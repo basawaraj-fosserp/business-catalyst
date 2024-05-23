@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-19 14:33:05.792510",
+ "modified": "2024-05-23 12:05:47.367583",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "trademark-certificate",
@@ -295,6 +295,18 @@
    "label": "Digital Signature certificate/ Esign",
    "max_length": 0,
    "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldtype": "HTML",
+   "hidden": 0,
+   "label": "Power of Attorney",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "<a href=\"https://bc.fosscrm.com/files/Power%20of%20attorney.doc\">Download Power of Attorney Template</a>",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0

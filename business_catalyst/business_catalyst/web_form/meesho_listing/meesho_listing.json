@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-17 15:37:30.172458",
+ "modified": "2024-05-23 11:13:58.574623",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "meesho-listing",
@@ -102,6 +102,18 @@
    "max_length": 0,
    "max_value": 0,
    "options": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldtype": "HTML",
+   "hidden": 0,
+   "label": "Template for Product Listings",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "<a href=\"https://bc.fosscrm.com/files/Template for Product Listings .xlsx\">Download Template for Product Listings</a>\n <br><br>",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
