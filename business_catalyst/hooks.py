@@ -30,7 +30,7 @@ app_license = "MIT"
 doctype_js = {"Lead" : "public/js/lead.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
-# doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+doctype_calendar_js = {"Lead" : "public/js/lead_calendar.js"}
 
 # Home Pages
 # ----------
@@ -118,7 +118,10 @@ doctype_js = {"Lead" : "public/js/lead.js"}
 
 doc_events = {
 	"Lead": {
-		"validate": "business_catalyst.api.validate_address",
+		"validate": [
+			"business_catalyst.api.validate_address",
+			"business_catalyst.api.set_assignment_date"
+		]
 	}
 }
 
