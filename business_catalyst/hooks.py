@@ -211,3 +211,6 @@ doc_events = {
 # auth_hooks = [
 # 	"business_catalyst.auth.validate"
 # ]
+from erpnext.crm import utils 
+from business_catalyst.api import update_lead_phone_numbers 
+utils.update_lead_phone_numbers = update_lead_phone_numbers
