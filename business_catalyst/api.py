@@ -76,8 +76,9 @@ def update_lead_phone_numbers(contact, method):
 
 def set_assignment_date(self, method):
     old_doc = self.get_doc_before_save()
-    if self.custom_tagged_se_salesperson != old_doc.custom_tagged_se_salesperson:
-        self.custom_se_assign_date = getdate()
+    if old_doc:
+        if self.custom_tagged_se_salesperson != old_doc.custom_tagged_se_salesperson:
+            self.custom_se_assign_date = getdate()
 
 
 @frappe.whitelist()
