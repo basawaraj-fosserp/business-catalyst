@@ -21,7 +21,7 @@ def validate_address(self, method):
 
 @frappe.whitelist()
 def get_regional_head(region):
-    data = frappe.db.get_list('Region Head' , {'region':region})
+    data = frappe.db.get_list('Region Head' , {'region':region}, ignore_user_permissions=True)
     if data:
         return data[0].name
     return
@@ -101,6 +101,8 @@ def get_calendar_details(start , end , filters = None):
     calendar_data = []
     for row in data:
         if row.get('start_date'):
+            end_date = row.get('start_date') + timedelta(minutes=15)
+            row.update({'end_date' : end_date})
             row.update({'title':"Call Back <b>{0}</b>".format(row.name)})
             calendar_data.append(row)
 

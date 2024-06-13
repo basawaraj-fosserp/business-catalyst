@@ -1,7 +1,7 @@
 frappe.views.calendar["Lead"] = {
     field_map: {
 		"start": "start_date",
-		"end": "start_date",
+		"end": "end_date",
 		"id": "name",
 		"title": "title",
 		"color":"color"

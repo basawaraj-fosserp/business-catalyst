@@ -1,4 +1,10 @@
 frappe.ui.form.on('Lead', {
+    refresh:frm => {
+        if(frappe.user.has_role('Support Executive') && !frappe.user.has_role('Advisor')){
+            frm.set_df_property('custom_calling_date', 'reqd', 1)
+            frm.set_df_property('custom_calling_status', 'reqd', 1)
+        }
+    },
 	custom_region(frm) {
         if(frm.doc.custom_region){
             frappe.call({
