@@ -21,7 +21,7 @@ def validate_address(self, method):
 
 @frappe.whitelist()
 def get_regional_head(region):
-    data = frappe.db.get_list('Region Head' , {'region':region}, ignore_user_permissions=True)
+    data = frappe.db.get_list('Region Head' , {'region':region})
     if data:
         return data[0].name
     return
