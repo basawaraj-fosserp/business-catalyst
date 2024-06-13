@@ -14,6 +14,11 @@ frappe.ui.form.on('Lead', {
             })
         }
 	},
+    custom_tagged_se_salesperson: frm => {
+        if(!frm.doc.custom_se_assign_date){
+            frm.set_value('custom_se_assign_date', frappe.datetime.get_today())
+        }
+    }
       
 
 })
