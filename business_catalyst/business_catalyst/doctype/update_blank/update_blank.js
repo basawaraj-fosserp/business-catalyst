@@ -16,5 +16,18 @@ frappe.ui.form.on('Update Blank', {
 				})
 			}
 		})
+		frm.add_custom_button(__('Delete Documents'), () => {
+			if(frm.doc.lead){
+				frappe.call({
+					method : "business_catalyst.business_catalyst.doctype.update_blank.update_blank.delete_all_document",
+					args:{
+						doc : frm.doc
+					},
+					callback:function(r){
+
+					}
+				})
+			}
+		})
 	}
 });
