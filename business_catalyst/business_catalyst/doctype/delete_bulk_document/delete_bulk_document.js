@@ -4,7 +4,7 @@
 frappe.ui.form.on('Delete Bulk Document', {
 	refresh: function(frm) {
 		frm.add_custom_button(__('Delete Documents'), () => {
-			if(frm.doc.id){
+			if(frm.doc.documents_numbers){
 				frappe.call({
 					method : "business_catalyst.business_catalyst.doctype.delete_bulk_document.delete_bulk_document.delete_all_document",
 					args:{
