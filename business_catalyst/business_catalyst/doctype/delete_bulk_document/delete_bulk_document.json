@@ -20,13 +20,13 @@
   },
   {
    "fieldname": "id",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "ID"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 15:34:31.165996",
+ "modified": "2024-06-27 15:07:20.315993",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Delete Bulk Document",
