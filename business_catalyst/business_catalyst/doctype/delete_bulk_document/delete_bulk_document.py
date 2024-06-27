@@ -18,7 +18,7 @@ def delete_all_document(doc):
 
 def delete_the_documents(doc):
 	doc =  json.loads(doc)
-	documents = doc.get('id').split('\n')
+	documents = doc.get('documents_numbers').split('\n')
 	for row in documents:
 		doc_ = frappe.get_doc(doc.get('document_type'), row)
 		doc_.delete()

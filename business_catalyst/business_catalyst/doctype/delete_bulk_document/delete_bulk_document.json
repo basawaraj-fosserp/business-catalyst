@@ -9,7 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "document_type",
-  "id"
+  "documents_numbers"
  ],
  "fields": [
   {
@@ -19,14 +19,14 @@
    "options": "DocType"
   },
   {
-   "fieldname": "id",
+   "fieldname": "documents_numbers",
    "fieldtype": "Small Text",
-   "label": "ID"
+   "label": "Documents Numbers"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-27 15:07:20.315993",
+ "modified": "2024-06-27 15:21:43.466510",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Delete Bulk Document",
