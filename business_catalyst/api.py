@@ -107,3 +107,28 @@ def get_calendar_details(start , end , filters = None):
             calendar_data.append(row)
 
     return calendar_data
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def get_region_wise_state(doctype, txt, searchfield, start, page_len, filters):
+    se = frappe.db.get_value('Support Executive', {'user': filters.get('user')}, 'name')
+    if se:
+        doctype ='Support Executive'
+        se = frappe.get_doc(doctype , se)
+        region = []    
+        for row in se.region_head:
+            region.append(frappe.db.get_value("Region Head", row.region_head, "region"))
+        state = frappe.get_all("State", {'region' : ['in', tuple(region)]})
+    
+        return tuple((item.name,) for item in state)
+    ad = frappe.db.get_value('Advisor', {'user': filters.get('user')}, 'name')
+    if ad:
+        doctype ='Advisor'
+        se = frappe.get_doc(doctype , ad)
+        region = []    
+        for row in se.region_head:
+            region.append(frappe.db.get_value("Region Head", row.region_head, "region"))
+        state = frappe.get_all("State", {'region' : ['in', tuple(region)]})
+    
+        return tuple((item.name,) for item in state)
+    return frappe.db.sql(f"Select name From `tabState`")

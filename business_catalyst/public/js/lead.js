@@ -34,9 +34,17 @@ cur_frm.set_query("custom_tagged_se_salesperson", function(doc) {
         filters: {'region_head': doc.custom_region_head }
     }
 });
+
 cur_frm.set_query("custom_tagged_advisor_sales_person", function(doc) {
     return {
         query: "business_catalyst.api.get_advisor_list",
         filters: {'region_head': doc.custom_region_head }
+    }
+});
+
+cur_frm.set_query("custom_state1", function(doc) {
+    return {
+        query: "business_catalyst.api.get_region_wise_state",
+        filters: {'user': frappe.session.user }
     }
 });
