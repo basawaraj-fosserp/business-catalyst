@@ -1,5 +1,5 @@
 import frappe
-from frappe.utils import getdate
+from frappe.utils import add_to_date, formatdate, get_link_to_form, getdate, nowdate
 import json
 from datetime import datetime, timedelta
 
@@ -132,3 +132,17 @@ def get_region_wise_state(doctype, txt, searchfield, start, page_len, filters):
     
         return tuple((item.name,) for item in state)
     return frappe.db.sql(f"Select name From `tabState`")
+
+
+def stop_duplicate_lead(self, method):
+    condition = ''
+    if self.custom_primary_email_id:
+        condition = f"where custom_primary_email_id = '{self.custom_primary_email_id}'"
+    if self.mobile_no:
+        if condition:
+            condition += f" or mobile_no = '{self.mobile_no}'"
+        else:
+            condition += f" where mobile_no = '{self.mobile_no}'"
+    data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
+    if data:
+        frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")

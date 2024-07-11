@@ -120,7 +120,8 @@ doc_events = {
 	"Lead": {
 		"validate": [
 			"business_catalyst.api.validate_address",
-			"business_catalyst.api.set_assignment_date"
+			"business_catalyst.api.set_assignment_date",
+			"business_catalyst.api.stop_duplicate_lead"
 		]
 	}
 }
