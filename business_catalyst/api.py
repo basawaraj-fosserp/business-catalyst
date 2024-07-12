@@ -135,14 +135,15 @@ def get_region_wise_state(doctype, txt, searchfield, start, page_len, filters):
 
 
 def stop_duplicate_lead(self, method):
-    condition = ''
-    if self.custom_primary_email_id:
-        condition = f"where custom_primary_email_id = '{self.custom_primary_email_id}'"
-    if self.mobile_no:
-        if condition:
-            condition += f" or mobile_no = '{self.mobile_no}'"
-        else:
-            condition += f" where mobile_no = '{self.mobile_no}'"
-    data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
-    if data:
-        frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
+    if self.get("__islocal"):
+        condition = ''
+        if self.custom_primary_email_id:
+            condition = f"where custom_primary_email_id = '{self.custom_primary_email_id}'"
+        if self.mobile_no:
+            if condition:
+                condition += f" or mobile_no = '{self.mobile_no}'"
+            else:
+                condition += f" where mobile_no = '{self.mobile_no}'"
+        data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
+        if data:
+            frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
