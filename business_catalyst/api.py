@@ -144,6 +144,8 @@ def stop_duplicate_lead(self, method):
                 condition += f" or mobile_no = '{self.mobile_no}'"
             else:
                 condition += f" where mobile_no = '{self.mobile_no}'"
-        data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
-        if data:
-            frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
+        if condition:
+            data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
+            
+            if data:
+                frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
