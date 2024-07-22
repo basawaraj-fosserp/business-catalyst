@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GSTRD.####",
+ "creation": "2024-04-10 12:56:33.108291",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_name",
+  "pan",
+  "aadhar_card",
+  "address_proof",
+  "gst_registration_documentation_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Attach",
+   "label": "PAN"
+  },
+  {
+   "fieldname": "aadhar_card",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card"
+  },
+  {
+   "fieldname": "address_proof",
+   "fieldtype": "Attach",
+   "label": "Address Proof"
+  },
+  {
+   "fieldname": "gst_registration_documentation_details",
+   "fieldtype": "Table",
+   "label": "GST Registration Documentation Details",
+   "options": "GST Registration Documentation Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-16 20:38:02.878437",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "GST Registration Documentation",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
