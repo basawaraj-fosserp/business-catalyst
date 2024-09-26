@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-17 12:56:20.841841",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task",
+  "column_break_unk8x",
+  "form_template",
+  "section_break_sbvvf",
+  "drive_folder_link",
+  "customer_facing_link_available",
+  "brand_name_is_correct_in_the_seller_information",
+  "number_of_skus_available_of_the_seller_on_the_platform",
+  "at_least_4_images_available_for_each_skus",
+  "product_details_available_for_each_sku",
+  "product_descriptions_available_for_each_sku",
+  "variants_are_properly_represented_for_each_sku",
+  "key_word_search_functionality",
+  "qc_completed_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "Task",
+   "options": "Task",
+   "read_only": 1
+  },
+  {
+   "fieldname": "drive_folder_link",
+   "fieldtype": "Data",
+   "label": "Drive Folder Link"
+  },
+  {
+   "fieldname": "customer_facing_link_available",
+   "fieldtype": "Select",
+   "label": "Customer Facing link available",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "brand_name_is_correct_in_the_seller_information",
+   "fieldtype": "Select",
+   "label": "Brand Name is correct in the seller information",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "number_of_skus_available_of_the_seller_on_the_platform",
+   "fieldtype": "Select",
+   "label": "Number of SKUs available of the seller on the platform",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "at_least_4_images_available_for_each_skus",
+   "fieldtype": "Select",
+   "label": "At least 4 images available for each SKUs",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "product_details_available_for_each_sku",
+   "fieldtype": "Select",
+   "label": "Product Details available for each SKU",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "product_descriptions_available_for_each_sku",
+   "fieldtype": "Select",
+   "label": "Product Descriptions available for each SKU",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "variants_are_properly_represented_for_each_sku",
+   "fieldtype": "Select",
+   "label": "Variants are properly represented for each SKU",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "key_word_search_functionality",
+   "fieldtype": "Select",
+   "label": "Key Word Search Functionality",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "qc_completed_date",
+   "fieldtype": "Date",
+   "label": "QC Completed - Date"
+  },
+  {
+   "fieldname": "column_break_unk8x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "form_template",
+   "fieldtype": "Link",
+   "label": "Form Template",
+   "options": "Project Template"
+  },
+  {
+   "fieldname": "section_break_sbvvf",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-17 14:42:19.454797",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "E-Commerce Question",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
