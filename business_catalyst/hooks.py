@@ -163,9 +163,9 @@ doc_events = {
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "business_catalyst.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.crm.doctype.opportunity.opportunity.make_quotation": "business_catalyst.business_catalyst.docevents.opportunity.make_quotation"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
