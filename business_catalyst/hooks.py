@@ -30,7 +30,8 @@ app_license = "MIT"
 doctype_js = {
 	"Lead" : "public/js/lead.js",
 	"Project":"public/js/project.js",
-	"Task" : "public/js/task.js"
+	"Task" : "public/js/task.js",
+	"Quotation" : "public/js/quotation.js"
 	}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
