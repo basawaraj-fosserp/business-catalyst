@@ -5,7 +5,7 @@ frappe.ui.form.on("Quotation",{
                 console.log(r)
                 frm.set_value("contact_email", r.custom_primary_email_id)
             })
-        }~
+        }
     },
     party_name:function(frm){
         if(frm.doc.quotation_to == "Lead" && !frm.doc.contact_email){
