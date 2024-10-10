@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestGSTRegisterationAmendment(FrappeTestCase):
+class TestGSTRegistrationAmendment(FrappeTestCase):
 	pass
