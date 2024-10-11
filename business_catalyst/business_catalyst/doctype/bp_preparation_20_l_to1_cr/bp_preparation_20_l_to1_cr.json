@@ -28,10 +28,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-BP-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-FS.####"
+   "options": "CUST-BP-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -83,7 +84,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:19:48.863407",
+ "modified": "2024-10-10 19:01:39.456181",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "BP Preparation 20 L to1 Cr",

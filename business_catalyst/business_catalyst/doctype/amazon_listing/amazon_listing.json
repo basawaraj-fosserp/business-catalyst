@@ -25,11 +25,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-AL-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-AL-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -74,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:18:05.752597",
+ "modified": "2024-10-10 18:54:41.885312",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Amazon Listing",

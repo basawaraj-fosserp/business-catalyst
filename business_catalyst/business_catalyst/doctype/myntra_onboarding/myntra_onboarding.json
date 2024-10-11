@@ -45,11 +45,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-MO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-MO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -193,7 +193,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:57:24.862450",
+ "modified": "2024-10-10 19:47:32.392665",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Myntra Onboarding",

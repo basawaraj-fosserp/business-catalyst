@@ -58,9 +58,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-GRA-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-GRA-.MM.-.####"
   },
   {
    "fieldname": "name_of_a_person",
@@ -264,7 +266,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:14:10.424121",
+ "modified": "2024-10-10 18:01:57.158588",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "GST Registration Amendment",

@@ -28,11 +28,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-SO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-SO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -91,7 +91,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:17:03.439297",
+ "modified": "2024-10-10 18:47:13.916151",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Snapdeal Onboarding",

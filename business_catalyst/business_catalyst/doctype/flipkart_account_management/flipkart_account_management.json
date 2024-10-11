@@ -29,11 +29,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-FAM-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-FAM-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -97,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 14:41:32.518228",
+ "modified": "2024-10-10 19:27:01.534501",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Flipkart Account Management",

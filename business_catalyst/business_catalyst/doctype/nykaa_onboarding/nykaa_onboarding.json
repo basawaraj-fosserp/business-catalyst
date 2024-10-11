@@ -45,11 +45,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-NO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-NO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -193,7 +193,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 13:18:46.316543",
+ "modified": "2024-10-10 19:41:35.240028",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Nykaa Onboarding",

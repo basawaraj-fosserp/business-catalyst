@@ -29,11 +29,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-CO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-CO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -97,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:14:40.346160",
+ "modified": "2024-10-10 18:49:37.015938",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Craftsvilla Onboarding",

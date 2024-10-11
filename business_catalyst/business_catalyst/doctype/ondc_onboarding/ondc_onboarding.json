@@ -29,11 +29,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-ONDC-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-ONDC-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -97,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:15:02.205877",
+ "modified": "2024-10-10 19:12:46.535346",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "ONDC Onboarding",

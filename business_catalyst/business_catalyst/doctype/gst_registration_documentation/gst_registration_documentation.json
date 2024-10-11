@@ -1,13 +1,15 @@
 {
+ "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "actions": [],
  "allow_rename": 1,
- "autoname": "GSTRD.####",
+ "autoname": "naming_series:",
  "creation": "2024-04-10 12:56:33.108291",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "company_name",
   "pan",
   "aadhar_card",
@@ -40,15 +42,22 @@
    "fieldtype": "Table",
    "label": "GST Registration Documentation Details",
    "options": "GST Registration Documentation Details"
+  },
+  {
+   "default": "CUST-GRD-.MM.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CUST-GRD-.MM.-.####"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 20:38:02.878437",
+ "modified": "2024-10-10 18:05:17.127239",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "GST Registration Documentation",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

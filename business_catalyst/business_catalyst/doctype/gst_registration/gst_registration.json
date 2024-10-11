@@ -58,9 +58,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-GR-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-GR-.MM.-.####"
   },
   {
    "fieldname": "name_of_a_person",
@@ -264,7 +266,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:14:27.073142",
+ "modified": "2024-10-10 18:02:29.520653",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "GST Registration",

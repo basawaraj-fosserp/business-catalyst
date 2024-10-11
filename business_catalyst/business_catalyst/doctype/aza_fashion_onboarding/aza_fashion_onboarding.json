@@ -44,11 +44,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-AFO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-AFO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -192,7 +192,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 13:28:26.138278",
+ "modified": "2024-10-10 19:40:43.123228",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Aza Fashion Onboarding",

@@ -42,10 +42,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-TR-.MM.-####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-LC.####"
+   "options": "CUST-TR-.MM.-####"
   },
   {
    "fieldname": "email",
@@ -167,7 +168,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:13:57.701307",
+ "modified": "2024-10-10 18:50:27.419998",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Trademark Registerations",

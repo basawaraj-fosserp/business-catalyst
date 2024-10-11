@@ -30,11 +30,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-AGO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-AGO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -103,7 +103,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:19:22.765561",
+ "modified": "2024-10-10 18:59:05.966429",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Amazon Global Onboarding",

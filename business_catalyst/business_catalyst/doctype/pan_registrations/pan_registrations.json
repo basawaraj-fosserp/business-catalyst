@@ -50,9 +50,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-PR-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-PR-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -214,7 +216,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:13:02.885910",
+ "modified": "2024-10-10 19:27:58.751696",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "PAN Registrations",

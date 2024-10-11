@@ -87,9 +87,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-GLA-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-GLA-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -439,7 +441,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:03:06.553048",
+ "modified": "2024-10-10 17:51:28.759421",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "GST LUT Application",

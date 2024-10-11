@@ -71,9 +71,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-IC-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-IC-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -343,7 +345,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:13:22.199304",
+ "modified": "2024-10-10 19:26:18.270563",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Import or Export Compliance",

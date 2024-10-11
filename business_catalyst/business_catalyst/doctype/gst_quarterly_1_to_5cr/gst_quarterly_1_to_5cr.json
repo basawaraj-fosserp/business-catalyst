@@ -1,5 +1,4 @@
 {
- "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
@@ -27,9 +26,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-GQ-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-GQ-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -70,7 +71,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 14:54:08.220393",
+ "modified": "2024-10-10 17:56:19.385730",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "GST Quarterly 1 to 5Cr",

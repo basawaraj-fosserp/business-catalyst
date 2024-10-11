@@ -43,10 +43,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-UR-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-LC.####"
+   "options": "CUST-UR-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -174,7 +175,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:13:42.594494",
+ "modified": "2024-10-10 18:51:25.302560",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Udyam Registrations",

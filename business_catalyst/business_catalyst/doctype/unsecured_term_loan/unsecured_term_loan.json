@@ -28,10 +28,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-UTL-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-FS.####"
+   "options": "CUST-UTL-.MM.-.####"
   },
   {
    "fieldname": "email",
@@ -83,7 +84,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:19:50.075454",
+ "modified": "2024-10-10 19:24:30.300644",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Unsecured Term Loan",

@@ -29,11 +29,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-EAP-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-EAP-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -97,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 14:54:56.291298",
+ "modified": "2024-10-10 18:52:17.783884",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "E-Comm Advance Package",

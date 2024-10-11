@@ -29,11 +29,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-MO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-MO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -97,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 12:11:17.756039",
+ "modified": "2024-10-10 19:29:32.286451",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Magicpin Onboarding",

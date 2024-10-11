@@ -149,3 +149,5 @@ def stop_duplicate_lead(self, method):
             
             if data:
                 frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
+
+

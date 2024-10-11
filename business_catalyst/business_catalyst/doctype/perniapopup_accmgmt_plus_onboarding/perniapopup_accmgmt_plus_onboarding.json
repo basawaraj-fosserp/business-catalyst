@@ -29,11 +29,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-PAO-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CUST-EC.####",
-   "reqd": 1
+   "options": "CUST-PAO-.MM.-.####"
   },
   {
    "fieldname": "email_id",
@@ -97,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 15:12:03.325785",
+ "modified": "2024-10-10 19:22:58.277306",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "PerniaPopup AccMgmt plus Onboarding",
