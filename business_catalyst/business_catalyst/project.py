@@ -30,6 +30,14 @@ def validate(self, method):
 		for row in doc.items:
 			if row.item_code == self.service_name:
 				frappe.db.set_value(row.doctype, row.name, "custom_project", self.name)
+	
+	if self.customer:
+		self.custom_msme_no = frappe.db.get_value("Customer", self.customer, "lead_name")
+
+	if self.custom_msme_no:
+		self.custom_company_name = frappe.db.get_value("Lead", self.custom_msme_no, "company_name")
+
+	
 
 
 #create bulk project from bulk Sales Order
