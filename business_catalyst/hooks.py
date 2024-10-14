@@ -31,7 +31,8 @@ doctype_js = {
 	"Lead" : "public/js/lead.js",
 	"Project":"public/js/project.js",
 	"Task" : "public/js/task.js",
-	"Quotation" : "public/js/quotation.js"
+	"Quotation" : "public/js/quotation.js",
+	"Sales Order" : "public/js/sales_order.js"
 	}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -131,6 +132,9 @@ doc_events = {
 	},
 	"Project":{
 		"validate": "business_catalyst.business_catalyst.project.validate"
+	},
+	"Sales Order" :{
+		"validate" : "business_catalyst.business_catalyst.docevents.sales_order.validate"
 	}
 }
 
