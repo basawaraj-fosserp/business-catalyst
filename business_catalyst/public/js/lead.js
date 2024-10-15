@@ -4,7 +4,17 @@ frappe.ui.form.on('Lead', {
             frm.set_df_property('custom_calling_date', 'reqd', 1)
             frm.set_df_property('custom_calling_status', 'reqd', 1)
         }
+        frm.remove_custom_button("Opportunity", "Create");
+        
     },
+    make_opportunity_bc: async function (frm) {
+        let fields = []
+        frappe.model.open_mapped_doc({
+            method: "erpnext.crm.doctype.lead.lead.make_opportunity",
+            frm: frm,
+        });
+		
+	},
 	custom_region(frm) {
         if(frm.doc.custom_region){
             frappe.call({
