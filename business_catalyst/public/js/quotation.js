@@ -18,29 +18,33 @@ frappe.ui.form.on("Quotation",{
     },
     refresh:function(frm){
         frm.remove_custom_button("Sales Order", "Create");
-        frm.add_custom_button(
-            __("Sales Order"),
-            function () {
-                frappe.model.open_mapped_doc({
-                    method: "business_catalyst.business_catalyst.docevents.sales_order.make_sales_order",
-                    frm: me.frm
-                });
-            },
-            __("Create")
-        );
+        if(frm.doc.docstatus == 1){
+            frm.add_custom_button(
+                __("Sales Order"),
+                function () {
+                    frappe.model.open_mapped_doc({
+                        method: "business_catalyst.business_catalyst.docevents.sales_order.make_sales_order",
+                        frm: me.frm
+                    });
+                },
+                __("Create")
+            );
+        }
     
     },
     validate:(frm)=>{
         frm.remove_custom_button("Sales Order", "Create");
-        frm.add_custom_button(
-            __("Sales Order"),
-            function () {
-                frappe.model.open_mapped_doc({
-                    method: "business_catalyst.business_catalyst.docevents.sales_order.make_sales_order",
-                    frm: me.frm
-                });
-            },
-            __("Create")
-        );
+        if(frm.doc.docstatus == 1){
+            frm.add_custom_button(
+                __("Sales Order"),
+                function () {
+                    frappe.model.open_mapped_doc({
+                        method: "business_catalyst.business_catalyst.docevents.sales_order.make_sales_order",
+                        frm: me.frm
+                    });
+                },
+                __("Create")
+            );
+        }
     }
 })
