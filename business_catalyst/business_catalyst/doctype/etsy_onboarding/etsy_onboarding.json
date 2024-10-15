@@ -20,7 +20,9 @@
   "gst_certificate_global",
   "cancelled_cheque_or_first_page_of_the_passbook_global",
   "trademark_certificate_global",
-  "any_other_additional_documents_that_is_not_asked_above_global"
+  "any_other_additional_documents_that_is_not_asked_above_global",
+  "please_upload_the_filled_listings_data_here",
+  "product_details_with_image"
  ],
  "fields": [
   {
@@ -99,11 +101,22 @@
    "fieldname": "any_other_additional_documents_that_is_not_asked_above_global",
    "fieldtype": "Attach",
    "label": "Any other additional documents that is not asked above (Global)"
+  },
+  {
+   "fieldname": "please_upload_the_filled_listings_data_here",
+   "fieldtype": "Attach",
+   "label": "Please upload the filled listings data here"
+  },
+  {
+   "fieldname": "product_details_with_image",
+   "fieldtype": "Table",
+   "label": "Product Details With Image",
+   "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 18:41:22.196524",
+ "modified": "2024-10-14 16:28:20.667480",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Etsy Onboarding",

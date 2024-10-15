@@ -18,7 +18,9 @@
   "cancelled_cheque_or_first_page_of_the_passbook",
   "trademark_certificate",
   "fssai",
-  "any_other_additional_documents_that_is_not_asked_above"
+  "any_other_additional_documents_that_is_not_asked_above",
+  "please_upload_the_filled_listings_data_here",
+  "product_details_with_image"
  ],
  "fields": [
   {
@@ -87,11 +89,22 @@
    "fieldname": "any_other_additional_documents_that_is_not_asked_above",
    "fieldtype": "Attach",
    "label": "Any other additional documents that is not asked above"
+  },
+  {
+   "fieldname": "please_upload_the_filled_listings_data_here",
+   "fieldtype": "Attach",
+   "label": "Please upload the filled listings data here"
+  },
+  {
+   "fieldname": "product_details_with_image",
+   "fieldtype": "Table",
+   "label": "Product Details With Image",
+   "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 18:40:10.827761",
+ "modified": "2024-10-14 15:43:38.391279",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Flipkart Onboarding",

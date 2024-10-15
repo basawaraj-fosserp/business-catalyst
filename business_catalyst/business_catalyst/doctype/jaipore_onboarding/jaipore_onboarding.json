@@ -186,13 +186,13 @@
   {
    "fieldname": "product_details",
    "fieldtype": "Table",
-   "label": "Product Details ",
+   "label": "Product Details With Image",
    "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:34:52.695117",
+ "modified": "2024-10-14 16:48:28.590930",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Jaipore Onboarding",

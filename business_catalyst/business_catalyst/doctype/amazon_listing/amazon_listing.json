@@ -67,14 +67,14 @@
   },
   {
    "fieldname": "product_details_with_image",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "label": "Product Details With Image",
    "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 18:54:41.885312",
+ "modified": "2024-10-14 15:18:11.766814",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Amazon Listing",

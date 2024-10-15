@@ -186,13 +186,13 @@
   {
    "fieldname": "product_details",
    "fieldtype": "Table",
-   "label": "Product Details ",
+   "label": "Product Details With Image",
    "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:38:56.167926",
+ "modified": "2024-10-14 17:08:52.134407",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "NetMed Onboarding",

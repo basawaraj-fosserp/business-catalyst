@@ -187,13 +187,13 @@
   {
    "fieldname": "product_details",
    "fieldtype": "Table",
-   "label": "Product Details ",
+   "label": "Product Details With Image",
    "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:47:32.392665",
+ "modified": "2024-10-14 16:42:09.808054",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Myntra Onboarding",

@@ -19,7 +19,9 @@
   "trademark_certificate",
   "fssai",
   "brand_logo",
-  "any_other_additional_documents_that_is_not_asked_above"
+  "any_other_additional_documents_that_is_not_asked_above",
+  "please_upload_the_filled_listings_data_here",
+  "product_details_with_image"
  ],
  "fields": [
   {
@@ -93,11 +95,22 @@
    "fieldname": "any_other_additional_documents_that_is_not_asked_above",
    "fieldtype": "Attach",
    "label": "Any other additional documents that is not asked above"
+  },
+  {
+   "fieldname": "please_upload_the_filled_listings_data_here",
+   "fieldtype": "Attach",
+   "label": "Please upload the filled listings data here"
+  },
+  {
+   "fieldname": "product_details_with_image",
+   "fieldtype": "Table",
+   "label": "Product Details With Image",
+   "options": "Product Details With Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:03:50.239334",
+ "modified": "2024-10-14 17:52:52.275755",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Purplle Acc Mgmt plus Onboarding",
