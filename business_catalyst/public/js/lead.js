@@ -5,6 +5,14 @@ frappe.ui.form.on('Lead', {
             frm.set_df_property('custom_calling_status', 'reqd', 1)
         }
         frm.remove_custom_button("Opportunity", "Create");
+        frm.add_custom_button(
+            __("Lead Task Status"),
+            function () {
+                let base_url = frappe.urllib.get_base_url()
+                window.open(`${base_url}/app/query-report/Lead%20Level%20Task%20Status?lead=${frm.doc.name}`, '_blank');
+            },
+            __("View")
+        );
         
     },
     make_opportunity_bc: async function (frm) {
@@ -35,8 +43,6 @@ frappe.ui.form.on('Lead', {
             frm.set_value('custom_se_assign_date', frappe.datetime.get_today())
         }
     }
-      
-
 })
 cur_frm.set_query("custom_tagged_se_salesperson", function(doc) {
     return {
