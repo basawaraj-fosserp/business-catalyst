@@ -16,7 +16,7 @@
   "mobile_number",
   "import_export_license_global",
   "authorized_code_global",
-  "fssai_global",
+  "fssai",
   "gst_certificate_global",
   "cancelled_cheque_or_first_page_of_the_passbook_global",
   "trademark_certificate_global",
@@ -78,11 +78,6 @@
    "label": "Authorized Code (Global)"
   },
   {
-   "fieldname": "fssai_global",
-   "fieldtype": "Attach",
-   "label": "FSSAI (Global)"
-  },
-  {
    "fieldname": "gst_certificate_global",
    "fieldtype": "Attach",
    "label": "GST Certificate (Global)"
@@ -112,11 +107,16 @@
    "fieldtype": "Table",
    "label": "Product Details With Image",
    "options": "Product Details With Image"
+  },
+  {
+   "fieldname": "fssai",
+   "fieldtype": "Attach",
+   "label": "FSSAI "
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-14 15:57:11.063411",
+ "modified": "2024-10-29 13:26:18.786851",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Amazon Global Onboarding",

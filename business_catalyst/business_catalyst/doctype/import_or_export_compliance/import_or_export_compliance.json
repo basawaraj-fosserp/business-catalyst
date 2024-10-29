@@ -196,7 +196,7 @@
   },
   {
    "fieldname": "email_id_all_partners_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Text",
    "label": "Email ID - All Partners"
   },
   {
@@ -221,12 +221,12 @@
   },
   {
    "fieldname": "mobile_number__authorized_signatory_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "label": "Mobile Number - Authorized Signatory"
   },
   {
    "fieldname": "email_id_authorized_signatory_ieap",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Email ID - Authorized Signatory",
    "options": "Email"
   },
@@ -282,12 +282,12 @@
   },
   {
    "fieldname": "mobile_number__director_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Mobile Number - Director"
   },
   {
    "fieldname": "email_id__director_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Email ID - Director",
    "options": "Email"
   },
@@ -318,12 +318,12 @@
   },
   {
    "fieldname": "mobile_number_authorized_signatory_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Mobile Number - Authorized Signatory"
   },
   {
    "fieldname": "email_id_authorized_signatory_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Email ID -  Authorized Signatory",
    "options": "Email"
   },
@@ -345,7 +345,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:26:18.270563",
+ "modified": "2024-10-29 12:23:18.288197",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Import or Export Compliance",

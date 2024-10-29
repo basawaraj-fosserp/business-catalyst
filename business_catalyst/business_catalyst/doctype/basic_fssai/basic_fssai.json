@@ -25,17 +25,21 @@
   "aadhar_card__authorized_signatory_frc",
   "pan_card__authorized_signatory_frc",
   "electricity__municipal_tax_own_building__frc",
-  "fssai_declaration_form_frc",
   "certificate_of_trade_license_panchayath_license_frc",
   "ie_code_import_export_code_certificate_frc",
+  "company_details_frc",
   "re_call_form_frc",
   "fsms_declaration_frc",
   "self_declaration_frc",
   "merchant_exporter_frc",
+  "machinery_list_frc",
+  "form_ix_frc",
   "list_of_food_category_desired_to_be_manufactured_frc",
   "partnership_details_section",
   "self_declaration_frp",
   "partnership_details_frp",
+  "form_ix_frp",
+  "machinery_list_frp",
   "merchant_exporter_frp",
   "partnership_deed_frp",
   "certification_of_registration_of_partnership_firm_frp",
@@ -52,9 +56,12 @@
   "proprietorship_details_section",
   "merchant_exporter",
   "self_declaration",
+  "machinery_list",
+  "form_ix",
   "fsms_declaration",
   "proprietor_details",
   "re_call_plan",
+  "manufacturing_unit_blueprint",
   "aadhar_card",
   "pan_card",
   "photo",
@@ -147,11 +154,6 @@
    "fieldname": "electricity__municipal_tax_own_building__frc",
    "fieldtype": "Attach",
    "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
-  },
-  {
-   "fieldname": "fssai_declaration_form_frc",
-   "fieldtype": "Attach",
-   "label": "FSSAI Declaration form "
   },
   {
    "fieldname": "certificate_of_trade_license_panchayath_license_frc",
@@ -330,7 +332,7 @@
   },
   {
    "fieldname": "list_of_food_category_desired_to_be_manufactured",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "label": "List of food category desired to be manufactured (In case of manufacturers) "
   },
   {
@@ -338,11 +340,52 @@
    "fieldtype": "Select",
    "label": "What type of firm?",
    "options": "Company\nPartnership\nProprietorship"
+  },
+  {
+   "fieldname": "company_details_frc",
+   "fieldtype": "Attach",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "machinery_list_frc",
+   "fieldtype": "Attach",
+   "label": "Machinery List"
+  },
+  {
+   "fieldname": "form_ix_frc",
+   "fieldtype": "Attach",
+   "label": "Form IX"
+  },
+  {
+   "fieldname": "form_ix_frp",
+   "fieldtype": "Attach",
+   "label": "Form IX"
+  },
+  {
+   "fieldname": "machinery_list_frp",
+   "fieldtype": "Attach",
+   "label": "Machinery List"
+  },
+  {
+   "fieldname": "machinery_list",
+   "fieldtype": "Attach",
+   "label": "Machinery List"
+  },
+  {
+   "fieldname": "form_ix",
+   "fieldtype": "Attach",
+   "label": "Form IX"
+  },
+  {
+   "description": "Upload your Manufacturing unit's blueprint under your company letter and sign",
+   "fieldname": "manufacturing_unit_blueprint",
+   "fieldtype": "Attach",
+   "label": "Manufacturing Unit Blueprint"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:32:53.896328",
+ "modified": "2024-10-28 19:43:29.132591",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Basic FSSAI",

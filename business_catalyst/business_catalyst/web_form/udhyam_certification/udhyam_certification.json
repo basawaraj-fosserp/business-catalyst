@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "allow_comments": 0,
  "allow_delete": 0,
  "allow_edit": 0,
@@ -18,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-19 14:41:03.148027",
+ "modified": "2024-10-29 12:28:10.152313",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "udhyam-certification",
@@ -145,7 +146,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "company_pan_ur",
-   "fieldtype": "Data",
+   "fieldtype": "Attach",
    "hidden": 0,
    "label": "Company PAN",
    "max_length": 0,

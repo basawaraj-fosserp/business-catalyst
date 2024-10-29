@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-20 00:14:49.520478",
+ "modified": "2024-10-29 12:25:35.863714",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "import-export-compliance",
@@ -318,7 +318,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id_all_partners_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Email ID - All Partners",
    "max_length": 0,
@@ -378,7 +378,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "mobile_number__authorized_signatory_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Mobile Number - Authorized Signatory",
    "max_length": 0,
@@ -390,7 +390,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id_authorized_signatory_ieap",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Email ID - Authorized Signatory",
    "max_length": 0,
@@ -525,7 +525,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "mobile_number__director_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Mobile Number - Director",
    "max_length": 0,
@@ -537,7 +537,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id__director_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Email ID - Director",
    "max_length": 0,
@@ -610,7 +610,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "mobile_number_authorized_signatory_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Mobile Number - Authorized Signatory",
    "max_length": 0,
@@ -622,7 +622,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id_authorized_signatory_ieac",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Email ID -  Authorized Signatory",
    "max_length": 0,
