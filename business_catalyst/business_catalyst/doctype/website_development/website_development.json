@@ -1,0 +1,95 @@
+{
+ "_liked_by": "[\"soundarya@fosscrm.com\"]",
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-10-15 21:00:01.081700",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "name_of_the_person",
+  "name_of_the_buisness",
+  "email_id",
+  "mobile_number",
+  "please_upload_the_filled_listings_data_here",
+  "product_details_with_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "name_of_the_person",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_buisness",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Buisness"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "please_upload_the_filled_listings_data_here",
+   "fieldtype": "Attach",
+   "label": "Please upload the filled listings data here"
+  },
+  {
+   "fieldname": "product_details_with_image",
+   "fieldtype": "Table",
+   "label": "Product Details With Image",
+   "options": "Product Details With Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-29 14:09:07.956268",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Website Development",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-10-16 12:47:57.543213",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service",
+  "naming_series",
+  "name_of_the_person",
+  "name_of_the_buisness",
+  "email_id",
+  "mobile_number",
+  "taglineslogan_if_any",
+  "what_does_your_business_do",
+  "industryniche",
+  "year_established_numeric",
+  "locations_on_where_you_are_planning_to_sell",
+  "target_audience",
+  "brand_identity_section",
+  "what_are_the_core_values_of_your_business",
+  "what_is_the_mission_statement_of_your_business",
+  "describe_the_personality_of_your_brand",
+  "what_makes_your_business_unique_or_different_from_competitors",
+  "how_do_you_want_customers_to_perceive_your_brand",
+  "are_there_any_specific_symbols_or_imagery_you_associate",
+  "logo_preferences_section",
+  "do_you_have_an_existing_logo_or_visual_identity_if_yes_give_ex",
+  "are_there_any_specific_colors_you_want_in_the_logo",
+  "any_colors_you_want_to_avoid",
+  "do_you_prefer_a_logo_that_is_more_text_based_icon_based",
+  "are_there_any_fonts_or_typography_styles_you_prefer",
+  "do_you_have_any_ideas_or_concepts_in_mind_for_the_logo",
+  "practical_consideration_section",
+  "where_will_the_logo_be_used"
+ ],
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Item"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "name_of_the_person",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Person"
+  },
+  {
+   "fieldname": "name_of_the_buisness",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Buisness"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "taglineslogan_if_any",
+   "fieldtype": "Data",
+   "label": "Tagline/Slogan (if any)"
+  },
+  {
+   "fieldname": "what_does_your_business_do",
+   "fieldtype": "Small Text",
+   "label": "What does your business do?"
+  },
+  {
+   "description": "e.g., Retail, Technology, Healthcare, Food & Beverage, Education, etc.  ",
+   "fieldname": "industryniche",
+   "fieldtype": "Data",
+   "label": "Industry/Niche"
+  },
+  {
+   "fieldname": "year_established_numeric",
+   "fieldtype": "Data",
+   "label": "Year Established (Numeric)"
+  },
+  {
+   "fieldname": "locations_on_where_you_are_planning_to_sell",
+   "fieldtype": "Data",
+   "label": "Location(s) on where you are planning to sell"
+  },
+  {
+   "description": " e.g., B2B, B2C, Children, Adults, Seniors, Specific Demographic  ",
+   "fieldname": "target_audience",
+   "fieldtype": "Small Text",
+   "label": "Target Audience"
+  },
+  {
+   "fieldname": "brand_identity_section",
+   "fieldtype": "Section Break",
+   "label": "Brand Identity"
+  },
+  {
+   "fieldname": "what_are_the_core_values_of_your_business",
+   "fieldtype": "Small Text",
+   "label": "What are the core values of your business?"
+  },
+  {
+   "fieldname": "what_is_the_mission_statement_of_your_business",
+   "fieldtype": "Small Text",
+   "label": "What is the mission statement of your business?"
+  },
+  {
+   "description": "e.g., Professional, Playful, Innovative, Traditional, Modern, Elegant, etc",
+   "fieldname": "describe_the_personality_of_your_brand",
+   "fieldtype": "Small Text",
+   "label": "Describe the personality of your brand"
+  },
+  {
+   "fieldname": "what_makes_your_business_unique_or_different_from_competitors",
+   "fieldtype": "Small Text",
+   "label": "What makes your business unique or different from competitors?"
+  },
+  {
+   "description": "e.g., Healthy, Trustworthy, Luxurious, Affordable, Cutting-edge, Friendly, etc.  ",
+   "fieldname": "how_do_you_want_customers_to_perceive_your_brand",
+   "fieldtype": "Data",
+   "label": "How do you want customers to perceive your brand?"
+  },
+  {
+   "fieldname": "are_there_any_specific_symbols_or_imagery_you_associate",
+   "fieldtype": "Small Text",
+   "label": "Are there any specific symbols or imagery you associate with your brand?"
+  },
+  {
+   "fieldname": "logo_preferences_section",
+   "fieldtype": "Section Break",
+   "label": "Logo Preferences"
+  },
+  {
+   "description": "Upload up to 10 supported files. Max 10 MB per file.",
+   "fieldname": "do_you_have_an_existing_logo_or_visual_identity_if_yes_give_ex",
+   "fieldtype": "Attach",
+   "label": "Do you have an existing logo or visual identity? (If Yes, provide examples) Ignore otherwise"
+  },
+  {
+   "fieldname": "are_there_any_specific_colors_you_want_in_the_logo",
+   "fieldtype": "Data",
+   "label": "Are there any specific colors you want in the logo?"
+  },
+  {
+   "fieldname": "any_colors_you_want_to_avoid",
+   "fieldtype": "Data",
+   "label": "Any colors you want to avoid?"
+  },
+  {
+   "fieldname": "do_you_prefer_a_logo_that_is_more_text_based_icon_based",
+   "fieldtype": "Select",
+   "label": "Do you prefer a logo that is more text-based, icon-based, or a combination? ",
+   "options": "\nText-based\nIcon-based\nCombination\nNo Preference"
+  },
+  {
+   "fieldname": "are_there_any_fonts_or_typography_styles_you_prefer",
+   "fieldtype": "Data",
+   "label": "Are there any fonts or typography styles you prefer? If no preference, write 'No Preference'"
+  },
+  {
+   "fieldname": "do_you_have_any_ideas_or_concepts_in_mind_for_the_logo",
+   "fieldtype": "Small Text",
+   "label": "Do you have any ideas or concepts in mind for the logo?"
+  },
+  {
+   "fieldname": "practical_consideration_section",
+   "fieldtype": "Section Break",
+   "label": "Practical Consideration"
+  },
+  {
+   "description": "e.g., Website, Business Cards, Signage, Social Media, Packaging, Merchandise, etc",
+   "fieldname": "where_will_the_logo_be_used",
+   "fieldtype": "Data",
+   "label": "Where will the logo be used?"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-29 14:09:06.600050",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Logo",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
