@@ -32,18 +32,5 @@ frappe.ui.form.on("Project",{
         if(frm.doc.service_name && frm.doc.sales_order){
             frm.set_value("project_name", frm.doc.sales_order +" : "+frm.doc.service_name )
         }
-		if(frm.doc.service_name){
-			frappe.call({
-				method : "business_catalyst.business_catalyst.docevents.sales_order.get_delivery_date",
-				args : {
-					"sales_order" : frm.doc.sales_order,
-					"service_name" : frm.doc.service_name
-				},
-				callback : (r)=>{
-					console.log(r.message)
-					frm.set_value(r.message)
-				}
-			})
-		}
     },
 })
