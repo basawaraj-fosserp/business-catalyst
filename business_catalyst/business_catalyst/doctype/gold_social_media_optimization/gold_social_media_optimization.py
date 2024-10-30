@@ -4,5 +4,5 @@
 # import frappe
 from frappe.model.document import Document
 
-class ProfessionalSocialMediaOptimization(Document):
+class GoldSocialMediaOptimization(Document):
 	pass

@@ -1,7 +1,7 @@
 // Copyright (c) 2024, Viral Patel and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Basic Social Media Optimization', {
+frappe.ui.form.on('FDA Certificate', {
 	// refresh: function(frm) {
 
 	// }

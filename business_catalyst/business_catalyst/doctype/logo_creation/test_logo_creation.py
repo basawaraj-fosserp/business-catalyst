@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestProfessionalSocialMediaOptimization(FrappeTestCase):
+class TestLogoCreation(FrappeTestCase):
 	pass

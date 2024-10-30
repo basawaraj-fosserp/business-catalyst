@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestAdvanceSocialMediaOptimization(FrappeTestCase):
+class TestFDACertificate(FrappeTestCase):
 	pass

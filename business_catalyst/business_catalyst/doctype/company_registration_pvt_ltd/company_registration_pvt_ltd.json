@@ -16,9 +16,21 @@
   "mobile_number_aadhar_linked",
   "product_list_hsn_wise",
   "activity_trading_manufacturing_administrative_job_worksetc",
-  "company_registration_as_pvt_ltd_section",
-  "directors_kyc",
-  "request_for_company_name_on_a_letter_head"
+  "pan_card__all_directors",
+  "aadhar_card__all_directors",
+  "photo__all_directors",
+  "email_id__all_directors",
+  "phone_number__all_directors",
+  "aadhar_card_authorized_signatory",
+  "pan_card__authorized_signatory",
+  "photo__authorized_signatory",
+  "mobile_number__authorized_signatory",
+  "email_id__authorized_signatory",
+  "savings_account_bank_statement_for_both_partners",
+  "share_capital_of_the_entire_company",
+  "share__between_the_directors",
+  "electricity_bill__property__municipal_khata_copy__own_or_rent",
+  "cancelled_cheque__first_page_of_passbook"
  ],
  "fields": [
   {
@@ -66,24 +78,86 @@
    "label": "Activity (Trading /manufacturing/ Administrative/ Job Works/Etc)"
   },
   {
-   "fieldname": "company_registration_as_pvt_ltd_section",
-   "fieldtype": "Section Break",
-   "label": "Company Registration As Pvt Ltd"
+   "fieldname": "pan_card__all_directors",
+   "fieldtype": "Attach",
+   "label": "PAN Card - All Directors"
   },
   {
-   "fieldname": "directors_kyc",
+   "fieldname": "aadhar_card__all_directors",
    "fieldtype": "Attach",
-   "label": "Directors' KYC"
+   "label": "Aadhar Card - All Directors"
   },
   {
-   "fieldname": "request_for_company_name_on_a_letter_head",
+   "fieldname": "photo__all_directors",
    "fieldtype": "Attach",
-   "label": "Request for Company Name on a letter head"
+   "label": "Photo - All Directors"
+  },
+  {
+   "fieldname": "email_id__all_directors",
+   "fieldtype": "Small Text",
+   "label": "Email ID - All Directors",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone_number__all_directors",
+   "fieldtype": "Small Text",
+   "label": "Phone number - All Directors"
+  },
+  {
+   "fieldname": "aadhar_card_authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "pan_card__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "PAN Card - Authorized Signatory"
+  },
+  {
+   "fieldname": "photo__authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Photo - Authorized Signatory"
+  },
+  {
+   "fieldname": "mobile_number__authorized_signatory",
+   "fieldtype": "Small Text",
+   "label": "Mobile Number - Authorized Signatory"
+  },
+  {
+   "fieldname": "email_id__authorized_signatory",
+   "fieldtype": "Small Text",
+   "label": "Email ID - Authorized Signatory",
+   "options": "Email"
+  },
+  {
+   "fieldname": "savings_account_bank_statement_for_both_partners",
+   "fieldtype": "Attach",
+   "label": "Savings Account Bank Statement for Both Partners"
+  },
+  {
+   "fieldname": "share_capital_of_the_entire_company",
+   "fieldtype": "Data",
+   "label": "Share Capital of the entire Company"
+  },
+  {
+   "fieldname": "share__between_the_directors",
+   "fieldtype": "Data",
+   "label": "Share % between the directors"
+  },
+  {
+   "fieldname": "electricity_bill__property__municipal_khata_copy__own_or_rent",
+   "fieldtype": "Attach",
+   "label": "Electricity Bill / Property Tax Receipt/ Municipal Khata Copy - Own Building OR Rental/Lease agreement + Electricity Bill - Rented Building"
+  },
+  {
+   "fieldname": "cancelled_cheque__first_page_of_passbook",
+   "fieldtype": "Attach",
+   "label": "Cancelled Cheque / First Page of Passbook"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:22:15.430111",
+ "modified": "2024-10-30 13:00:15.716070",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Company Registration-Pvt Ltd",
