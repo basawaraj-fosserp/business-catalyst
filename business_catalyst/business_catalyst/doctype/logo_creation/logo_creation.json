@@ -45,9 +45,11 @@
    "options": "Item"
   },
   {
+   "default": "CUST-LC-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "CUST-LC-.MM.-.####"
   },
   {
    "fieldname": "name_of_the_person",
@@ -194,7 +196,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 14:09:06.600050",
+ "modified": "2024-11-01 15:28:56.957281",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Logo Creation",
