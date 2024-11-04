@@ -115,7 +115,7 @@ def _make_sales_order(source_name, target_doc=None, ignore_permissions=False):
 def validate(self, method):
     total_days_of_delivery = 0
     for row in self.items:
-        total_days_of_delivery += row.custom_duration
+        total_days_of_delivery += flt(row.custom_duration)
 
     self.delivery_date = add_days(self.transaction_date, total_days_of_delivery)
 
