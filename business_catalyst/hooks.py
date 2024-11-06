@@ -131,7 +131,8 @@ doc_events = {
 		]
 	},
 	"Project":{
-		"validate": "business_catalyst.business_catalyst.project.validate"
+		"validate": "business_catalyst.business_catalyst.project.validate",
+		"on_trash" : "business_catalyst.business_catalyst.project.on_trash"
 	},
 	"Sales Order" :{
 		"validate" : "business_catalyst.business_catalyst.docevents.sales_order.validate"

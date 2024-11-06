@@ -37,7 +37,12 @@ def validate(self, method):
 	if self.custom_msme_no:
 		self.custom_company_name = frappe.db.get_value("Lead", self.custom_msme_no, "company_name")
 
-	
+def on_trash(self, method):
+	if self.sales_order:
+		doc = frappe.get_doc("Sales Order", self.sales_order)
+		for row in doc.items:
+			if row.item_code == self.service_name:
+				frappe.db.set_value(row.doctype, row.name, "custom_project", '')
 
 
 #create bulk project from bulk Sales Order
@@ -66,6 +71,7 @@ def make_project(source_name, item_code, target_doc=None):
 	)
 	doc.service_name = item_code
 	doc.project_name = "{} : {}".format(source_name , item_code)
+	doc.project_template = frappe.db.get_value("Item", item_code, "form_template")
 	try:
 		doc.save()
 	except Exception as e:
@@ -73,8 +79,31 @@ def make_project(source_name, item_code, target_doc=None):
 
 #create bulk project from bulk Sales Order
 def project_from_so():
-	so_list = frappe.db.get_list("Sales Order", {"docstatus" : 1} ,pluck="name")
+	so_list = frappe.db.get_list("Sales Order", {"docstatus" : 1} ,pluck="name", page_length=20)
 	for row in so_list:
 		doc = frappe.get_doc("Sales Order", row)
 		for i in doc.items:
-			make_project(row, i.item_code, target_doc=None)
+			if not i.custom_project:
+				make_project(row, i.item_code, target_doc=None)
+
+
+
+# Second Step
+# pro_list = frappe.db.get_list("Project", pluck="name")
+# for row in pro_list:
+# 	pro_doc = frappe.get_doc("Project", row)
+# 	if pro_doc.sales_order:
+# 		doc = frappe.get_doc("Sales Order", pro_doc.sales_order)
+# 		for row in doc.items:
+# 			if row.item_code == pro_doc.service_name:
+# 				frappe.db.set_value(row.doctype, row.name, "custom_project", pro_doc.name)
+
+# First Step
+# for row in soi_list:
+#    soi = frappe.get_doc("Sales Order Item", row)
+#    if soi.custom_project and frappe.db.exists("Project", soi.custom_project):
+#        so = frappe.db.get_value("Project", soi.custom_project, "sales_order")
+#        if so != soi.parent:
+#            frappe.db.set_value("Sales Order Item", row, "custom_project", '')
+#    if not frappe.db.exists("Project", soi.custom_project):
+#        frappe.db.set_value("Sales Order Item", row, "custom_project", '')
