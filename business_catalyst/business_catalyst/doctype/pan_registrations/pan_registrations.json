@@ -160,27 +160,30 @@
   },
   {
    "fieldname": "aadhar_card__partners",
-   "fieldtype": "Attach",
-   "label": "Aadhar Card - Partners"
+   "fieldtype": "Table",
+   "label": "Aadhar Card - Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "pan_card__partners",
-   "fieldtype": "Attach",
-   "label": "PAN Card - Partners"
+   "fieldtype": "Table",
+   "label": "PAN Card - Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "photo_partners",
-   "fieldtype": "Attach",
-   "label": "Photo - Partners"
+   "fieldtype": "Table",
+   "label": "Photo - Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "mobile_number_partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "label": "Mobile Number - Partners"
   },
   {
    "fieldname": "email_id_partners",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Email ID - Partners"
   },
   {
@@ -216,7 +219,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:27:58.751696",
+ "modified": "2024-11-07 15:15:22.546286",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "PAN Registrations",

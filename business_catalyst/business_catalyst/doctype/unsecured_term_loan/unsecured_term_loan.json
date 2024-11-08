@@ -43,7 +43,7 @@
   {
    "fieldname": "name_of_a_person",
    "fieldtype": "Data",
-   "label": "Name of a Person",
+   "label": "Name of the Person",
    "unique": 1
   },
   {
@@ -63,8 +63,9 @@
   },
   {
    "fieldname": "upload_banking_statements_for_last_6_months",
-   "fieldtype": "Attach",
-   "label": "Upload Banking Statements for last 6 months"
+   "fieldtype": "Table",
+   "label": "Upload Banking Statements for last 6 months",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "gst_certificate",
@@ -84,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:24:30.300644",
+ "modified": "2024-11-07 13:45:28.600987",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Unsecured Term Loan",

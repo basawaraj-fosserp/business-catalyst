@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
@@ -70,37 +71,37 @@
   {
    "fieldname": "import_export_license_global",
    "fieldtype": "Attach",
-   "label": "Import-Export License (Global)"
+   "label": "Import-Export License "
   },
   {
    "fieldname": "authorized_code_global",
    "fieldtype": "Attach",
-   "label": "Authorized Code (Global)"
+   "label": "Authorized Code "
   },
   {
    "fieldname": "fssai_global",
    "fieldtype": "Attach",
-   "label": "FSSAI (Global)"
+   "label": "FSSAI "
   },
   {
    "fieldname": "gst_certificate_global",
    "fieldtype": "Attach",
-   "label": "GST Certificate (Global)"
+   "label": "GST Certificate "
   },
   {
    "fieldname": "cancelled_cheque_or_first_page_of_the_passbook_global",
    "fieldtype": "Attach",
-   "label": "Cancelled Cheque OR First Page of the passbook (Global)"
+   "label": "Cancelled Cheque OR First Page of the passbook "
   },
   {
    "fieldname": "trademark_certificate_global",
    "fieldtype": "Attach",
-   "label": "Trademark Certificate (Global)"
+   "label": "Trademark Certificate "
   },
   {
    "fieldname": "any_other_additional_documents_that_is_not_asked_above_global",
    "fieldtype": "Attach",
-   "label": "Any other additional documents that is not asked above (Global)"
+   "label": "Any other additional documents that is not asked above "
   },
   {
    "fieldname": "please_upload_the_filled_listings_data_here",
@@ -116,7 +117,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-14 16:28:20.667480",
+ "modified": "2024-11-05 16:53:14.603738",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Etsy Onboarding",

@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-10-14 17:20:49.326708",
+ "modified": "2024-11-07 15:42:29.542544",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "e-comme-one-to-one-package",
@@ -32,7 +32,7 @@
  "web_form_fields": [
   {
    "allow_read_on_all_link_options": 0,
-   "default": "E-Comme One-to-One Package ",
+   "default": "",
    "fieldname": "service",
    "fieldtype": "Link",
    "hidden": 0,

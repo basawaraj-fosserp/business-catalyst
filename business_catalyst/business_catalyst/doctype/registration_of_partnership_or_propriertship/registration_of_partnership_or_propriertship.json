@@ -51,7 +51,7 @@
   {
    "fieldname": "name_of_a_person",
    "fieldtype": "Data",
-   "label": "Name of a Person"
+   "label": "Name of the Person"
   },
   {
    "fieldname": "name_of_the_business",
@@ -85,18 +85,21 @@
   },
   {
    "fieldname": "pan_card_all_partners",
-   "fieldtype": "Attach",
-   "label": "PAN Card - All Partners"
+   "fieldtype": "Table",
+   "label": "PAN Card - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "aadhar_card_all_partners",
-   "fieldtype": "Attach",
-   "label": "Aadhar Card - All Partners"
+   "fieldtype": "Table",
+   "label": "Aadhar Card - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "photo_all_partners",
-   "fieldtype": "Attach",
-   "label": "Photo - All Partners"
+   "fieldtype": "Table",
+   "label": "Photo - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "mobile_number_all_partners",
@@ -132,7 +135,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 14:09:02.913615",
+ "modified": "2024-11-07 15:09:25.684380",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Registration of Partnership Or Propriertship",

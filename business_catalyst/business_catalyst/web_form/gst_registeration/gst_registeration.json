@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-10-29 12:19:48.381391",
+ "modified": "2024-11-07 13:26:51.899982",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "gst-registeration",
@@ -342,12 +342,13 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "pan_card___all_partners",
-   "fieldtype": "Attach",
+   "fieldname": "pan_card_all_partners",
+   "fieldtype": "Table",
    "hidden": 0,
-   "label": "PAN Card - All Partners",
+   "label": "PAN Card- All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -355,11 +356,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "aadhar_card___all_partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Aadhar Card - All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -367,11 +369,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "photo__all_partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Photo - All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -576,11 +579,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "pan_card__all_directors",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "PAN Card - All Directors",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -588,11 +592,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "aadhar_card__all_directors",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Aadhar Card - All Directors",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -600,11 +605,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "photo__all_directors",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Photo - All Directors",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0

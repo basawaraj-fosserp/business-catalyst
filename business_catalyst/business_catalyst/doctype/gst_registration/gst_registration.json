@@ -33,7 +33,7 @@
   "partnership_details_section",
   "partnership_deed__registration_certificate",
   "firm_pan",
-  "pan_card___all_partners",
+  "pan_card_all_partners",
   "aadhar_card___all_partners",
   "photo__all_partners",
   "mobile_number___all_partners",
@@ -201,19 +201,16 @@
    "label": "Firm PAN"
   },
   {
-   "fieldname": "pan_card___all_partners",
-   "fieldtype": "Attach",
-   "label": "PAN Card - All Partners"
-  },
-  {
    "fieldname": "aadhar_card___all_partners",
-   "fieldtype": "Attach",
-   "label": "Aadhar Card - All Partners"
+   "fieldtype": "Table",
+   "label": "Aadhar Card - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "photo__all_partners",
-   "fieldtype": "Attach",
-   "label": "Photo - All Partners"
+   "fieldtype": "Table",
+   "label": "Photo - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "mobile_number___all_partners",
@@ -299,18 +296,21 @@
   },
   {
    "fieldname": "pan_card__all_directors",
-   "fieldtype": "Attach",
-   "label": "PAN Card - All Directors"
+   "fieldtype": "Table",
+   "label": "PAN Card - All Directors",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "aadhar_card__all_directors",
-   "fieldtype": "Attach",
-   "label": "Aadhar Card - All Directors"
+   "fieldtype": "Table",
+   "label": "Aadhar Card - All Directors",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "photo__all_directors",
-   "fieldtype": "Attach",
-   "label": "Photo - All Directors"
+   "fieldtype": "Table",
+   "label": "Photo - All Directors",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "mobile_number__all_directors",
@@ -373,11 +373,17 @@
    "fieldname": "firm_page_of_passbook__cancelled_cheque",
    "fieldtype": "Attach",
    "label": "Firm Page of Passbook / Cancelled Cheque"
+  },
+  {
+   "fieldname": "pan_card_all_partners",
+   "fieldtype": "Table",
+   "label": "Pan Card - All Partners",
+   "options": "Partner Documents"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 12:16:32.179438",
+ "modified": "2024-11-07 13:22:30.512927",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "GST Registration",

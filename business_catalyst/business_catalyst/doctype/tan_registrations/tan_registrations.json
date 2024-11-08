@@ -20,8 +20,6 @@
   "what_type_of_firm",
   "company_details_section",
   "incorporation_certificate",
-  "certificate_of_registration_issued_by_register_of_companies",
-  "pan_of_the_company",
   "gstin_of_the_company",
   "aadhar_card__authorized_signatory",
   "pan_card___authorized_signatory",
@@ -30,6 +28,13 @@
   "digital_signature__authorized_signatory",
   "electricity__municipal_tax_own_building_trc",
   "partnership_details_section",
+  "aadhar_card_partner",
+  "two_soft_copies_of_the_work",
+  "demand_draft",
+  "noc_from_authorapplicant",
+  "noc_from_publisher",
+  "search_certificate_issued_by_register_of_trademarks",
+  "noc_from_the_person_whose_photograph_appears_on_work",
   "partnership_deed",
   "certification_of_registration_of_partnership_firm",
   "pan_of_the_firm",
@@ -115,16 +120,6 @@
    "label": "Incorporation Certificate"
   },
   {
-   "fieldname": "certificate_of_registration_issued_by_register_of_companies",
-   "fieldtype": "Attach",
-   "label": "Certificate of registration issued by Register of companies"
-  },
-  {
-   "fieldname": "pan_of_the_company",
-   "fieldtype": "Attach",
-   "label": "PAN of the Company"
-  },
-  {
    "fieldname": "gstin_of_the_company",
    "fieldtype": "Attach",
    "label": "GSTIN of the company"
@@ -186,18 +181,20 @@
   },
   {
    "fieldname": "contact_details",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Contact Details"
   },
   {
    "fieldname": "aadhar_card__partners",
-   "fieldtype": "Attach",
-   "label": "Aadhar Card - Partners"
+   "fieldtype": "Table",
+   "label": "Aadhar Card - Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "pan_card__partners",
-   "fieldtype": "Attach",
-   "label": "Pan Card - Partners"
+   "fieldtype": "Table",
+   "label": "Pan Card - Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "aadhar_card_managing_partner",
@@ -253,11 +250,47 @@
    "fieldname": "electricity__municipal_tax__own_building_tr",
    "fieldtype": "Attach",
    "label": "Electricity / Municipal Tax - Own Building OR Rental/Lease agreement - Rented Building"
+  },
+  {
+   "fieldname": "aadhar_card_partner",
+   "fieldtype": "Attach",
+   "label": "Aadhar Card Partner"
+  },
+  {
+   "fieldname": "two_soft_copies_of_the_work",
+   "fieldtype": "Table",
+   "label": "Two soft copies of the work",
+   "options": "Partner Documents"
+  },
+  {
+   "fieldname": "demand_draft",
+   "fieldtype": "Attach",
+   "label": "Demand Draft"
+  },
+  {
+   "fieldname": "noc_from_authorapplicant",
+   "fieldtype": "Attach",
+   "label": "NOC from Author/Applicant"
+  },
+  {
+   "fieldname": "noc_from_publisher",
+   "fieldtype": "Attach",
+   "label": "NOC from publisher (if work published and publisher is different from applicant)"
+  },
+  {
+   "fieldname": "search_certificate_issued_by_register_of_trademarks",
+   "fieldtype": "Attach",
+   "label": "Search certificate issued by Register of Trademarks"
+  },
+  {
+   "fieldname": "noc_from_the_person_whose_photograph_appears_on_work",
+   "fieldtype": "Attach",
+   "label": "NOC from the person whose Photograph appears on work"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 19:05:01.455151",
+ "modified": "2024-11-07 14:05:10.688325",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "TAN Registrations",

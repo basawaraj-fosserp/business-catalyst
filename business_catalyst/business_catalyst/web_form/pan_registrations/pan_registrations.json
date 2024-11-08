@@ -1,5 +1,5 @@
 {
- "_liked_by": "[]",
+ "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "allow_comments": 0,
  "allow_delete": 0,
  "allow_edit": 0,
@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-20 10:27:44.987749",
+ "modified": "2024-11-07 15:16:43.659992",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "pan-registrations",
@@ -50,7 +50,7 @@
    "fieldname": "name_of_a_person",
    "fieldtype": "Data",
    "hidden": 0,
-   "label": "Name of a Person",
+   "label": "Name of the Person",
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,
@@ -282,11 +282,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "aadhar_card__partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Aadhar Card - Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -294,11 +295,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "pan_card__partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "PAN Card - Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -306,11 +308,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "photo_partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Photo - Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -318,7 +321,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "mobile_number_partners",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Mobile Number - Partners",
    "max_length": 0,
@@ -330,7 +333,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id_partners",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Email ID - Partners",
    "max_length": 0,

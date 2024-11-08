@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"soundarya@fosscrm.com\"]",
  "allow_comments": 0,
  "allow_delete": 0,
  "allow_edit": 0,
@@ -18,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-05-20 00:15:02.992942",
+ "modified": "2024-11-07 15:25:17.709043",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "import-export-compliance-amendment",
@@ -269,11 +270,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "pan_card_all_partners_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "PAN Card - All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -281,11 +283,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "aadhar_card_all_partners_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Aadhar Card - All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -293,11 +296,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "photo_all_partners_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "Photo-All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -305,7 +309,7 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "mobile_no_all_partners_ieap",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Mobile No - All Partners",
    "max_length": 0,
@@ -317,11 +321,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "email_id_all_partners_ieap",
-   "fieldtype": "Attach",
+   "fieldtype": "Small Text",
    "hidden": 0,
    "label": "Email ID - All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Email",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
@@ -488,11 +493,12 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "pan_card__all_partners_ieac",
-   "fieldtype": "Attach",
+   "fieldtype": "Table",
    "hidden": 0,
    "label": "PAN Card - All Partners",
    "max_length": 0,
    "max_value": 0,
+   "options": "Partner Documents",
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0

@@ -176,27 +176,30 @@
   },
   {
    "fieldname": "pan_card_all_partners_ieap",
-   "fieldtype": "Attach",
-   "label": "PAN Card - All Partners"
+   "fieldtype": "Table",
+   "label": "PAN Card - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "aadhar_card_all_partners_ieap",
-   "fieldtype": "Attach",
-   "label": "Aadhar Card - All Partners"
+   "fieldtype": "Table",
+   "label": "Aadhar Card - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "photo_all_partners_ieap",
-   "fieldtype": "Attach",
-   "label": "Photo-All Partners"
+   "fieldtype": "Table",
+   "label": "Photo-All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "mobile_no_all_partners_ieap",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Mobile No - All Partners"
   },
   {
    "fieldname": "email_id_all_partners_ieap",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Email ID - All Partners"
   },
   {
@@ -267,8 +270,9 @@
   },
   {
    "fieldname": "pan_card__all_partners_ieac",
-   "fieldtype": "Attach",
-   "label": "PAN Card - All Partners"
+   "fieldtype": "Table",
+   "label": "PAN Card - All Partners",
+   "options": "Partner Documents"
   },
   {
    "fieldname": "aadhar_card__director_ieac",
@@ -345,7 +349,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-29 12:23:18.288197",
+ "modified": "2024-11-07 13:39:33.450258",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Import or Export Compliance",
