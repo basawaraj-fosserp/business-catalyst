@@ -19,8 +19,8 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-11-07 13:26:51.899982",
- "modified_by": "soundarya@fosscrm.com",
+ "modified": "2024-11-12 12:01:05.917309",
+ "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "gst-registeration",
  "owner": "soundarya@fosscrm.com",
@@ -33,7 +33,7 @@
  "web_form_fields": [
   {
    "allow_read_on_all_link_options": 0,
-   "default": "GST Registeration",
+   "default": "GST Registration",
    "fieldname": "service",
    "fieldtype": "Link",
    "hidden": 0,
@@ -42,18 +42,6 @@
    "max_value": 0,
    "options": "Item",
    "read_only": 1,
-   "reqd": 0,
-   "show_in_filter": 0
-  },
-  {
-   "allow_read_on_all_link_options": 0,
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 0,
-   "label": "Naming Series",
-   "max_length": 0,
-   "max_value": 0,
-   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   },
