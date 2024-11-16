@@ -87,6 +87,7 @@ def project_from_so():
 		for i in doc.items:
 			if not i.custom_project:
 				make_project(row, i.item_code, target_doc=None)
+				frappe.db.commit()
 
 
 
