@@ -69,12 +69,12 @@ def make_project(source_name, item_code, target_doc=None):
 		target_doc,
 		postprocess,
 	)
-	doc.service_name = item_code
-	doc.project_name = "{} : {}".format(source_name , item_code)
-	if not frappe.db.get_value("Item", item_code, "form_template"):
-		frappe.throw(f"project Template is not exist for service <b>{item_code}</b>")
-	doc.project_template = frappe.db.get_value("Item", item_code, "form_template")
 	try:
+		doc.service_name = item_code
+		doc.project_name = "{} : {}".format(source_name , item_code)
+		if not frappe.db.get_value("Item", item_code, "form_template"):
+			frappe.throw(f"project Template is not exist for service <b>{item_code}</b>")
+		doc.project_template = frappe.db.get_value("Item", item_code, "form_template")
 		doc.save()
 	except Exception as e:
 		frappe.log_error(e)
