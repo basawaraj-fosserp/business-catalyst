@@ -6,6 +6,7 @@ def create_sales_order():
             Select name
             From `tabQuotation`
             Where docstatus = 1 and status = 'Open'
+            Order By name ASC
             Limit 20
     """, as_dict = 1)
     from erpnext.selling.doctype.quotation.quotation import make_sales_order
