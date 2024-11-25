@@ -64,6 +64,7 @@ def make_quotation(source_name, target_doc=None):
 					"parent": "prevdoc_docname",
 					"parenttype": "prevdoc_doctype",
 					"uom": "stock_uom",
+					"contact_email" : "custom_primary_email_id"
 				},
 				"add_if_empty": True,
 			},
@@ -73,3 +74,11 @@ def make_quotation(source_name, target_doc=None):
 	)
 
 	return doclist
+
+
+def create_quotation_from_opportunity():
+	from business_catalyst.business_catalyst.docevents.opportunity import make_quotation
+	opportunity_list = frappe.db.get_list("Opportunity", pluck="name", page_length=20)
+	for row in opportunity_list:
+		doc = make_quotation(row, target_doc=None)
+		doc.save()
