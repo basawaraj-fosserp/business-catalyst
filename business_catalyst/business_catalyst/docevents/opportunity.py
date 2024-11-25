@@ -56,19 +56,21 @@ def make_quotation(source_name, target_doc=None):
 		{
 			"Opportunity": {
 				"doctype": "Quotation",
-				"field_map": {"opportunity_from": "quotation_to", "name": "enq_no", "contact_email":"custom_primary_email_id"},
+				"field_map": {"opportunity_from": "quotation_to", 
+					"name": "enq_no", 
+					"contact_email":"custom_primary_email_id", 	
+					"custom_primary_email_id" :"email_id",
+					"custom_primary_email_id" :"contact_email",
+					"contact_mobile" : "contact_mobile",
+					"email_id" : "custom_primary_email_id" ,
+					"contact_email" : "custom_primary_email_id" ,},
 			},
 			"Opportunity Item": {
 				"doctype": "Quotation Item",
 				"field_map": {
 					"parent": "prevdoc_docname",
 					"parenttype": "prevdoc_doctype",
-					"uom": "stock_uom",
-					"custom_primary_email_id" :"email_id",
-					"custom_primary_email_id" :"contact_email",
-					"contact_mobile" : "contact_mobile",
-					"email_id" : "custom_primary_email_id" ,
-					"contact_email" : "custom_primary_email_id" ,
+					"uom": "stock_uom"
 				},
 				"add_if_empty": True,
 			},
