@@ -64,7 +64,8 @@ def make_quotation(source_name, target_doc=None):
 					"parent": "prevdoc_docname",
 					"parenttype": "prevdoc_doctype",
 					"uom": "stock_uom",
-					"email_id" : "custom_primary_email_id"
+					"custom_primary_email_id" :"email_id",
+					"contact_mobile" : "contact_mobile"
 				},
 				"add_if_empty": True,
 			},
