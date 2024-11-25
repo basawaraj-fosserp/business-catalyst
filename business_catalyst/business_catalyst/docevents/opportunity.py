@@ -66,7 +66,9 @@ def make_quotation(source_name, target_doc=None):
 					"uom": "stock_uom",
 					"custom_primary_email_id" :"email_id",
 					"custom_primary_email_id" :"contact_email",
-					"contact_mobile" : "contact_mobile"
+					"contact_mobile" : "contact_mobile",
+					"email_id" : "custom_primary_email_id" ,
+					"contact_email" : "custom_primary_email_id" ,
 				},
 				"add_if_empty": True,
 			},
