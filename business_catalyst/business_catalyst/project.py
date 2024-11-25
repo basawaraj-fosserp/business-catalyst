@@ -81,7 +81,7 @@ def make_project(source_name, item_code, target_doc=None):
 
 #create bulk project from bulk Sales Order
 def project_from_so():
-	so_list = frappe.db.get_list("Sales Order", {"docstatus" : 1} ,pluck="name")
+	so_list = frappe.db.get_list("Sales Order", {"docstatus" : 1} ,pluck="name", order_by='date ASC',)
 	for row in so_list:
 		doc = frappe.get_doc("Sales Order", row)
 		for i in doc.items:
