@@ -1,4 +1,7 @@
 frappe.ui.form.on('Lead', {
+    onload:frm=>{
+        cur_frm.$wrapper.find(".form-shared").addClass("hidden")
+    },
     refresh:frm => {
         if(frappe.user.has_role('Support Executive') && !frappe.user.has_role('Advisor')){
             frm.set_df_property('custom_calling_date', 'reqd', 1)

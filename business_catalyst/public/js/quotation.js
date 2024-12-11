@@ -1,4 +1,7 @@
 frappe.ui.form.on("Quotation",{
+    onload:frm=>{
+        cur_frm.$wrapper.find(".form-shared").addClass("hidden")
+    },
     setup:function(frm){
         if(frm.doc.quotation_to == "Lead" && !frm.doc.contact_email){
             frappe.model.get_value("Lead", frm.doc.party_name, ["custom_primary_email_id", "custom_secondary_email_id"], r=>{
