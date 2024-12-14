@@ -36,6 +36,7 @@ def validate(self, method):
 
 	if self.custom_msme_no:
 		self.custom_company_name = frappe.db.get_value("Lead", self.custom_msme_no, "company_name")
+	set_aggregator(self)
 
 def on_trash(self, method):
 	if self.sales_order:
@@ -43,6 +44,17 @@ def on_trash(self, method):
 		for row in doc.items:
 			if row.item_code == self.service_name:
 				frappe.db.set_value(row.doctype, row.name, "custom_project", '')
+
+def set_aggregator(self):
+	if self.sales_order:
+		doc = frappe.get_doc("Sales Order", self.sales_order)
+		quotation_list = [ row.prevdoc_docname if frappe.db.exists("Quotation", row.prevdoc_docname) else '' for row in doc.items]
+		for row in quotation_list:
+			if oppo := frappe.db.get_value("Quotation", row, "opportunity"):
+				aggregator = frappe.db.get_value("Opportunity", oppo, "custom_tag")
+				self.aggregator = aggregator
+		
+
 
 
 #create bulk project from bulk Sales Order
