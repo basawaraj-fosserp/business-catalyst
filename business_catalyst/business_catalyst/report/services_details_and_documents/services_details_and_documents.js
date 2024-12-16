@@ -5,10 +5,24 @@
 frappe.query_reports["Services Details and Documents"] = {
 	"filters": [
 		{
+			fieldname : "project_template",
+			label : "Project Template",
+			fieldtype : "Link",
+			options : "Project Template",
+		},
+		{
 			fieldname : "services",
 			label : "Services",
 			fieldtype : "Link",
-			options : "Item"
+			options : "Item",
+			get_query: () => {
+				var template = frappe.query_report.get_filter_value("project_template");
+				return {
+					filters: {
+						'form_template': template,
+					},
+				};
+			},
 		},
 		{
 			fieldname : "services_name",
@@ -22,6 +36,6 @@ frappe.query_reports["Services Details and Documents"] = {
 				}
 				return services;
 			},
-		},
+		}
 	]
 };

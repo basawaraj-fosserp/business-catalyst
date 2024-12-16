@@ -37,8 +37,8 @@ def get_services_list(filters):
 
 def get_services_detalis(filters):
 	cond = ''
-	if filters.get("name"):
-		cond += f" and name = '{filters.get('name')}' "
+	if filters.get("services_name"):
+		cond += f" and name = '{filters.get('services_name')}' "
 	services = get_services_list(filters)
 	data = []
 	for row in services:
