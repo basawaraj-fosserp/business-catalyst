@@ -9,16 +9,25 @@ def execute(filters=None):
 	data = get_services_detalis(filters)
 	columns = [
 		{
+			"fieldname" : "project_template",
+			"fieldtype" : "Link",
+			"options" : "Project Template",
+			"label" : "Form Template",
+			"width" : 200
+		},
+		{
 			"fieldname" : "service",
 			"fieldtype" : "Link",
 			"options" : "Item",
-			"label" : "Services"
+			"label" : "Services",
+			"width" : 200
 		},
 		{
 			"fieldname" : "name",
 			"fieldtype" : "Dynamic Link",
 			"options" : "service",
-			"label" : "Services Details"
+			"label" : "Services Details",
+			"width" : 200
 		},
 
 	]
@@ -54,5 +63,5 @@ def get_services_detalis(filters):
 			
 
 def update_row(d, row):
-	d.update({"service" : row})
+	d.update({"service" : row, "project_template" : frappe.db.get_value("Item", row, "form_template")})
 	return d
