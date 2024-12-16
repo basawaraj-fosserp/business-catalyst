@@ -131,7 +131,7 @@ doc_events = {
 			"business_catalyst.api.stop_duplicate_lead"
 		]
 	},
-	"Project":{
+	"Project": {
 		"validate": "business_catalyst.business_catalyst.project.validate",
 		"on_trash" : "business_catalyst.business_catalyst.project.on_trash"
 	},

@@ -1,5 +1,6 @@
 import frappe
 from frappe.model.mapper import get_mapped_doc
+from frappe.utils import getdate, flt, today, add_days
 
 
 @frappe.whitelist()
@@ -23,6 +24,8 @@ def get_services_name(doctype, txt, searchfield, start, page_len, filters):
 		return data
 
 def validate(self, method):
+	if self.is_new():
+		self.expected_start_date = getdate()
 	if self.is_new() and not self.service_name:
 		frappe.throw("Service Name is requiered")
 	if self.sales_order:
@@ -37,6 +40,7 @@ def validate(self, method):
 	if self.custom_msme_no:
 		self.custom_company_name = frappe.db.get_value("Lead", self.custom_msme_no, "company_name")
 	set_aggregator(self)
+	set_start_date_end_date(self)
 
 def on_trash(self, method):
 	if self.sales_order:
@@ -54,6 +58,14 @@ def set_aggregator(self):
 				aggregator = frappe.db.get_value("Opportunity", oppo, "custom_tag")
 				self.aggregator = aggregator
 		
+def set_start_date_end_date(self):
+	project_template_doc = frappe.get_doc("Project Template", self.project_template)
+	end_date_list = []
+	for row in project_template_doc.tasks:
+		end_date_list.append(frappe.db.get_value("Task", row.task, "duration"))
+	max_duration = max(end_date_list)
+	self.expected_end_date = add_days(getdate(), max_duration)
+
 
 
 
