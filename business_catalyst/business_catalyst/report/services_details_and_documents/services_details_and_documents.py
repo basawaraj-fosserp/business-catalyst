@@ -9,13 +9,6 @@ def execute(filters=None):
 	data = get_services_detalis(filters)
 	columns = [
 		{
-			"fieldname" : "project_template",
-			"fieldtype" : "Link",
-			"options" : "Project Template",
-			"label" : "Form Template",
-			"width" : 200
-		},
-		{
 			"fieldname" : "service",
 			"fieldtype" : "Link",
 			"options" : "Item",
