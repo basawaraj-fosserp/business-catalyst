@@ -48,6 +48,10 @@ def get_services_detalis(filters):
 	cond = ''
 	if filters.get("services_name"):
 		cond += f" and name = '{filters.get('services_name')}' "
+	if filters.get("from_date"):
+		cond += f" and creation >= '{filters.get('from_date')}' "
+	if filters.get("to_date"):
+		cond += f" and creation <= '{filters.get('to_date')}' "
 	services = get_services_list(filters)
 	data = []
 	for row in services:
