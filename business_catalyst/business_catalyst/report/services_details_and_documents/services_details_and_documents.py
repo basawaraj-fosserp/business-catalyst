@@ -26,7 +26,7 @@ def execute(filters=None):
 			"fieldname" : "name",
 			"fieldtype" : "Dynamic Link",
 			"options" : "service",
-			"label" : "Services Details",
+			"label" : "Document Submitted by Customer",
 			"width" : 200
 		},
 
