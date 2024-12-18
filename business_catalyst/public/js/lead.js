@@ -26,6 +26,9 @@ frappe.ui.form.on('Lead', {
         });
 		
 	},
+    custom_primary_email_id(frm){
+        frm.set_value("email_id", frm.doc.custom_primary_email_id)
+    },
 	custom_region(frm) {
         if(frm.doc.custom_region){
             frappe.call({
