@@ -151,3 +151,18 @@ def stop_duplicate_lead(self, method):
                 frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
 
 
+#invite as user from customer
+@frappe.whitelist()
+def create_user(customer):
+    contact_data = frappe.db.sql(f"""
+            Select co.name
+            From `tabContact` as co
+            Left Join `tabDynamic Link` as dl on dl.link_doctype = 'Customer' and dl.link_name = '{customer}' and dl.parenttype = 'Contact' and co.name = dl.parent
+            where dl.link_name = '{customer}'
+    """, as_dict = 1)
+
+    from frappe.contacts.doctype.contact.contact import invite_user
+    for row in contact_data:
+        doc = frappe.get_doc("Contact", row.name)
+        user =  invite_user(doc)
+        frappe.db.set_value("Contact", doc.name, "user", user, update_modified=False)
