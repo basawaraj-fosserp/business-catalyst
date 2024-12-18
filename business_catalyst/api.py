@@ -164,5 +164,6 @@ def create_user(customer):
     from frappe.contacts.doctype.contact.contact import invite_user
     for row in contact_data:
         doc = frappe.get_doc("Contact", row.name)
-        user =  invite_user(doc)
-        frappe.db.set_value("Contact", doc.name, "user", user, update_modified=False)
+        if not doc.user:
+            user =  invite_user(doc)
+            frappe.db.set_value("Contact", doc.name, "user", user, update_modified=False)
