@@ -118,6 +118,7 @@ def validate(self, method):
         total_days_of_delivery += flt(row.custom_duration)
 
     self.delivery_date = add_days(self.transaction_date, total_days_of_delivery)
+    set_tagged_advisor(self)
 
 
 @frappe.whitelist()
@@ -128,3 +129,15 @@ def get_delivery_date(sales_order, service_name):
             date = row.delivery_date
             break
     return { "expected_start_date" : doc.transaction_date, "expected_end_date" : date }
+
+def set_tagged_advisor(self):
+    advisor_list = []
+    for row in self.items:
+        if row.prevdoc_docname:
+            advisor = frappe.db.get_value("Quotation", row.prevdoc_docname, "custom_tagged_advisor")
+            if advisor:
+                advisor_list.append(advisor)
+    
+    advisor_list = list(set(advisor_list))
+    if len(advisor_list) > 0:
+        self.custom_tagged_advisor = advisor_list[0] 
