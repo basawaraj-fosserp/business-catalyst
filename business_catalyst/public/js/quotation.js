@@ -27,7 +27,7 @@ frappe.ui.form.on("Quotation",{
                 function () {
                     frappe.model.open_mapped_doc({
                         method: "business_catalyst.business_catalyst.docevents.sales_order.make_sales_order",
-                        frm: me.frm
+                        frm: frm
                     });
                 },
                 __("Create")
