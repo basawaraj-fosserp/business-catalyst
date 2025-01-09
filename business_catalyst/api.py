@@ -147,7 +147,7 @@ def stop_duplicate_lead(self, method):
         if condition:
             data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
             
-            if data:
+            if data and not frappe.session.user == "soundarya@fosscrm.com":
                 frappe.throw(f"Lead is already exist, {get_link_to_form('Lead',data[0].name)}")
 
 
