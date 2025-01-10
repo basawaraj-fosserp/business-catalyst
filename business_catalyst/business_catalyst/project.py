@@ -55,7 +55,7 @@ def set_aggregator(self):
 		quotation_list = [ row.prevdoc_docname if frappe.db.exists("Quotation", row.prevdoc_docname) else '' for row in doc.items]
 		for row in quotation_list:
 			if oppo := frappe.db.get_value("Quotation", row, "opportunity"):
-				aggregator, tagged_advisor = frappe.db.get_value('Opportunity', oppo, ['custom_tag', 'custom_tagged_advisor'])
+				aggregator, tagged_advisor = frappe.db.get_value('Opportunity', oppo, ['custom_aggregator', 'custom_tagged_advisor'])
 				self.aggregator = aggregator
 				self.custom_advisor = tagged_advisor
 
