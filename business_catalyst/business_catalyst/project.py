@@ -55,8 +55,13 @@ def set_aggregator(self):
 		quotation_list = [ row.prevdoc_docname if frappe.db.exists("Quotation", row.prevdoc_docname) else '' for row in doc.items]
 		for row in quotation_list:
 			if oppo := frappe.db.get_value("Quotation", row, "opportunity"):
-				tagged_advisor = frappe.db.get_value('Opportunity', oppo, ['custom_tagged_advisor'])
-				self.custom_advisor = tagged_advisor
+				opp_doc = frappe.get_doc("Opportunity", oppo)
+				self.custom_advisor = opp_doc.custom_tagged_advisor
+				if opp_doc.custom_aggregator:
+					for row in opp_doc.custom_aggregator:
+						self.append("aggregator", {
+							"aggregator_name" : row.aggregator_name
+						})
 
 def set_start_date_end_date(self):
 	project_template_doc = frappe.get_doc("Project Template", self.project_template)
