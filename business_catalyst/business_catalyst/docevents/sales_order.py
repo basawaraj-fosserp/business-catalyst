@@ -141,3 +141,8 @@ def set_tagged_advisor(self):
     advisor_list = list(set(advisor_list))
     if len(advisor_list) > 0:
         self.custom_tagged_advisor = advisor_list[0] 
+
+
+@frappe.whitelist()
+def is_project_available(sales_order):
+    return frappe.db.exists("Project", {"sales_order" : sales_order} )
