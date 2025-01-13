@@ -59,9 +59,10 @@ def set_aggregator(self):
 				self.custom_advisor = opp_doc.custom_tagged_advisor
 				if opp_doc.custom_aggregator:
 					for row in opp_doc.custom_aggregator:
-						self.append("aggregator", {
-							"aggregator_name" : row.aggregator_name
-						})
+						if row.get("row.aggregator_name"):
+							self.append("aggregator", {
+								"aggregator_name" : row.aggregator_name
+							})
 
 def set_start_date_end_date(self):
 	project_template_doc = frappe.get_doc("Project Template", self.project_template)
