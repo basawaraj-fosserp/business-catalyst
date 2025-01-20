@@ -227,15 +227,15 @@ def validate_address(row):
             row.update({ "custom_annual_turnover" : "10-30L"})
         if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
             row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
-        if row.get("custom_no_of_employees1"):
-            if row.get("custom_no_of_employees1") == "4 - 9":
-                row.update({ "custom_no_of_employees1" : "5-9" })
-            if row.get("custom_no_of_employees1") == "20 - 50":
-                row.update({ "custom_no_of_employees1" : "20-49" })
-            if row.get("custom_no_of_employees1") == "1 - 4":
-                row.update({ "custom_no_of_employees1" : "3-4" })
-            if row.get("custom_no_of_employees1") == "10 - 20":
-                row.update({ "custom_no_of_employees1" : "10-19" })
+    if row.get("custom_no_of_employees1"):
+        if row.get("custom_no_of_employees1") == "4 - 9":
+            row.update({ "custom_no_of_employees1" : "5-9" })
+        if row.get("custom_no_of_employees1") == "20 - 50":
+            row.update({ "custom_no_of_employees1" : "20-49" })
+        if row.get("custom_no_of_employees1") == "1 - 4":
+            row.update({ "custom_no_of_employees1" : "3-4" })
+        if row.get("custom_no_of_employees1") == "10 - 20":
+            row.update({ "custom_no_of_employees1" : "10-19" })
     
     return row
 
