@@ -2,6 +2,7 @@ import pandas as pd
 import json
 from frappe.utils.file_manager import get_file_path
 import frappe
+from business_catalyst.api import get_regional_head
 columns_mapping = [
         {
         "ERP Column": "first_name",
@@ -160,6 +161,20 @@ def migrate_in_json():
 
 
 
+def validate_address(row):
+    if row.get("custom_location_name"):
+        state, district = frappe.db.get_value("Location Name", row.get("custom_location_name"), ['state','district'])
+        if row.get("custom_state1") != state or row.get("custom_district") != district:
+            frappe.throw(row.get("custom_location_name"))
+        
+        row.update({"custom_state1" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'state')})
+    
+        row.update({"custom_district" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'district')})
+
+    if row.get("custom_state1"):
+        row.update({"custom_region" : frappe.db.get_value("State", self.custom_state1, 'region')})
+    if row.get("custom_region"):
+        row.update({"custom_region_head" : get_regional_head(row.get("custom_region"))})
        
 
 
