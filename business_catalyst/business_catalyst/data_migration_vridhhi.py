@@ -160,9 +160,9 @@ def migrate_in_json():
                         lead.update({
                             'custom_business_type1' : "Services"
                         })
-                if (d.get("ERP Column") == "predominant_channel_one") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
+                if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
                     lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
-                if (d.get("ERP Column") == "predominant_channel_one") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
+                if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
                     lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
                 lead.update( {"source" : "Prospera"} )
             lead.update({"doctype" : "Lead"})
