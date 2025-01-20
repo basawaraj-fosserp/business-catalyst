@@ -219,9 +219,8 @@ def validate_address(row):
             row.update({ "custom_designation1" : "Founder" })
         if row.get("custom_designation1") == "vikas Kumar":
             row.update({ "custom_designation1" : "Employee" })
-    if row.get("gender"):
-        if row.get("gender") == "PNTS":
-            row.update({ "gender" : "Prefer not to say" })
+    if row.get("gender") and row.get("gender") == "PNTS":
+        row.update({ "gender" : "Prefer not to say" })
 
     return row
 
