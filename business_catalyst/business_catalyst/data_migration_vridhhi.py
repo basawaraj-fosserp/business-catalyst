@@ -159,6 +159,7 @@ def migrate_in_json():
             frappe.db.commit()
             count +=1
             print(count)
+            print(row.get("id"))
 
 def check_email_id_is_unique(row):
     if row.get("email_id"):
@@ -199,7 +200,7 @@ def validate_address(row):
             row.update({ "custom_annual_turnover" : "50L-1Cr"})
         if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
             row.update({ "custom_annual_turnover" : "10-30L"})
-        if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
+        if row.get("custom_annual_turnover") in ["1 Cr - 5 Cr", " 1 Cr - 5 Cr"]:
             row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
     if row.get("custom_no_of_employees1"):
         if row.get("custom_no_of_employees1") == "4 - 9":

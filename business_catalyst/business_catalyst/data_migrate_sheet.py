@@ -159,6 +159,7 @@ def migrate_2_in_json():
             frappe.db.commit()
             count +=1
             print(count)
+            print(row.get("id"))
 
 def check_email_id_is_unique(row):
     if row.get("email_id"):
