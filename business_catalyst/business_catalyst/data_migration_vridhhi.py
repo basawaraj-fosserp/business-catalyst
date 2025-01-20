@@ -162,6 +162,9 @@ def migrate_in_json():
                         })
                 lead.update( {"source" : "Prospera"} )
             lead.update({"doctype" : "Lead"})
+            check_email = check_email_id_is_unique(lead)
+            if check_email:
+                continue
             lead = validate_address(lead)
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
@@ -169,7 +172,20 @@ def migrate_in_json():
             count +=1
             print(count)
 
+def check_email_id_is_unique(row):
+    if row.get("email_id"):
+        # validate email is unique
+        if not frappe.db.get_single_value("CRM Settings", "allow_lead_duplication_based_on_emails"):
+            duplicate_leads = frappe.get_all(
+                "Lead", filters={"email_id": row.get("email_id")}
+            )
+            duplicate_leads = [
+                lead.name for lead in duplicate_leads
+            ]
 
+            if duplicate_leads:
+                return True
+        return False
 
 def validate_address(row):
     if row.get("custom_location_name"):
