@@ -209,9 +209,17 @@ def validate_address(row):
         row.update({"custom_region" : frappe.db.get_value("State", row.get("custom_state1"), 'region')})
     if row.get("custom_region"):
         row.update({"custom_region_head" : get_regional_head(row.get("custom_region"))})
+    if row.get("custom_annual_turnover"):
+        if row.get("custom_annual_turnover") in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
+            row.update({ "custom_annual_turnover" : "Above 5Cr"})
+        if row.get("custom_annual_turnover") == "50 lakhs - 1 Cr":
+            row.update({ "custom_annual_turnover" : "50L-1Cr"})
+        if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
+            row.update({ "custom_annual_turnover" : "10-30L"})
+        if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
+            row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
+    
     return row
-       
-
 
 
 def split_excel_file(input_file, output_file_prefix, rows_per_file):
@@ -272,4 +280,6 @@ def check_migrate_in_json():
     fail_lead = []
 
     for row in json_data:
-        print(row.get("predominant_channel_one"))
+        if row.get("revenue_ranges") not in fail_lead:
+            fail_lead.append(row.get("revenue_ranges"))
+    print(fail_lead)
