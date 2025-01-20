@@ -224,7 +224,7 @@ def validate_address(row):
         row.update({ "gender" : "Prefer not to say" })
     if row.get("custom_predominant_trade_channel") and row.get("custom_predominant_trade_channel") == "General trade":
         row.update({"custom_predominant_trade_channel" : "General Trade"})
-    if row.get("custom_primary_email_id")=="hanumanaligarh@gmailcom" or row.get("custom_primary_email_id")=="hanumanaligarh@gmailcom":
+    if row.get("custom_primary_email_id")=="hanumanaligarh@gmailcom" or row.get("email_id")=="hanumanaligarh@gmailcom":
         row.update({"custom_primary_email_id" : "hanumanaligarh@gmail.com", "email_id" : "hanumanaligarh@gmail.com"})
     return row
 
