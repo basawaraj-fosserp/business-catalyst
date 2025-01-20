@@ -222,6 +222,8 @@ def validate_address(row):
             row.update({ "custom_designation1" : "Employee" })
     if row.get("gender") and row.get("gender") == "PNTS":
         row.update({ "gender" : "Prefer not to say" })
+    if row.get("custom_predominant_trade_channel") and row.get("custom_predominant_trade_channel") == "General trade":
+        row.update({"custom_predominant_trade_channel" : "General Trade"})
 
     return row
 
