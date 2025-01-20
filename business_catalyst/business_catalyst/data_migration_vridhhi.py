@@ -110,6 +110,8 @@ def migrate_in_json():
                 lead.update({
                     d.get("ERP Column") : row.get(d.get("Dwani Column"))
                 })
+                if (d.get("ERP Column") == "custom_primary_email_id") and (row.get(d.get("Dwani Column")) == "rohit das"):
+                    continue
                 if (d.get("ERP Column") == "gender") and (row.get(d.get("Dwani Column")) == "Others"):
                     lead.update({
                     'gender' : "Other"
@@ -191,7 +193,7 @@ def validate_address(row):
             row.update({ "custom_annual_turnover" : "50L-1Cr"})
         if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
             row.update({ "custom_annual_turnover" : "10-30L"})
-        if row.get("custom_annual_turnover") in  ["1 Cr - 5 Cr" ," 1 Cr - 5 Cr" ]:
+        if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
             row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
     if row.get("custom_no_of_employees1"):
         if row.get("custom_no_of_employees1") == "4 - 9":
