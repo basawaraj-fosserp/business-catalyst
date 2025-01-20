@@ -196,7 +196,6 @@ def validate_address(row):
         state, district = frappe.db.get_value("Location Name", row.get("custom_location_name"), ['state','district'])
         if (row.get("custom_state1")) and row.get("custom_state1") == "Maharshatra":
             row.update({"custom_state1" : "Maharashatra"})
-            return row
         if row.get("custom_state1") != state or row.get("custom_district") != district:
             row.update({"custom_state1" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'state')})
             row.update({"custom_district" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'district')})
