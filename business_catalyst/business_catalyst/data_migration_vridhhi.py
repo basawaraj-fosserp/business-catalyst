@@ -218,6 +218,15 @@ def validate_address(row):
             row.update({ "custom_annual_turnover" : "10-30L"})
         if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
             row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
+        if row.get("no_of_employee"):
+            if row.get("no_of_employee") == "4 - 9":
+                row.update({ "custom_no_of_employees1" : "5-9" })
+            if row.get("no_of_employee") == "20 - 50":
+                row.update({ "custom_no_of_employees1" : "20-49" })
+            if row.get("no_of_employee") == "1 - 4":
+                row.update({ "custom_no_of_employees1" : "3-4" })
+            if row.get("no_of_employee") == "10 - 20":
+                row.update({ "custom_no_of_employees1" : "10-19" })
     
     return row
 
@@ -280,6 +289,6 @@ def check_migrate_in_json():
     fail_lead = []
 
     for row in json_data:
-        if row.get("revenue_ranges") not in fail_lead:
-            fail_lead.append(row.get("revenue_ranges"))
+        if row.get("no_of_workers") not in fail_lead:
+            fail_lead.append(row.get("no_of_workers"))
     print(fail_lead)
