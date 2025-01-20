@@ -224,7 +224,8 @@ def validate_address(row):
         row.update({ "gender" : "Prefer not to say" })
     if row.get("custom_predominant_trade_channel") and row.get("custom_predominant_trade_channel") == "General trade":
         row.update({"custom_predominant_trade_channel" : "General Trade"})
-
+    if row.get("custom_primary_email_id")=="hanumanaligarh@gmailcom":
+        row.update({"custom_primary_email_id" : "hanumanaligarh@gmail.com", "email_id" : "hanumanaligarh@gmail.com"})
     return row
 
 
@@ -289,5 +290,5 @@ def stop_duplicate_lead(row):
     if condition:
         data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
         
-        if data and not frappe.session.user == "soundarya@fosscrm.com":
+        if data:
             return True
