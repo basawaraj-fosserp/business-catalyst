@@ -282,14 +282,14 @@ def stop_duplicate_lead(row):
     
     if row.get("mobile_no"):
         if condition:
-            condition += f" or mobile_no = '{row.get('mobile_no')}'"
+            condition += f" or mobile_no = '{row.get('phone')}'"
         else:
-            condition += f" where mobile_no = '{row.get('mobile_no')}'"
+            condition += f" where mobile_no = '{row.get('phone')}'"
     if row.get("phone"):
         if condition:
-            condition += f" or phone = '{row.get('phone')}'"
+            condition += f" or phone = '{row.get('secondary_phones')}'"
         else:
-            condition += f" where phone = '{row.get('phone')}'"
+            condition += f" where phone = '{row.get('secondary_phones')}'"
     if condition:
         data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
         
