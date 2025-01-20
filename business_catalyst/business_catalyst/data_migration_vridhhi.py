@@ -165,6 +165,9 @@ def migrate_in_json():
 def validate_address(row):
     if row.get("custom_location_name"):
         state, district = frappe.db.get_value("Location Name", row.get("custom_location_name"), ['state','district'])
+        if (row.get("custom_state1")) and row.get("custom_state1") == "Maharshatra":
+            row.update({"custom_state1" : "Maharashatra"})
+            return row
         if row.get("custom_state1") != state or row.get("custom_district") != district:
             frappe.throw(row.get("custom_location_name"))
         
