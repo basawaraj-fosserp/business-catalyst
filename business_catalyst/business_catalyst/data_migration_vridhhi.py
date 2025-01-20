@@ -226,6 +226,8 @@ def validate_address(row):
         row.update({"custom_predominant_trade_channel" : "General Trade"})
     if row.get("custom_primary_email_id")=="hanumanaligarh@gmailcom" or row.get("email_id")=="hanumanaligarh@gmailcom":
         row.update({"custom_primary_email_id" : "hanumanaligarh@gmail.com", "email_id" : "hanumanaligarh@gmail.com"})
+    if row.get("custom_secondary_email_id") == "hanumanaligarh@gmailcom":
+        row.update({"custom_secondary_email_id" : "hanumanaligarh@gmail.com"})
     return row
 
 
