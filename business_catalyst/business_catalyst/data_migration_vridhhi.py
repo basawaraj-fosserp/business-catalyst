@@ -176,7 +176,7 @@ def validate_address(row):
         row.update({"custom_district" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'district')})
 
     if row.get("custom_state1"):
-        row.update({"custom_region" : frappe.db.get_value("State", self.custom_state1, 'region')})
+        row.update({"custom_region" : frappe.db.get_value("State", row.get("custom_state1"), 'region')})
     if row.get("custom_region"):
         row.update({"custom_region_head" : get_regional_head(row.get("custom_region"))})
     return row
