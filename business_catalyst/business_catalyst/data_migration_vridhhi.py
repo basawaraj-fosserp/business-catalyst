@@ -107,37 +107,12 @@ def migrate_in_json():
                 continue
             lead = {}
             for d in columns_mapping:
-                
                 lead.update({
                     d.get("ERP Column") : row.get(d.get("Dwani Column"))
                 })
-                if (d.get("ERP Column") == "custom_primary_email_id") and (row.get(d.get("Dwani Column")) == "rohit das"):
-                    lead.update({
-                    'custom_primary_email_id' : "rohitdas19967@gmail.com"
-                    })
-                if (d.get("ERP Column") == "email_id") and (row.get(d.get("Dwani Column")) == "rohit das"):
-                    lead.update({
-                    'email_id' : "rohitdas199677@gmail.com"
-                    })
                 if (d.get("ERP Column") == "gender") and (row.get(d.get("Dwani Column")) == "Others"):
                     lead.update({
                     'gender' : "Other"
-                    })
-                if (d.get("ERP Column") == "custom_designation1") and (row.get(d.get("Dwani Column")) == "owner"):
-                    lead.update({
-                    'custom_designation1' : "Owner"
-                    })
-                if (d.get("ERP Column") == "custom_designation1") and (row.get(d.get("Dwani Column")) == "Properietor" or row.get(d.get("Dwani Column")) == "PROPRIETOR"):
-                    lead.update({
-                    'custom_designation1' : "Proprietor"
-                    })
-                if (d.get("ERP Column") == "custom_designation1") and (row.get(d.get("Dwani Column")) == "Designer, Founder"):
-                    lead.update({
-                    'custom_designation1' : "Founder"
-                    })
-                if (d.get("ERP Column") == "custom_designation1") and (row.get(d.get("Dwani Column")) == "vikas Kumar"):
-                    lead.update({
-                    'custom_designation1' : "Employee"
                     })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
@@ -160,15 +135,6 @@ def migrate_in_json():
                         lead.update({
                             'custom_business_type1' : "Services"
                         })
-                if d.get("ERP Column") == "custom_annual_turnover":
-                    if row.get(d.get("Dwani Column")) in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
-                        lead.update({ "custom_annual_turnover" : "Above 5Cr"})
-                    if row.get(d.get("Dwani Column")) == "50 lakhs - 1 Cr":
-                        lead.update({ "custom_annual_turnover" : "50L-1Cr"})
-                    if row.get(d.get("Dwani Column")) in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
-                        lead.update({ "custom_annual_turnover" : "10-30L"})
-                    if row.get(d.get("Dwani Column")) in  ["1 Cr - 5 Cr" ," 1 Cr - 5 Cr" ]:
-                        lead.update({ "custom_annual_turnover" : "1Cr-3Cr"})
 
                 if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
                     lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
@@ -225,7 +191,7 @@ def validate_address(row):
             row.update({ "custom_annual_turnover" : "50L-1Cr"})
         if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
             row.update({ "custom_annual_turnover" : "10-30L"})
-        if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
+        if row.get("custom_annual_turnover") in  ["1 Cr - 5 Cr" ," 1 Cr - 5 Cr" ]:
             row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
     if row.get("custom_no_of_employees1"):
         if row.get("custom_no_of_employees1") == "4 - 9":
@@ -236,7 +202,17 @@ def validate_address(row):
             row.update({ "custom_no_of_employees1" : "3-4" })
         if row.get("custom_no_of_employees1") == "10 - 20":
             row.update({ "custom_no_of_employees1" : "10-19" })
-    
+    if row.get("custom_designation1"):
+        if row.get("custom_designation1") == "owner":
+            row.update({ "custom_designation1" : "Owner" })
+        if row.get("custom_designation1") in ["PROPRIETOR", "Properietor"]:
+            row.update({ "custom_designation1" : "Proprietor" })
+        if row.get("custom_designation1") in ["Designer, Founder"]:
+            row.update({ "custom_designation1" : "Founder" })
+        if row.get("custom_designation1") == "vikas Kumar":
+            row.update({ "custom_designation1" : "Employee" })
+        
+
     return row
 
 
