@@ -278,7 +278,7 @@ def stop_duplicate_lead(row):
 
     condition = ''
     if row.get("custom_primary_email_id"):
-        condition = f"where custom_primary_email_id = '{ row.get('custom_primary_email_id') }'"
+        condition = f"where custom_primary_email_id = '{ row.get('email') }'"
     
     if row.get("mobile_no"):
         if condition:
