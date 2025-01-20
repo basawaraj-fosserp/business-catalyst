@@ -114,6 +114,10 @@ def migrate_in_json():
                     lead.update({
                     'custom_primary_email_id' : "rohitdas19967@gmail.com"
                     })
+                if (d.get("ERP Column") == "email_id") and (row.get(d.get("Dwani Column")) == "rohit das"):
+                    lead.update({
+                    'email_id' : "rohitdas199677@gmail.com"
+                    })
                 if (d.get("ERP Column") == "gender") and (row.get(d.get("Dwani Column")) == "Others"):
                     lead.update({
                     'gender' : "Other"
