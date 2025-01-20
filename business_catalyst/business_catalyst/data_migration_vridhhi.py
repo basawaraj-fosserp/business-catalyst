@@ -255,22 +255,6 @@ rows_per_file = 50000
 
 # Call the function
 
-def stop_duplicate_lead(row):
-
-    condition = ''
-    if row.get("custom_primary_email_id"):
-        condition = f"where custom_primary_email_id = '{ row.get('custom_primary_email_id') }'"
-    if row.get("phone"):
-        if condition:
-            condition += f" or mobile_no = '{row.get('phone')}'"
-        else:
-            condition += f" where mobile_no = '{row.get('phone')}'"
-    if condition:
-        data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
-        
-        if data and not frappe.session.user == "soundarya@fosscrm.com":
-            return True
-
 def check_migrate_in_json():
     filename = "output_file_part_1.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]

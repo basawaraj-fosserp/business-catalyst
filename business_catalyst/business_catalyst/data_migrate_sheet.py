@@ -3,6 +3,7 @@ import json
 from frappe.utils.file_manager import get_file_path
 import frappe
 from business_catalyst.api import get_regional_head
+from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique
 columns_mapping = [
         {
         "ERP Column": "first_name",
@@ -161,72 +162,6 @@ def migrate_2_in_json():
             print(count)
             print(row.get("id"))
 
-def check_email_id_is_unique(row):
-    if row.get("email_id"):
-        # validate email is unique
-        if not frappe.db.get_single_value("CRM Settings", "allow_lead_duplication_based_on_emails"):
-            duplicate_leads = frappe.get_all(
-                "Lead", filters={"email_id": row.get("email_id")}
-            )
-            duplicate_leads = [
-                lead.name for lead in duplicate_leads
-            ]
-
-            if duplicate_leads:
-                return True
-        return False
-
-def validate_address(row):
-    if row.get("custom_location_name"):
-        state, district = frappe.db.get_value("Location Name", row.get("custom_location_name"), ['state','district'])
-        if (row.get("custom_state1")) and row.get("custom_state1") == "Maharshatra":
-            row.update({"custom_state1" : "Maharashatra"})
-        if row.get("custom_state1") != state or row.get("custom_district") != district:
-            row.update({"custom_state1" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'state')})
-            row.update({"custom_district" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'district')})
-        
-        row.update({"custom_state1" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'state')})
-    
-        row.update({"custom_district" : frappe.db.get_value("Location Name", row.get("custom_location_name"), 'district')})
-
-    if row.get("custom_state1"):
-        row.update({"custom_region" : frappe.db.get_value("State", row.get("custom_state1"), 'region')})
-    if row.get("custom_region"):
-        row.update({"custom_region_head" : get_regional_head(row.get("custom_region"))})
-    if row.get("custom_annual_turnover"):
-        if row.get("custom_annual_turnover") in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
-            row.update({ "custom_annual_turnover" : "Above 5Cr"})
-        if row.get("custom_annual_turnover") in ["50 lakhs - 1 Cr", "50 lakhs - 1Cr"]:
-            row.update({ "custom_annual_turnover" : "50L-1Cr"})
-        if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
-            row.update({ "custom_annual_turnover" : "10-30L"})
-        if row.get("custom_annual_turnover") in ["1 Cr - 5 Cr", " 1 Cr - 5 Cr"]:
-            row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
-    if row.get("custom_no_of_employees1"):
-        if row.get("custom_no_of_employees1") == "4 - 9":
-            row.update({ "custom_no_of_employees1" : "5-9" })
-        if row.get("custom_no_of_employees1") == "20 - 50":
-            row.update({ "custom_no_of_employees1" : "20-49" })
-        if row.get("custom_no_of_employees1") == "1 - 4":
-            row.update({ "custom_no_of_employees1" : "3-4" })
-        if row.get("custom_no_of_employees1") == "10 - 20":
-            row.update({ "custom_no_of_employees1" : "10-19" })
-    if row.get("custom_designation1"):
-        if row.get("custom_designation1") == "owner":
-            row.update({ "custom_designation1" : "Owner" })
-        if row.get("custom_designation1") in ["PROPRIETOR", "Properietor"]:
-            row.update({ "custom_designation1" : "Proprietor" })
-        if row.get("custom_designation1") in ["Designer, Founder"]:
-            row.update({ "custom_designation1" : "Founder" })
-        if row.get("custom_designation1") == "vikas Kumar":
-            row.update({ "custom_designation1" : "Employee" })
-    if row.get("gender") and row.get("gender") == "PNTS":
-        row.update({ "gender" : "Prefer not to say" })
-    if row.get("custom_predominant_trade_channel") and row.get("custom_predominant_trade_channel") == "General trade":
-        row.update({"custom_predominant_trade_channel" : "General Trade"})
-
-    return row
-
 
 def split_excel_file(input_file, output_file_prefix, rows_per_file):
     # Read the Excel file into a pandas DataFrame
@@ -265,6 +200,11 @@ def stop_duplicate_lead(row):
             condition += f" or mobile_no = '{row.get('phone')}'"
         else:
             condition += f" where mobile_no = '{row.get('phone')}'"
+    if row.get("mobile_no"):
+        if condition:
+            condition += f" or mobile_no = '{row.get('mobile_no')}'"
+        else:
+            condition += f" where mobile_no = '{row.get('mobile_no')}'"
     if condition:
         data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
         
