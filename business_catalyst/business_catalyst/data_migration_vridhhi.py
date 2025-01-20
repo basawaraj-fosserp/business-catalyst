@@ -113,7 +113,7 @@ def migrate_in_json():
                 })
                 if (d.get("ERP Column") == "custom_primary_email_id") and (row.get(d.get("Dwani Column")) == "rohit das"):
                     lead.update({
-                    'custom_primary_email_id' : "rohitdas199677@gmail.com"
+                    'custom_primary_email_id' : "rohitdas19967@gmail.com"
                     })
                 if (d.get("ERP Column") == "email_id") and (row.get(d.get("Dwani Column")) == "rohit das"):
                     lead.update({
