@@ -160,6 +160,10 @@ def migrate_in_json():
                         lead.update({
                             'custom_business_type1' : "Services"
                         })
+                if (d.get("ERP Column") == "predominant_channel_one") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
+                    lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
+                if (d.get("ERP Column") == "predominant_channel_one") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
+                    lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
                 lead.update( {"source" : "Prospera"} )
             lead.update({"doctype" : "Lead"})
             check_email = check_email_id_is_unique(lead)
@@ -252,3 +256,20 @@ def stop_duplicate_lead(row):
         
         if data and not frappe.session.user == "soundarya@fosscrm.com":
             return True
+
+def check_migrate_in_json():
+    filename = "output_file_part_1.xlsx"
+    init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
+
+    excel_file = init_path
+    sheet_name = "Sheet1"          
+
+    df = pd.read_excel(excel_file, sheet_name=sheet_name)
+
+    json_data = df.to_json(orient='records', indent=4)
+    json_data = json.loads(json_data)
+
+    fail_lead = []
+
+    for row in json_data:
+        print(row.get("predominant_channel_one"))
