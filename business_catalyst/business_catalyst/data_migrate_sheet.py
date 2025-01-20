@@ -199,7 +199,7 @@ def validate_address(row):
             row.update({ "custom_annual_turnover" : "50L-1Cr"})
         if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
             row.update({ "custom_annual_turnover" : "10-30L"})
-        if row.get("custom_annual_turnover") == "1 Cr - 5 Cr":
+        if row.get("custom_annual_turnover") in ["1 Cr - 5 Cr", " 1 Cr - 5 Cr"]:
             row.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
     if row.get("custom_no_of_employees1"):
         if row.get("custom_no_of_employees1") == "4 - 9":
@@ -286,3 +286,4 @@ def check_migrate_in_json():
         if row.get("no_of_workers") not in fail_lead:
             fail_lead.append(row.get("no_of_workers"))
     print(fail_lead)
+from business_catalyst.business_catalyst.data_migrate_sheet import migrate_2_in_json
