@@ -153,7 +153,7 @@ def migrate_in_json():
                 lead.update( {"source" : "Prospera"} )
             lead.update({"doctype" : "Lead"})
             doc = frappe.get_doc(lead)
-            doc.insert()
+            doc.insert(ignore_mandatory=True)
             frappe.db.commit()
             count +=1
             print(count)
