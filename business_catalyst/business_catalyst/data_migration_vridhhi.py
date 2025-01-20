@@ -153,6 +153,7 @@ def migrate_in_json():
                         })
                 lead.update( {"source" : "Prospera"} )
             lead.update({"doctype" : "Lead"})
+            lead = validate_address(lead)
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
@@ -175,6 +176,7 @@ def validate_address(row):
         row.update({"custom_region" : frappe.db.get_value("State", self.custom_state1, 'region')})
     if row.get("custom_region"):
         row.update({"custom_region_head" : get_regional_head(row.get("custom_region"))})
+    return row
        
 
 
