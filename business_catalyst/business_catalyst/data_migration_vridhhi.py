@@ -160,6 +160,16 @@ def migrate_in_json():
                         lead.update({
                             'custom_business_type1' : "Services"
                         })
+                if d.get("ERP Column") == "custom_annual_turnover":
+                    if row.get(d.get("Dwani Column")) in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
+                        lead.update({ "custom_annual_turnover" : "Above 5Cr"})
+                    if row.get(d.get("Dwani Column")) == "50 lakhs - 1 Cr":
+                        lead.update({ "custom_annual_turnover" : "50L-1Cr"})
+                    if row.get(d.get("Dwani Column")) in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
+                        lead.update({ "custom_annual_turnover" : "10-30L"})
+                    if row.get(d.get("Dwani Column")) == "1 Cr - 5 Cr":
+                        lead.update({ "custom_annual_turnover" : "1Cr-3Cr"})
+
                 if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
                     lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
                 if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
