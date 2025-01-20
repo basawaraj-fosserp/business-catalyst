@@ -167,7 +167,7 @@ def migrate_in_json():
                         lead.update({ "custom_annual_turnover" : "50L-1Cr"})
                     if row.get(d.get("Dwani Column")) in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
                         lead.update({ "custom_annual_turnover" : "10-30L"})
-                    if row.get(d.get("Dwani Column")) == "1 Cr - 5 Cr":
+                    if row.get(d.get("Dwani Column")) in  ["1 Cr - 5 Cr" ," 1 Cr - 5 Cr" ]:
                         lead.update({ "custom_annual_turnover" : "1Cr-3Cr"})
 
                 if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
