@@ -3,7 +3,7 @@ import json
 from frappe.utils.file_manager import get_file_path
 import frappe
 from business_catalyst.api import get_regional_head
-from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique
+from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique, stop_duplicate_lead
 columns_mapping = [
         {
         "ERP Column": "first_name",
@@ -188,28 +188,7 @@ input_file = init_path
 output_file_prefix = "output_file"  
 rows_per_file = 50000  
 
-# Call the function
 
-def stop_duplicate_lead(row):
-
-    condition = ''
-    if row.get("custom_primary_email_id"):
-        condition = f"where custom_primary_email_id = '{ row.get('custom_primary_email_id') }'"
-    if row.get("phone"):
-        if condition:
-            condition += f" or mobile_no = '{row.get('phone')}'"
-        else:
-            condition += f" where mobile_no = '{row.get('phone')}'"
-    if row.get("mobile_no"):
-        if condition:
-            condition += f" or mobile_no = '{row.get('mobile_no')}'"
-        else:
-            condition += f" where mobile_no = '{row.get('mobile_no')}'"
-    if condition:
-        data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
-        
-        if data and not frappe.session.user == "soundarya@fosscrm.com":
-            return True
 
 def check_migrate_in_json():
     filename = "output_file_part_1.xlsx"

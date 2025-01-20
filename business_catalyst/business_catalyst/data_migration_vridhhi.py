@@ -99,7 +99,7 @@ def migrate_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
-    for row in json_data[3270:]:
+    for row in json_data[3630:]:
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
@@ -273,3 +273,24 @@ def check_migrate_in_json():
         if row.get("no_of_workers") not in fail_lead:
             fail_lead.append(row.get("no_of_workers"))
     print(fail_lead)
+
+def stop_duplicate_lead(row):
+
+    condition = ''
+    if row.get("custom_primary_email_id"):
+        condition = f"where custom_primary_email_id = '{ row.get('custom_primary_email_id') }'"
+    if row.get("phone"):
+        if condition:
+            condition += f" or mobile_no = '{row.get('phone')}'"
+        else:
+            condition += f" where mobile_no = '{row.get('phone')}'"
+    if row.get("mobile_no"):
+        if condition:
+            condition += f" or mobile_no = '{row.get('mobile_no')}'"
+        else:
+            condition += f" where mobile_no = '{row.get('mobile_no')}'"
+    if condition:
+        data = frappe.db.sql(f"Select name From `tabLead` {condition}",as_dict = 1)
+        
+        if data and not frappe.session.user == "soundarya@fosscrm.com":
+            return True
