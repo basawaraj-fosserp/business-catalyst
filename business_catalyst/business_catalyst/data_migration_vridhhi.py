@@ -204,7 +204,7 @@ def validate_address(row):
     if row.get("custom_annual_turnover"):
         if row.get("custom_annual_turnover") in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
             row.update({ "custom_annual_turnover" : "Above 5Cr"})
-        if row.get("custom_annual_turnover") in ["50 lakhs - 1 Cr", "50 lakhs - 1Cr"]:
+        if row.get("custom_annual_turnover") in ["50 lakhs - 1 Cr", "50 lakhs - 1Cr", "50 lakhs - 1 Cr'"]:
             row.update({ "custom_annual_turnover" : "50L-1Cr"})
         if row.get("custom_annual_turnover") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
             row.update({ "custom_annual_turnover" : "10-30L"})
