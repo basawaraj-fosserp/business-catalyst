@@ -151,9 +151,6 @@ def migrate_in_json():
                         lead.update({
                             'custom_business_type1' : "Services"
                         })
-
-                if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
-                    lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
                 if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
                     lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
                 lead.update( {"source" : "Prospera"} )
@@ -232,6 +229,8 @@ def validate_address(row):
         row.update({ "gender" : "Prefer not to say" })
     if row.get("custom_predominant_trade_channel") and row.get("custom_predominant_trade_channel") == "General trade":
         row.update({"custom_predominant_trade_channel" : "General Trade"})
+    if row.get("custom_predominant_trade_channel") and row.get("custom_predominant_trade_channel") == "MODERN TRADE":
+        row.update({"custom_predominant_trade_channel" : "Modern Trade"})
     if row.get("custom_primary_email_id")=="hanumanaligarh@gmailcom" or row.get("email_id")=="hanumanaligarh@gmailcom":
         row.update({"custom_primary_email_id" : "hanumanaligarh@gmail.com", "email_id" : "hanumanaligarh@gmail.com"})
     if row.get("custom_secondary_email_id") == "hanumanaligarh@gmailcom":
