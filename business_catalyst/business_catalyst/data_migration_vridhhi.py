@@ -136,7 +136,7 @@ def migrate_in_json():
                         })  
                 if (d.get("ERP Column") == "phone") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","").replace(" ","").split(",")[0]
+                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","").replace(" ","").split(",")[0][0:13]
                         })
                 if (d.get("ERP Column") == "custom_business_type1"):
                     if row.get(d.get("Dwani Column")) == "Trader":
