@@ -238,7 +238,7 @@ def validate_address(row):
     if row.get("mobile_no"):
         row.update({"mobile_no" : row.get("mobile_no").replace("-","").replace(" ","")})
     if row.get("phone"):
-        row.update({"phone" : row.get("phone").replace("-","").replace(" ","").split(",")[0]})
+        row.update({"phone" : row.get("phone").replace("-","").replace(" ","").replace(" ","").split(",")[0]})
     return row
 
 
