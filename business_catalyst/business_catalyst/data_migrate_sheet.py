@@ -125,11 +125,11 @@ def migrate_2_in_json():
                     })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'mobile_no' : str(row.get(d.get("Dwani Column")))
+                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ",'')
                         })  
                 if (d.get("ERP Column") == "phone") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'phone' : str(row.get(d.get("Dwani Column")))
+                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ",'').split(",")
                         })
                 if (d.get("ERP Column") == "custom_business_type1"):
                     if row.get(d.get("Dwani Column")) == "Trader":
@@ -208,4 +208,3 @@ def check_migrate_in_json():
         if row.get("no_of_workers") not in fail_lead:
             fail_lead.append(row.get("no_of_workers"))
     print(fail_lead)
-from business_catalyst.business_catalyst.data_migrate_sheet import migrate_2_in_json
