@@ -158,9 +158,9 @@ def migrate_2_in_json():
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
             count +=1
-            frappe.db.commit()
             print(count)
             print(row.get("id"))
+            frappe.db.commit()
 
 
 def split_excel_file(input_file, output_file_prefix, rows_per_file):
