@@ -236,10 +236,10 @@ def validate_address(row):
     if row.get("custom_secondary_email_id") == "hanumanaligarh@gmailcom":
         row.update({"custom_secondary_email_id" : "hanumanaligarh@gmail.com"})
     if row.get("mobile_no"):
-        row.update({"mobile_no" : str(row.get("mobile_no")).replace("-","").replace(" ","").replace("(O)","")})
+        row.update({"mobile_no" : str(row.get("mobile_no")).replace("-","").replace(":","").replace(" ","").replace("(O)","")})
     if row.get("phone"):
         phone = str(row.get("phone"))
-        row.update({"phone" : str(phone).replace("-","").replace(" ","").replace("(O)","").replace(" ","").split(",")[0]})
+        row.update({"phone" : str(phone).replace("-","").replace(" ","").replace(":","").replace("(O)","").replace(" ","").split(",")[0]})
     return row
 
 
