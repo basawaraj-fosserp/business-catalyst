@@ -130,6 +130,9 @@ doc_events = {
 			"business_catalyst.api.validate_address",
 			"business_catalyst.api.set_assignment_date",
 			"business_catalyst.api.stop_duplicate_lead"
+		],
+        "before_validate" : [
+            "business_catalyst.business_catalyst.docevents.lead.before_validate"
 		]
 	},
 	"Project": {
