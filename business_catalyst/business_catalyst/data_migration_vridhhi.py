@@ -159,6 +159,8 @@ def migrate_in_json():
             if check_email:
                 continue
             lead = validate_address(lead)
+            if not lead.get("first_name") and not lead.get("company_name") and not lead.get("email_id"):
+                continue
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
