@@ -149,10 +149,7 @@ def migrate_in_json():
                 lead.update({"company_name" : "unknown"})
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
-            if count % 10 == 0:
-                frappe.db.commit()
-            count +=1
-            print(count)
+            frappe.db.commit()
             print(row.get("id"))
 
 def check_email_id_is_unique(row):

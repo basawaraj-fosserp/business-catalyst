@@ -153,10 +153,7 @@ def migrate_2_in_json():
             doc = frappe.get_doc(lead)
             print(row.get("id"))
             doc.insert(ignore_mandatory=True)
-            count +=1
-            print(count)
-            if count % 10 == 0:
-                frappe.db.commit()
+            frappe.db.commit()
             
 
 
