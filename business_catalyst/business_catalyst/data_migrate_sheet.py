@@ -163,7 +163,9 @@ def migrate_2_in_json():
             doc.insert(ignore_mandatory=True)
             count +=1
             print(count)
-            frappe.db.commit()
+            if count % 10 == 0:
+                frappe.db.commit()
+            
 
 
 def split_excel_file(input_file, output_file_prefix, rows_per_file):
