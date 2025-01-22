@@ -125,11 +125,11 @@ def migrate_2_in_json():
                     })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ",'')
+                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","")
                         })  
                 if (d.get("ERP Column") == "phone") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ",'').split(",")[0]
+                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","").split(",")[0]
                         })
                 if (d.get("ERP Column") == "custom_business_type1"):
                     if row.get(d.get("Dwani Column")) == "Trader":
