@@ -156,10 +156,10 @@ def migrate_2_in_json():
                 continue
             lead = validate_address(lead)
             doc = frappe.get_doc(lead)
+            print(row.get("id"))
             doc.insert(ignore_mandatory=True)
             count +=1
             print(count)
-            print(row.get("id"))
             frappe.db.commit()
 
 
