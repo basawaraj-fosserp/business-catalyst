@@ -160,7 +160,8 @@ def migrate_in_json():
                 continue
             lead = validate_address(lead)
             if not lead.get("first_name") and not lead.get("company_name") and not lead.get("email_id"):
-                continue
+                lead.update({"first_name" : "unknown"})
+                lead.update({"company_name" : "unknown"})
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
