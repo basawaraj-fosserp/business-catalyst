@@ -152,7 +152,7 @@ def migrate_sheet5_in_json():
                 lead.update({"company_name" : "unknown"})
             doc = frappe.get_doc(lead)
             print(row.get("id"))
-            print("sheet3")
+            print("sheet5")
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
             
