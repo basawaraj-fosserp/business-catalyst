@@ -117,7 +117,7 @@ def migrate_2_in_json():
                     })
                 if (d.get("ERP Column") == "first_name") and (row.get(d.get("Dwani Column")) == "Manager"):
                     lead.update({
-                    'first_name' : row.get("business_entity")
+                    'first_name' : "Manager {0}".format(row.get("business_entity"))
                     })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
