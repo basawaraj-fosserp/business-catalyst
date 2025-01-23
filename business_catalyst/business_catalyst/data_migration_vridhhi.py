@@ -150,6 +150,7 @@ def migrate_in_json():
             doc = frappe.get_doc(lead)
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
+            print("sheet4")
             print(row.get("id"))
 
 def check_email_id_is_unique(row):
