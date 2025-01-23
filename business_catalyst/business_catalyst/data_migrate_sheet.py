@@ -150,6 +150,8 @@ def migrate_2_in_json():
             if not lead.get("first_name") and not lead.get("company_name") and not lead.get("email_id"):
                 lead.update({"first_name" : "unknown"})
                 lead.update({"company_name" : "unknown"})
+            if lead.get("first_name") == "Manager":
+                lead.update({"first_name" : f"Manager ({row.get(company_name)})"})
             doc = frappe.get_doc(lead)
             print(row.get("id"))
             print("sheet3")
