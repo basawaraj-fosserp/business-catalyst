@@ -115,6 +115,10 @@ def migrate_2_in_json():
                     lead.update({
                     'gender' : "Other"
                     })
+                if (d.get("ERP Column") == "first_name") and (row.get(d.get("Dwani Column")) == "Manager"):
+                    lead.update({
+                    'first_name' : row.get("business_entity")
+                    })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
                             'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","")
