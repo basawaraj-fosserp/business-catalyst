@@ -148,10 +148,10 @@ def migrate_in_json():
                 lead.update({"first_name" : "unknown"})
                 lead.update({"company_name" : "unknown"})
             doc = frappe.get_doc(lead)
+            print(row.get("id"))
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
             print("sheet4")
-            print(row.get("id"))
 
 def check_email_id_is_unique(row):
     if row.get("email_id"):
