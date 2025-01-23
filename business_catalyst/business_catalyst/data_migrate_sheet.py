@@ -87,7 +87,7 @@ columns_mapping = [
         }
         
     ]
-def migrate_2_in_json():
+def migrate_6_in_json():
     filename = "output_file_part_6.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
