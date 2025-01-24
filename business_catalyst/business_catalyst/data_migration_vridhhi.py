@@ -117,15 +117,15 @@ def migrate_in_json():
                     })
                 if (d.get("ERP Column") == "email_id"):
                     lead.update({
-                    'email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","")
+                    'email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","") if row.get(d.get("Dwani Column")) else ''
                     })
                 if (d.get("ERP Column") == "custom_primary_email_id"):
                     lead.update({
-                    'custom_primary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","")
+                    'custom_primary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","") if row.get(d.get("Dwani Column")) else ''
                     })
                 if (d.get("ERP Column") == "custom_secondary_email_id"):
                     lead.update({
-                    'custom_secondary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","")
+                    'custom_secondary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","") if row.get(d.get("Dwani Column")) else ''
                     })
                 if (d.get("ERP Column") == "first_name") and (row.get(d.get("Dwani Column")) == "Manager"):
                     lead.update({
