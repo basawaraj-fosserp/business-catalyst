@@ -115,6 +115,18 @@ def migrate_in_json():
                     lead.update({
                     'gender' : "Other"
                     })
+                if (d.get("ERP Column") == "email_id"):
+                    lead.update({
+                    'email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","")
+                    })
+                if (d.get("ERP Column") == "custom_primary_email_id"):
+                    lead.update({
+                    'custom_primary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","")
+                    })
+                if (d.get("ERP Column") == "custom_secondary_email_id"):
+                    lead.update({
+                    'custom_secondary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","")
+                    })
                 if (d.get("ERP Column") == "first_name") and (row.get(d.get("Dwani Column")) == "Manager"):
                     lead.update({
                     'first_name' : "Manager {0}".format(row.get("business_entity"))
