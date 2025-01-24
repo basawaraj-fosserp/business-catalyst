@@ -295,7 +295,7 @@ def check_migrate_in_json():
 def stop_duplicate_lead(row):
 
     condition = ''
-    if row.get("custom_primary_email_id"):
+    if row.get("email"):
         condition = f"where custom_primary_email_id = '{ row.get('email') }'"
     
     if row.get("phone"):
