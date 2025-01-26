@@ -100,8 +100,9 @@ def migrate_sheet5_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
+    dwani_id = frappe.db.get_list("Lead", fields = ["custom_dwani_erp_id"], pluck="custom_dwani_erp_id")
     for row in json_data:
-        if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
+        if row.get("id") not in dwani_id:
             error = stop_duplicate_lead(row)
             if error:
                 fail_lead.append({row.get("id") : "Dupricate lead"})
