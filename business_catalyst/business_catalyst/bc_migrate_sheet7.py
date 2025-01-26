@@ -4,7 +4,7 @@ from frappe.utils.file_manager import get_file_path
 import frappe
 from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique, stop_duplicate_lead
 
-def migrate_in_json():
+def migrate_7_in_json():
     filename = "output_file_part_8.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
