@@ -167,7 +167,7 @@ def migrate_6_in_json():
                 lead.update({"first_name" : "unknown"})
                 lead.update({"company_name" : "unknown"})
             if lead.get("first_name") == "Manager":
-                lead.update({"first_name" : f"Manager ({row.get(company_name)})"})
+                lead.update({"first_name" : f"Manager ({row.get('company_name')})"})
             doc = frappe.get_doc(lead)
             count+=1
             print(str(row.get("id")) +" sheet6" + f" {count}")
