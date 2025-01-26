@@ -100,7 +100,7 @@ def migrate_sheet5_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
-    for row in json_data[44310:]:
+    for row in json_data[48065:]:
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
@@ -168,7 +168,7 @@ def migrate_sheet5_in_json():
                 lead.update({"company_name" : "unknown"})
             doc = frappe.get_doc(lead)
             count+=1
-            print(str(row.get("id")) +" sheet6" + f" {count}")
+            print(str(row.get("id")) +" sheet5" + f" {count}")
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
             
