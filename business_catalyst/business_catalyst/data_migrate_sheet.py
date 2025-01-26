@@ -100,74 +100,124 @@ def migrate_6_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
-    for row in json_data[6415:]:
+    for row in json_data[8760:]:
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
                 fail_lead.append({row.get("id") : "Dupricate lead"})
                 continue
             lead = {}
-            for d in columns_mapping:
+            if not lead.get("first_name") and not lead.get("company_name") and not lead.get("email_id"):
+                lead.update({"first_name" : "unknown"})
+                lead.update({"company_name" : "unknown"})
+            if row.get('first_name') == "Manager":
                 lead.update({
-                    d.get("ERP Column") : row.get(d.get("Dwani Column"))
+                'first_name' : "Manager {0}".format(row.get("business_entity")), "last_name" : row.get("last_name")
                 })
-                if (d.get("ERP Column") == "gender") and (row.get(d.get("Dwani Column")) == "Others"):
-                    lead.update({
-                    'gender' : "Other"
-                    })
-                if (d.get("ERP Column") == "email_id"):
-                    lead.update({
-                    'email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","") if row.get(d.get("Dwani Column")) else ''
-                    })
-                if (d.get("ERP Column") == "custom_primary_email_id"):
-                    lead.update({
-                    'custom_primary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","") if row.get(d.get("Dwani Column")) else ''
-                    })
-                if (d.get("ERP Column") == "custom_secondary_email_id"):
-                    lead.update({
-                    'custom_secondary_email_id' : str(row.get(d.get("Dwani Column"))).replace(" ","") if row.get(d.get("Dwani Column")) else ''
-                    })
-                if (d.get("ERP Column") == "first_name") and (row.get(d.get("Dwani Column")) == "Manager"):
-                    lead.update({
-                    'first_name' : "Manager {0}".format(row.get("business_entity"))
-                    })
-                if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
-                    lead.update({
-                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(":","").replace(" ","").replace("(O)","")[0:15]
-                        })  
-                if (d.get("ERP Column") == "phone") and row.get(d.get("Dwani Column")):
-                    lead.update({
-                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace("(O)","").replace(" ","").replace(" ","").split(",")[0][0:15]
-                        })
-                if (d.get("ERP Column") == "custom_business_type1"):
-                    if row.get(d.get("Dwani Column")) == "Trader":
-                        lead.update({
-                            'custom_business_type1' : "Trading"
-                        })
-                    if row.get(d.get("Dwani Column")) == "Manufacturer":
-                        lead.update({
-                            'custom_business_type1' : "Manufacturing"
-                        })
-                    if row.get(d.get("Dwani Column")) == "Service Provider":
-                        lead.update({
-                            'custom_business_type1' : "Services"
-                        })
+                lead
+            else:
+                lead.update({
+                    "first_name" : row.get("first_name"), "last_name" : row.get("last_name")
+                })
+            lead.update({
+                            'mobile_no' : str(row.get("phone")).replace("-","").replace(":","").replace(" ","").replace("(O)","")[0:15] if row.get("phone") else '',
+                            'phone' : str(row.get("secondary_phones")).replace("-","").replace("(O)","").replace(" ","").replace(" ","").split(",")[0][0:15] if row.get("secondary_phones") else '',
+                            'custom_primary_email_id' : str(row.get("email")).replace(" ","") if row.get("email") else '',
+                            'email_id' : str(row.get("email")).replace(" ","") if row.get("email") else '',
+                            'custom_secondary_email_id' : str(row.get("secondary_emails")).replace(" ","") if row.get("secondary_emails") else '',
+                            "source" : "Prospera",
+                            "doctype" : "Lead",
+                            "custom_district" : row.get("district"),
+                            "custom_location_name" : row.get("location"),
+                            "custom_state1" : row.get("state"),
+                            "company_name" : row.get("business_entity"),
+                            "custom_dwani_erp_id" : row.get("id"),
 
-                if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
+                        }) 
+
+            if row.get("gender") == "Others":
+                lead.update({
+                    'gender' : "Other"
+                })
+            elif row.get("gender") == "PNTS":
+                lead.update({
+                    'gender' : "Prefer not to say"
+                })
+            else:
+                lead.update({
+                    "gender" : row.get("gender")
+                })
+            if row.get("business_type") == "Trader":
+                lead.update({
+                        'custom_business_type1' : "Trading"
+                    })
+            elif row.get("business_type") == "Manufacturer":
+                lead.update({
+                        'custom_business_type1' : "Manufacturing"
+                    })
+            elif row.get("business_type") == "Service Provider":
+                lead.update({
+                    'custom_business_type1' : "Services"
+                    })
+            else:
+                lead.update({
+                    'custom_business_type1' : row.get("business_type")
+                    })
+            if row.get("predominant_channel_one"):
+                if row.get("predominant_channel_one") in ["eCommerce", "e Commerce"]:
                     lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
-                if (d.get("ERP Column") == "custom_predominant_trade_channel") and row.get(d.get("Dwani Column")) in ["eCommerce", "e Commerce"]:
-                    lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
-                lead.update( {"source" : "Prospera"} )
-            lead.update({"doctype" : "Lead"})
+                elif row.get("predominant_channel_one") == "General trade":
+                    lead.update({"custom_predominant_trade_channel" : "General Trade"})
+                elif row.get("predominant_channel_one") == "MODERN TRADE":
+                    lead.update({"custom_predominant_trade_channel" : "Modern Trade"})
+                else: 
+                    lead.update({
+                            "custom_predominant_trade_channel" : row.get("predominant_channel_one")
+                    })
+            
+            if row.get("revenue_ranges"):
+                if row.get("revenue_ranges") in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
+                    lead.update({ "custom_annual_turnover" : "Above 5Cr"})
+                elif row.get("revenue_ranges") in ["50 lakhs - 1 Cr", "50 lakhs - 1Cr", "50 lakhs - 1 Cr'"]:
+                    lead.update({ "custom_annual_turnover" : "50L-1Cr"})
+                elif row.get("revenue_ranges") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
+                    lead.update({ "custom_annual_turnover" : "10-30L"})
+                elif row.get("revenue_ranges") in ["1 Cr - 5 Cr", " 1 Cr - 5 Cr"]:
+                    lead.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
+                else:
+                    lead.update({
+                        "custom_annual_turnover" : row.get("revenue_ranges")
+                    })
+            if row.get("designation"):
+                if row.get("designation") == "owner":
+                    lead.update({ "custom_designation1" : "Owner" })
+                elif row.get("designation") in ["PROPRIETOR", "Properietor"]:
+                    lead.update({ "custom_designation1" : "Proprietor" })
+                elif row.get("designation") in ["Designer, Founder"]:
+                    lead.update({ "custom_designation1" : "Founder" })
+                elif row.get("designation") == "vikas Kumar":
+                    lead.update({ "custom_designation1" : "Employee" })
+                else:
+                    lead.update({
+                        "custom_designation1" : row.get("designation")
+                    })
+                
+            if row.get("no_of_workers"):
+                if row.get("no_of_workers") == "4 - 9":
+                    row.update({ "custom_no_of_employees1" : "5-9" })
+                elif row.get("no_of_workers") == "20 - 50":
+                    row.update({ "custom_no_of_employees1" : "20-49" })
+                elif row.get("no_of_workers") == "1 - 4":
+                    row.update({ "custom_no_of_employees1" : "3-4" })
+                elif row.get("no_of_workers") == "10 - 20":
+                    row.update({ "custom_no_of_employees1" : "10-19" })
+                else:
+                    row.update({ "custom_no_of_employees1" : row.get("no_of_workers") })
+ 
             check_email = check_email_id_is_unique(lead)
             if check_email:
                 continue
             lead = validate_address(lead)
-            if not lead.get("first_name") and not lead.get("company_name") and not lead.get("email_id"):
-                lead.update({"first_name" : "unknown"})
-                lead.update({"company_name" : "unknown"})
-            if lead.get("first_name") == "Manager":
-                lead.update({"first_name" : f"Manager ({row.get('company_name')})"})
             doc = frappe.get_doc(lead)
             count+=1
             print(str(row.get("id")) +" sheet6" + f" {count}")
