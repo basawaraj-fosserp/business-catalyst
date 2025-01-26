@@ -88,7 +88,7 @@ columns_mapping = [
     ]
 
 def migrate_in_json():
-    filename = "output_file_part_4.xlsx"
+    filename = "output_file_part_8.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
     excel_file = init_path
@@ -100,7 +100,7 @@ def migrate_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
-    for row in json_data[49740:]:
+    for row in json_data:
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
@@ -167,7 +167,7 @@ def migrate_in_json():
             print(row.get("id"))
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
-            print("sheet4")
+            print("sheet8")
 
 def check_email_id_is_unique(row):
     if row.get("email_id"):
