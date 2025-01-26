@@ -133,7 +133,7 @@ def migrate_in_json():
                     })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","").replace(" ","")[0:15]
+                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(":","").replace(" ","").replace("(O)","")[0:15]
                         })  
                 if (d.get("ERP Column") == "phone") and row.get(d.get("Dwani Column")):
                     lead.update({
@@ -238,11 +238,6 @@ def validate_address(row):
         row.update({"custom_primary_email_id" : "hanumanaligarh@gmail.com", "email_id" : "hanumanaligarh@gmail.com"})
     if row.get("custom_secondary_email_id") == "hanumanaligarh@gmailcom":
         row.update({"custom_secondary_email_id" : "hanumanaligarh@gmail.com"})
-    if row.get("mobile_no"):
-        row.update({"mobile_no" : str(row.get("mobile_no")).replace("-","").replace(":","").replace(" ","").replace("(O)","")})
-    if row.get("phone"):
-        phone = str(row.get("phone"))
-        row.update({"phone" : str(phone).replace("-","").replace(" ","").replace(":","").replace("(O)","").replace(" ","").split(",")[0]})
     return row
 
 

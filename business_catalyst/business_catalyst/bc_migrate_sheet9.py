@@ -133,11 +133,11 @@ def migrate_sheet7_in_json():
                     })
                 if (d.get("ERP Column") == "mobile_no") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","")
+                            'mobile_no' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(":","").replace(" ","").replace("(O)","")[0:15]
                         })  
                 if (d.get("ERP Column") == "phone") and row.get(d.get("Dwani Column")):
                     lead.update({
-                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace(" ","").split(",")[0]
+                            'phone' : str(row.get(d.get("Dwani Column"))).replace("-","").replace("(O)","").replace(" ","").replace(" ","").split(",")[0][0:15]
                         })
                 if (d.get("ERP Column") == "custom_business_type1"):
                     if row.get(d.get("Dwani Column")) == "Trader":
