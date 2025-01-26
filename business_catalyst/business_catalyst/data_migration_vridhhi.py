@@ -49,7 +49,7 @@ def migrate_in_json():
                             "custom_location_name" : row.get("location"),
                             "custom_state1" : row.get("state"),
                             "company_name" : row.get("business_entity"),
-                            "custom_dwani_lead_id" : row.get("id"),
+                            "custom_dwani_erp_id" : row.get("id"),
 
                         }) 
 
