@@ -87,7 +87,7 @@ columns_mapping = [
         }
         
     ]
-def migrate_sheet5_in_json():
+def migrate_sheet7_in_json():
     filename = "output_file_part_7.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
@@ -168,7 +168,7 @@ def migrate_sheet5_in_json():
                 lead.update({"company_name" : "unknown"})
             doc = frappe.get_doc(lead)
             print(row.get("id"))
-            print("sheet5")
+            print("sheet7")
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
             
