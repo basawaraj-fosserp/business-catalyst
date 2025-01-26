@@ -38,8 +38,8 @@ def migrate_in_json():
                     "first_name" : row.get("first_name"), "last_name" : row.get("last_name")
                 })
             lead.update({
-                            'mobile_no' : str(row.get("phone")).replace("-","").replace(":","").replace(" ","").replace("(O)","")[0:15],
-                            'phone' : str(row.get("secondary_phones")).replace("-","").replace("(O)","").replace(" ","").replace(" ","").split(",")[0][0:15],
+                            'mobile_no' : str(row.get("phone")).replace("-","").replace(":","").replace(" ","").replace("(O)","")[0:15] if row.get("phone") else '',
+                            'phone' : str(row.get("secondary_phones")).replace("-","").replace("(O)","").replace(" ","").replace(" ","").split(",")[0][0:15] if row.get("secondary_phones") else '',
                             'custom_primary_email_id' : str(row.get("email")).replace(" ","") if row.get("email") else '',
                             'email_id' : str(row.get("email")).replace(" ","") if row.get("email") else '',
                             'custom_secondary_email_id' : str(row.get("secondary_emails")).replace(" ","") if row.get("secondary_emails") else '',
