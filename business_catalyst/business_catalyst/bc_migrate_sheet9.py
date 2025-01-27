@@ -5,6 +5,7 @@ import frappe
 from business_catalyst.api import get_regional_head
 from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique, stop_duplicate_lead
 
+wrong_email =[]
 def migrate_9_in_json():
     filename = "output_file_part_9.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
@@ -190,3 +191,22 @@ def check_migrate_in_json():
         if row.get("no_of_workers") not in fail_lead:
             fail_lead.append(row.get("no_of_workers"))
     print(fail_lead)
+
+from frappe.utils import validate_email_address
+wrong_email =[]
+def validate_email_id():
+    filename = "output_file_part_9.xlsx"
+    init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
+
+    excel_file = init_path
+    sheet_name = "Sheet1"          
+
+    df = pd.read_excel(excel_file, sheet_name=sheet_name)
+
+    json_data = df.to_json(orient='records', indent=4)
+    json_data = json.loads(json_data)
+    for row in json_data:
+        if row.get("email"):
+            validate = validate_email_address(row.get("email"), False)
+            if not validate:
+                wrong_email.append({"name" : row.get("id"),"email" : row.get("email")})
