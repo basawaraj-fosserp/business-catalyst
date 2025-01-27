@@ -106,7 +106,7 @@ def migrate_7_in_json():
             count+=1
             print(str(row.get("id")) +" sheet7" + f" {count}")
             doc.insert(ignore_mandatory=True)
-            
+            frappe.db.commit()
 
 
 
