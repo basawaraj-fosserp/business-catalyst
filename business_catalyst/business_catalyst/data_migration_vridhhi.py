@@ -236,3 +236,23 @@ def stop_duplicate_lead(row):
         
         if data:
             return True
+    
+from frappe.utils import validate_email_address
+wrong_email =[]
+def validate_email_id():
+    filename = "output_file_part_8.xlsx"
+    init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
+
+    excel_file = init_path
+    sheet_name = "Sheet1"          
+
+    df = pd.read_excel(excel_file, sheet_name=sheet_name)
+
+    json_data = df.to_json(orient='records', indent=4)
+    json_data = json.loads(json_data)
+    for row in json_data:
+        if row.get("email"):
+            validate = validate_email_address(row.get("email"), False)
+            if not validate:
+                wrong_email.append({"name" : row.get("id"),"email" : row.get("email")})
+    print(wrong_email)
