@@ -49,28 +49,62 @@ def migrate_7_in_json():
                             "custom_state1" : row.get("state"),
                             "company_name" : row.get("business_entity"),
                             "custom_dwani_erp_id" : row.get("id"),
-                            "gender" : row.get("gender"),
-                            'custom_business_type1' : row.get("business_type"),
-                            "custom_predominant_trade_channel" : row.get("predominant_channel_one"),
-                            "custom_annual_turnover" : row.get("revenue_ranges")
 
                         }) 
 
-           
+            if row.get("gender") == "Others":
+                lead.update({
+                    'gender' : "Other"
+                })
+            elif row.get("gender") == "PNTS":
+                lead.update({
+                    'gender' : "Prefer not to say"
+                })
+            else:
+                lead.update({
+                    "gender" : row.get("gender")
+                })
+            if row.get("business_type") == "Trader":
+                lead.update({
+                        'custom_business_type1' : "Trading"
+                    })
+            elif row.get("business_type") == "Manufacturer":
+                lead.update({
+                        'custom_business_type1' : "Manufacturing"
+                    })
+            elif row.get("business_type") == "Service Provider":
+                lead.update({
+                    'custom_business_type1' : "Services"
+                    })
+            else:
+                lead.update({
+                    'custom_business_type1' : row.get("business_type")
+                    })
+            if row.get("predominant_channel_one"):
+                if row.get("predominant_channel_one") in ["eCommerce", "e Commerce"]:
+                    lead.update({"custom_predominant_trade_channel" : "E-Commerce"})
+                elif row.get("predominant_channel_one") == "General trade":
+                    lead.update({"custom_predominant_trade_channel" : "General Trade"})
+                elif row.get("predominant_channel_one") == "MODERN TRADE":
+                    lead.update({"custom_predominant_trade_channel" : "Modern Trade"})
+                else: 
+                    lead.update({
+                            "custom_predominant_trade_channel" : row.get("predominant_channel_one")
+                    })
             
-            # if row.get("revenue_ranges"):
-            #     if row.get("revenue_ranges") in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
-            #         lead.update({ "custom_annual_turnover" : "Above 5Cr"})
-            #     elif row.get("revenue_ranges") in ["50 lakhs - 1 Cr", "50 lakhs - 1Cr", "50 lakhs - 1 Cr'"]:
-            #         lead.update({ "custom_annual_turnover" : "50L-1Cr"})
-            #     elif row.get("revenue_ranges") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
-            #         lead.update({ "custom_annual_turnover" : "10-30L"})
-            #     elif row.get("revenue_ranges") in ["1 Cr - 5 Cr", " 1 Cr - 5 Cr"]:
-            #         lead.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
-            #     else:
-            #         lead.update({
-                        
-            #         })
+            if row.get("revenue_ranges"):
+                if row.get("revenue_ranges") in [" 5 Cr - 10 Cr", "5 Cr - 10 Cr", '10 Cr - 20 Cr', '20 Cr - 50 Cr', '20 Over 50 Cr']:
+                    lead.update({ "custom_annual_turnover" : "Above 5Cr"})
+                elif row.get("revenue_ranges") in ["50 lakhs - 1 Cr", "50 lakhs - 1Cr", "50 lakhs - 1 Cr'"]:
+                    lead.update({ "custom_annual_turnover" : "50L-1Cr"})
+                elif row.get("revenue_ranges") in ["Less than 50 lakhs", "Less Than 50 Lakhs"]:
+                    lead.update({ "custom_annual_turnover" : "10-30L"})
+                elif row.get("revenue_ranges") in ["1 Cr - 5 Cr", " 1 Cr - 5 Cr"]:
+                    lead.update({ "custom_annual_turnover" : "1Cr-3Cr"}) 
+                else:
+                    lead.update({
+                        "custom_annual_turnover" : row.get("revenue_ranges")
+                    })
             if row.get("designation"):
                 if row.get("designation") == "owner":
                     lead.update({ "custom_designation1" : "Owner" })
