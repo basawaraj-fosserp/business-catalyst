@@ -210,3 +210,4 @@ def validate_email_id():
             validate = validate_email_address(row.get("email"), False)
             if not validate:
                 wrong_email.append({"name" : row.get("id"),"email" : row.get("email")})
+    print(wrong_email)
