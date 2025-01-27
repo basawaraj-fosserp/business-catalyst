@@ -197,11 +197,6 @@ def split_excel_file(input_file, output_file_prefix, rows_per_file):
         chunk.to_excel(output_file, index=False)
         print(f"Saved: {output_file}")
 
-filename = "Vriddhi DB Migration.xlsx"
-init_path = "/home/frappe/frappe-bench/sites" + get_file_path(filename)[1:]
-input_file = init_path
-output_file_prefix = "output_file"  
-rows_per_file = 50000  
 
 # Call the function
 
