@@ -1,15 +1,18 @@
-<p>Hello,</p>
+Dear{{doc.lead_name}},
 
-<p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. 
-It was a pleasure speaking with you today. As per your request, we will call you on {{doc.custom_call_back}}. 
-We specialise in assisting MSMEs to enhance growth and profitability through tailored services, reducing costs and increasing turnover. </p>
+<p>Greetings from Business Catalyst! </p>
 
-<p><br></p>
 
+<p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst.
+It was a pleasure speaking with you today. 
+Our team will be reaching out shortly to provide more insights into our services and help identify the best solutions to meet your needs.</p>
+<br>
+<p>In the meantime, I would like to share a few details about Business Catalyst and its range of services. 
+<a href="https://catalysts.global/">Our organisation</a> has a rich history of 30 years and is based in Bangalore. 
+We have worked in 25 countries, offering support for various programs and services.</p>
+<br>
 <p>Here’s a snapshot of our key services:</p>
-
-<p><br></p>
-
+<br>
 <table border="1">
     <tr>
         <th>
@@ -76,19 +79,12 @@ We specialise in assisting MSMEs to enhance growth and profitability through tai
         </td>
     </tr>
 </table>
-
-<p><br></p>
-
+<br>
 <p>For further information, please call us at +91 9945972835 or email </p>
-
 <p>business.catalyst@catalysts.org . Visit our website at <a href="https://business-catalyst.cms.org.in/">cms.org.in/business-catalyst/</a>  for details.</p>
-
-<p><br></p>
-
+<br>
 <p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>
-
-<p><br></p>
-
+<br>
 <p>Regards,<br>
 Business Catalyst Team<br>
 Bengaluru, Karnataka - 560094<br>
