@@ -4,6 +4,7 @@ from frappe.utils.file_manager import get_file_path
 import frappe
 from business_catalyst.api import get_regional_head
 from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique, stop_duplicate_lead
+from openpyxl import Workbook
 
 wrong_email =[]
 def migrate_9_in_json():
@@ -138,11 +139,12 @@ def migrate_9_in_json():
                 continue
             lead = validate_address(lead)
             
-            doc = frappe.get_doc(lead)
+            # doc = frappe.get_doc(lead)
             count+=1
             print(str(row.get("id")) +" sheet9" + f" {count}")
-            doc.insert(ignore_mandatory=True)
-            frappe.db.commit()
+            # doc.insert(ignore_mandatory=True)
+            # frappe.db.commit()
+    json_to_excel(lead, "output_file_part_9_.xlsx")
 
 
 
@@ -211,3 +213,21 @@ def validate_email_id():
             if not validate:
                 wrong_email.append({"name" : row.get("id"),"email" : row.get("email")})
     print(wrong_email)
+
+def json_to_excel(json_data, excel_file_name):
+    # Create a new workbook
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sheet1"
+
+    # Add headers (keys from the first dictionary)
+    headers = json_data[0].keys()
+    ws.append(list(headers))
+
+    # Add rows (values)
+    for entry in json_data:
+        ws.append(list(entry.values()))
+
+    # Save the workbook
+    wb.save(excel_file_name)
+    print(f"Excel file '{excel_file_name}' created successfully!")
