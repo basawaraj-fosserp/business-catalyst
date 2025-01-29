@@ -142,11 +142,9 @@ def migrate_9_in_json():
             
             doc = frappe.get_doc(lead)
             count+=1
-            try:
-                doc.insert(ignore_mandatory=True)
-                frappe.db.commit()
-            except:
-                print(str(row.get("id")) +" sheet9" + f" {count}")
+            doc.insert(ignore_mandatory=True)
+            frappe.db.commit()
+            print(str(row.get("id")) +" sheet9" + f" {count}")
     # json_to_excel(lead, "output_file_part_9_.xlsx")
 
 
