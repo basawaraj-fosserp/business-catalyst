@@ -20,7 +20,8 @@ def migrate_9_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
-    for row in json_data[38630:]:
+    docs = []
+    for row in json_data[44090:]:
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
@@ -141,9 +142,12 @@ def migrate_9_in_json():
             
             doc = frappe.get_doc(lead)
             count+=1
+            docs.append(doc)
             print(str(row.get("id")) +" sheet9" + f" {count}")
-            doc.insert(ignore_mandatory=True)
-            frappe.db.commit()
+            if len(docs) == 100:
+                frappe.get_doc(docs).insert(ignore_permissions=True, ignore_mandatory=True)
+                frappe.db.commit()
+                docs = []
     # json_to_excel(lead, "output_file_part_9_.xlsx")
 
 
