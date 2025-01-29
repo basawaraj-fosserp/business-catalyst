@@ -236,7 +236,8 @@ def stop_duplicate_lead(row):
         
         if data:
             return True
-    
+    return False
+
 from frappe.utils import validate_email_address
 wrong_email =[]
 def validate_email_id():
