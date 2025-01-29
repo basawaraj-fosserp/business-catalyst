@@ -143,7 +143,7 @@ def migrate_9_in_json():
             count+=1
             docs.append(lead)
             print(str(row.get("id")) +" sheet9" + f" {count}")
-            if len(docs) == 100:
+            if len(docs) == 50:
                 frappe.get_doc("Lead",docs).insert(ignore_permissions=True, ignore_mandatory=True)
                 frappe.db.commit()
                 docs = []
