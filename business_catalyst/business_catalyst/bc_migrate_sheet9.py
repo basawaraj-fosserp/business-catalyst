@@ -177,23 +177,23 @@ rows_per_file = 50000
 # Call the function
 
 def check_migrate_in_json():
-    filename = "output_file_part_1.xlsx"
-    init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
+filename = "output_file_part_8.xlsx"
+init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
-    excel_file = init_path
-    sheet_name = "Sheet1"          
+excel_file = init_path
+sheet_name = "Sheet1"          
 
-    df = pd.read_excel(excel_file, sheet_name=sheet_name)
+df = pd.read_excel(excel_file, sheet_name=sheet_name)
 
-    json_data = df.to_json(orient='records', indent=4)
-    json_data = json.loads(json_data)
+json_data = df.to_json(orient='records', indent=4)
+json_data = json.loads(json_data)
+dwani_id_list = frappe.db.get_list("Lead", fields = ["custom_dwani_erp_id"], pluck="custom_dwani_erp_id")
+id_list = []
+for row in json_data:
+    if row.get("id") not in dwani_id_list:
+        id_list.append(row.get("id"))
 
-    fail_lead = []
-
-    for row in json_data:
-        if row.get("no_of_workers") not in fail_lead:
-            fail_lead.append(row.get("no_of_workers"))
-    print(fail_lead)
+print(id_list)
 
 from frappe.utils import validate_email_address
 wrong_email =[]
