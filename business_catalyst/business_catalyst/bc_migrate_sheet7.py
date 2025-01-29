@@ -5,7 +5,7 @@ import frappe
 from business_catalyst.business_catalyst.data_migration_vridhhi import validate_address, check_email_id_is_unique, stop_duplicate_lead
 
 def migrate_7_in_json():
-    filename = "output_file_part_7.xlsx"
+    filename = "output_file_part_8.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
     excel_file = init_path
@@ -17,7 +17,7 @@ def migrate_7_in_json():
     json_data = json.loads(json_data)
     fail_lead = []
     count = 0
-    for row in json_data[49550:]:
+    for row in json_data:
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
@@ -138,7 +138,7 @@ def migrate_7_in_json():
             
             doc = frappe.get_doc(lead)
             count+=1
-            print(str(row.get("id")) +" sheet7" + f" {count}")
+            print(str(row.get("id")) +" sheet8" + f" {count}")
             doc.insert(ignore_mandatory=True)
             frappe.db.commit()
 
