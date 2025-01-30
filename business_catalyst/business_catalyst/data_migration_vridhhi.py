@@ -19,7 +19,7 @@ def migrate_in_json():
     fail_lead = []
     count = 0
     for row in json_data[3717:]:
-        print(count+1)
+        print(count+=1)
         if not frappe.db.exists("Lead", {"custom_dwani_erp_id" : row.get("id")}):
             error = stop_duplicate_lead(row)
             if error:
