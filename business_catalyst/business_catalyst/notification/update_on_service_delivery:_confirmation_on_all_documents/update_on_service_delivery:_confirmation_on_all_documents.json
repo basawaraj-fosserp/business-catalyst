@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status == \"Completed\" and doc.template_task in ('TASK-2024-00010', 'TASK-2024-00017', 'TASK-2024-00028', 'TASK-2024-00039', 'TASK-2024-00043', 'TASK-2024-00048')",
+ "creation": "2025-01-31 12:32:30.365367",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Task",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>Thank you for opting for our services. Our team is committed to achieving timely completion of the service delivery and would greatly appreciate your cooperation. Thank you for submitting the missing documents on the input {{doc.completed_on}}. Please note that the service delivery will now be completed by {{ frappe.db.get_value(\"Project\", doc.project ,\"expected_end_date\") }}.</p>\n<p>Our team will provide you with constant updates on all developments on your service delivery. Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n<p>Business Catalyst Team</p>\n<p>Bengaluru, Karnataka - 560094</p>",
+ "message_type": "Markdown",
+ "modified": "2025-02-03 10:14:10.140674",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Update on Service Delivery: Confirmation on All Documents",
+ "owner": "Administrator",
+ "property_value": "#0dff05",
+ "recipients": [
+  {
+   "receiver_by_document_field": "custom_customer_email"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "set_property_after_alert": "color",
+ "subject": "Business Catalyst | Confirmation on All Documents received"
+}
