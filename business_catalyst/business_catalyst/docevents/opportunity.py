@@ -118,6 +118,4 @@ def create_opportunity(source_name, target_doc=None):
 		set_missing_values,
 	)
 
-	doc = frappe.get_doc(target_doc)
-	doc.flags.ignore_mandatory = True
-	doc.save()
+	return target_doc
