@@ -118,7 +118,7 @@ def create_opportunity(source_name, target_doc=None):
 		set_missing_values,
 	)
 
-	target_doc.items.append({
+	target_doc.append("items",{
 		"item_code" : "Digital Learning",
 		"item_group" : "Digital Learning",
 		"rate" : 0.00
