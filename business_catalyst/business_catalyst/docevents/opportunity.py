@@ -20,6 +20,7 @@ from erpnext.crm.utils import (
 )
 from erpnext.setup.utils import get_exchange_rate
 from erpnext.utilities.transaction_base import TransactionBase
+from erpnext.crm.doctype.lead.lead import _set_missing_values
 
 
 @frappe.whitelist()
@@ -88,3 +89,35 @@ def create_quotation_from_opportunity():
 	for row in opportunity_list:
 		doc = make_quotation(row, target_doc=None)
 		doc.save()
+
+
+def create_opportunity(source_name, target_doc=None):
+	def set_missing_values(source, target):
+		_set_missing_values(source, target)
+
+	target_doc = get_mapped_doc(
+		"Lead",
+		source_name,
+		{
+			"Lead": {
+				"doctype": "Opportunity",
+				"field_map": {
+					"campaign_name": "campaign",
+					"doctype": "opportunity_from",
+					"name": "party_name",
+					"lead_name": "contact_display",
+					"company_name": "customer_name",
+					"email_id": "contact_email",
+					"mobile_no": "contact_mobile",
+					"lead_owner": "opportunity_owner",
+					"notes": "notes",
+				},
+			}
+		},
+		target_doc,
+		set_missing_values,
+	)
+
+	doc = frappe.get_doc(target_doc)
+	doc.flags.ignore_mandatory = True
+	doc.save()
