@@ -1,9 +1,13 @@
-Hello,
+<p>Hello,</p>
 
 <p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. We tried to reach you about your interest in our Business Support Services, but couldn’t connect. We specialise in assisting MSMEs to enhance growth and profitability through tailored services, reducing costs and increasing turnover. </p>
-<br>
+
+<p><br></p>
+
 <p>Here’s a snapshot of our key services:</p>
-<br>
+
+<p><br></p>
+
 <table border="1">
     <tr>
         <th>
@@ -70,13 +74,21 @@ Hello,
         </td>
     </tr>
 </table>
-<br>
+
+<p><br></p>
+
 <p>For further information, please call us at +91 9945972835 or email </p>
+
 <p>business.catalyst@catalysts.org . Visit our website at <a href="https://business-catalyst.cms.org.in/">cms.org.in/business-catalyst/</a>  for details.</p>
-<br>
+
+<p><br></p>
+
 <p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>
-<br>
-<p>Regards,<br>
-Business Catalyst Team<br>
-Bengaluru, Karnataka - 560094<br>
-</p>
+
+<p><br></p>
+
+<p>Regards,</p>
+
+<p>Business Catalyst Team</p>
+
+<p>Bengaluru, Karnataka - 560094</p>

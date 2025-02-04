@@ -1,18 +1,23 @@
-Dear{{doc.lead_name}},
+<p>Dear{{doc.lead_name}},</p>
 
 <p>Greetings from Business Catalyst! </p>
-
 
 <p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst.
 It was a pleasure speaking with you today. 
 Our team will be reaching out shortly to provide more insights into our services and help identify the best solutions to meet your needs.</p>
-<br>
+
+<p><br></p>
+
 <p>In the meantime, I would like to share a few details about Business Catalyst and its range of services. 
 <a href="https://catalysts.global/">Our organisation</a> has a rich history of 30 years and is based in Bangalore. 
 We have worked in 25 countries, offering support for various programs and services.</p>
-<br>
+
+<p><br></p>
+
 <p>Here’s a snapshot of our key services:</p>
-<br>
+
+<p><br></p>
+
 <table border="1">
     <tr>
         <th>
@@ -79,13 +84,21 @@ We have worked in 25 countries, offering support for various programs and servic
         </td>
     </tr>
 </table>
-<br>
+
+<p><br></p>
+
 <p>For further information, please call us at +91 9945972835 or email </p>
+
 <p>business.catalyst@catalysts.org . Visit our website at <a href="https://business-catalyst.cms.org.in/">cms.org.in/business-catalyst/</a>  for details.</p>
-<br>
+
+<p><br></p>
+
 <p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>
-<br>
-<p>Regards,<br>
-Business Catalyst Team<br>
-Bengaluru, Karnataka - 560094<br>
-</p>
+
+<p><br></p>
+
+<p>Regards,</p>
+
+<p>Business Catalyst Team</p>
+
+<p>Bengaluru, Karnataka - 560094</p>

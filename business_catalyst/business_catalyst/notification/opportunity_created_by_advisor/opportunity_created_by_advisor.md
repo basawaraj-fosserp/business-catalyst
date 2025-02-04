@@ -3,6 +3,7 @@
         border-spacing : 0px;
     }
 </style>
+
 <p>Dear {{doc.custom_first_name}}</p>
 
 <p>My name is {{doc.custom_tagged_se_salesperson}} from Business Catalyst.
@@ -44,7 +45,8 @@ Based on your enquiry regarding {{doc.items[0].item_code}}, please find below th
 
 <p><br></p>
 
-<p>Regards,<br>
-Business Catalyst Team<br>
-Bengaluru, Karnataka - 560094<br>
-</p>
+<p>Regards,</p>
+
+<p>Business Catalyst Team</p>
+
+<p>Bengaluru, Karnataka - 560094</p>

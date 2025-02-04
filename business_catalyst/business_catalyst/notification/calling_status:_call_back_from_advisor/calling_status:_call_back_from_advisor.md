@@ -1,4 +1,4 @@
-Add <p>Hello,</p>
+<p>Add <p>Hello,</p></p>
 
 <p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. It was a pleasure speaking with you today.
 As per your request, we will call you on {{doc.custom_call_back_ad}}.
@@ -90,8 +90,10 @@ We specialise in assisting MSMEs to enhance growth and profitability through tai
 
 <p><br></p>
 
-<p>Regards,<br>
-Business Catalyst Team<br>
-Bengaluru, Karnataka - 560094<br>
-</p>
-your message here
+<p>Regards,</p>
+
+<p>Business Catalyst Team</p>
+
+<p>Bengaluru, Karnataka - 560094</p>
+
+<p>your message here</p>

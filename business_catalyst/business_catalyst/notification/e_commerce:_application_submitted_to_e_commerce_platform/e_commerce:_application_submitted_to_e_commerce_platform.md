@@ -12,8 +12,6 @@
 
 <p><a href="https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view">Inline Image</a></p>
 
-<p>Inline Image</p>
-
 <p>Regards,</p>
 
 <p>Business Catalyst Team</p>
