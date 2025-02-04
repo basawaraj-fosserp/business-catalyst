@@ -118,4 +118,11 @@ def create_opportunity(source_name, target_doc=None):
 		set_missing_values,
 	)
 
-	return target_doc
+	target_doc.items.append({
+		"item_code" : "Digital Learning",
+		"item_group" : "Digital Learning",
+		"rate" : 0.00
+	})
+	target_doc.flags.ignore_mandatory = True
+	target_doc.save()
+	print(1)
