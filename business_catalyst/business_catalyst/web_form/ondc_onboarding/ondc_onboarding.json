@@ -22,7 +22,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-01-23 10:12:42.048849",
+ "modified": "2025-02-04 16:08:36.758994",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "ondc-onboarding",
@@ -244,6 +244,21 @@
    "options": "Product Details With Image",
    "read_only": 0,
    "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "default": "0",
+   "description": "I undertake to inform you of any changes therein, immediately. In case any of the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for it.",
+   "fieldname": "i_hereby_declare_that_the_details_furnished_above_are_true",
+   "fieldtype": "Check",
+   "hidden": 0,
+   "label": "I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief ",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 1,
    "show_in_filter": 0
   }
  ]

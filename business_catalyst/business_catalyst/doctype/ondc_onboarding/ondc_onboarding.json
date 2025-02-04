@@ -23,7 +23,8 @@
   "brand_logo_only_for_ondc_mystore_platform",
   "any_other_additional_documents_that_is_not_asked_above",
   "please_upload_the_filled_listings_data_here",
-  "product_details_with_image"
+  "product_details_with_image",
+  "i_hereby_declare_that_the_details_furnished_above_are_true"
  ],
  "fields": [
   {
@@ -119,11 +120,18 @@
    "fieldname": "please_add_your_products_photos",
    "fieldtype": "Attach",
    "label": "Please add your products photos Storage"
+  },
+  {
+   "default": "0",
+   "description": "I undertake to inform you of any changes therein, immediately. In case any of the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for it.",
+   "fieldname": "i_hereby_declare_that_the_details_furnished_above_are_true",
+   "fieldtype": "Check",
+   "label": "I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief."
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-23 10:08:41.747362",
+ "modified": "2025-02-04 16:06:18.168554",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "ONDC Onboarding",
