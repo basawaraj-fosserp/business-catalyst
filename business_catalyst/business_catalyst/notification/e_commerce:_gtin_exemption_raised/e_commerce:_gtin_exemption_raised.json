@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status == \"Completed\" and doc.template_task in ('TASK-2024-00019', 'TASK-2024-00050') and doc.custom_email_sent != 1",
+ "creation": "2025-02-03 10:53:00.598888",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Task",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n<p>We have officially submitted your application to the {{ frappe.db.get_value(\"Project\", doc.project ,\"service_name\") }} on {{ doc.completed_on  or '' }}. We now await to hear from the platform. Once approved, we will be raising your GTIN Exemption.</p>\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n<p>Business Catalyst Team</p>\n<p>Bengaluru, Karnataka - 560094</p>\n",
+ "message_type": "Markdown",
+ "modified": "2025-02-05 15:38:01.091760",
+ "modified_by": "soundarya@fosscrm.com",
+ "module": "Business Catalyst",
+ "name": "E-Commerce: GTIN Exemption Raised",
+ "owner": "Administrator",
+ "property_value": "1",
+ "recipients": [
+  {
+   "cc": "nagaveni@fosserp.com",
+   "receiver_by_document_field": "custom_customer_email"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "set_property_after_alert": "custom_email_sent",
+ "subject": "Business Catalyst | GTIN Exemption Raised"
+}

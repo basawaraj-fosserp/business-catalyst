@@ -1,4 +1,4 @@
-<p>Add <p>Hello,</p></p>
+<p>Hello,</p>
 
 <p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. It was a pleasure speaking with you today.
 As per your request, we will call you on {{doc.custom_call_back_ad}}.
