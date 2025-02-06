@@ -119,8 +119,8 @@ def create_opportunity(source_name, target_doc=None):
 	)
 
 	target_doc.append("items",{
-		"item_code" : "Cross Border Trade - CBT",
-		"item_group" : "Walmart Marketplace Onboarding",
+		"item_code" : "Digital Learning",
+		"item_group" : "Digital Learning",
 		"rate" : 0.00
 	})
 	target_doc.flags.ignore_mandatory = True
