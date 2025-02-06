@@ -127,3 +127,40 @@ def create_opportunity(source_name, target_doc=None):
 	target_doc.save()
 	frappe.db.commit()
 	print(source_name)
+
+def create_opportunity(source_name, target_doc=None):
+	def set_missing_values(source, target):
+		_set_missing_values(source, target)
+
+	target_doc = get_mapped_doc(
+		"Lead",
+		source_name,
+		{
+			"Lead": {
+				"doctype": "Opportunity",
+				"field_map": {
+					"campaign_name": "campaign",
+					"doctype": "opportunity_from",
+					"name": "party_name",
+					"lead_name": "contact_display",
+					"company_name": "customer_name",
+					"email_id": "contact_email",
+					"mobile_no": "contact_mobile",
+					"lead_owner": "opportunity_owner",
+					"notes": "notes",
+				},
+			}
+		},
+		target_doc,
+		set_missing_values,
+	)
+
+	target_doc.append("items",{
+		"item_code" : "Cross Border Trade - CBT",
+		"item_group" : "Walmart Marketplace Onboarding",
+		"rate" : 0.00
+	})
+	target_doc.flags.ignore_mandatory = True
+	target_doc.save()
+	frappe.db.commit()
+	print(source_name)
