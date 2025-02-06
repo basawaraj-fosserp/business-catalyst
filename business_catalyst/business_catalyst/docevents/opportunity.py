@@ -125,5 +125,5 @@ def create_opportunity(source_name, target_doc=None):
 	})
 	target_doc.flags.ignore_mandatory = True
 	target_doc.save()
-	# frappe.db.commit()
+	frappe.db.commit()
 	print(source_name)
