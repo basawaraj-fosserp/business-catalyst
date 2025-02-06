@@ -156,8 +156,8 @@ def create_opportunity_cbt(source_name, target_doc=None):
 	)
 
 	target_doc.append("items",{
-		"item_code" : "Cross Border Trade - CBT",
-		"item_group" : "Walmart Marketplace Onboarding",
+		"item_code" : "Personalised Mentoring",
+		"item_group" : "One-to-One Mentoring",
 		"rate" : 0.00
 	})
 	target_doc.flags.ignore_mandatory = True
