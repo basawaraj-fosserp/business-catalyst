@@ -128,7 +128,7 @@ def create_opportunity(source_name, target_doc=None):
 	frappe.db.commit()
 	print(source_name)
 
-def create_opportunity(source_name, target_doc=None):
+def create_opportunity_cbt(source_name, target_doc=None):
 	def set_missing_values(source, target):
 		_set_missing_values(source, target)
 
