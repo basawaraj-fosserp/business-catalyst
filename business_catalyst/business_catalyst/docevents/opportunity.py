@@ -156,8 +156,8 @@ def create_opportunity_cbt(source_name, target_doc=None):
 	)
 
 	target_doc.append("items",{
-		"item_code" : "Personalised Mentoring",
-		"item_group" : "One-to-One Mentoring",
+		"item_code" : "Digital Learning",
+		"item_group" : "Digital Learning",
 		"rate" : 0.00
 	})
 	target_doc.flags.ignore_mandatory = True
