@@ -167,3 +167,5 @@ def create_user(customer):
         if not doc.user:
             user =  invite_user(row.name)
             frappe.db.set_value("Contact", doc.name, "user", user, update_modified=False)
+        else:
+            frappe.throw("User is already exists")
