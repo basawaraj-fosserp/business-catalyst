@@ -10,11 +10,13 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/business_catalyst/css/business_catalyst.css"
-# app_include_js = "/assets/business_catalyst/js/business_catalyst.js"
-
+# app_include_js = "/assets/business_catalyst/js/product_ui/list.js"
+# app_include_js = [
+# 	"business_catalyst.bundle.js",
+# ]
 # include js, css files in header of web template
 # web_include_css = "/assets/business_catalyst/css/business_catalyst.css"
-# web_include_js = "/assets/business_catalyst/js/business_catalyst.js"
+web_include_js = "business_catalyst.bundle.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "business_catalyst/public/scss/website"

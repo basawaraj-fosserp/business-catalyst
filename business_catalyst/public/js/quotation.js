@@ -21,7 +21,7 @@ frappe.ui.form.on("Quotation",{
     },
     refresh:function(frm){
         frm.remove_custom_button("Sales Order", "Create");
-        if(frm.doc.docstatus == 1){
+        if(frm.doc.docstatus == 1 && frm.doc.status != "Ordered"){
             frm.add_custom_button(
                 __("Sales Order"),
                 function () {
