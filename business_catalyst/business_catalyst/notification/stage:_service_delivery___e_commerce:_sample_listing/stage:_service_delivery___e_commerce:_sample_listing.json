@@ -1,0 +1,32 @@
+{
+ "_liked_by": "[]",
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status == \"Completed\" and doc.template_task in ('TASK-2024-00012', 'TASK-2024-00023', 'TASK-2024-00054') and doc.custom_email_sent != 1",
+ "creation": "2025-02-03 16:41:52.564265",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Task",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>We would like to inform you that we have completed sample listings of an SKU from your list of products. This sample listing represents our initial attempt to showcase your products effectively on the chosen platforms.</p>\n\n<p>Before proceeding further with the remaining listings, we would greatly appreciate your feedback on the sample listings. We kindly request you to review them and confirm if the approach and presentation meet your satisfaction. Your feedback is invaluable to us, and we are fully committed to making any necessary adjustments based on your preferences.</p>\n<p>We kindly ask for your response within the next 3 days. If we do not receive any feedback within this timeframe, we will proceed with the remaining listings assuming that the sample listings meet your approval, and we will replicate the approach used in the samples.</p>\n<p>Thank you for your cooperation and collaboration in this process. We look forward to receiving your feedback and working together to achieve the best possible outcomes for your e-commerce endeavors.</p>\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no or ''}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>",
+ "message_type": "Markdown",
+ "modified": "2025-02-10 12:56:34.155314",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Stage: Service Delivery - E-Commerce: Sample Listing",
+ "owner": "soundarya@fosscrm.com",
+ "property_value": "1",
+ "recipients": [
+  {
+   "receiver_by_document_field": "custom_customer_email"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "set_property_after_alert": "custom_email_sent",
+ "subject": "Business Catalyst | Feedback on Sample Listing"
+}
