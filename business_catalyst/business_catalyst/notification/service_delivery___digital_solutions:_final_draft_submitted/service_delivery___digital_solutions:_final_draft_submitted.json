@@ -2,22 +2,24 @@
  "_liked_by": "[\"Administrator\"]",
  "attach_print": 0,
  "channel": "Email",
+ "condition": "doc.status == \"Completed\" and doc.template_task == \"TASK-2024-00036\" and  doc.custom_email_sent != 1",
  "creation": "2025-02-03 17:42:40.689258",
  "days_in_advance": 0,
  "docstatus": 0,
  "doctype": "Notification",
  "document_type": "Task",
- "enabled": 0,
+ "enabled": 1,
  "event": "Save",
  "idx": 0,
  "is_standard": 1,
- "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n<p>Greetings from Business Catalyst. Please find the link to the final draft of the {{ frappe.db.get_value(\"Project\", doc.project, \"service_name\") }}.</p> \n\n\n<p>We would greatly appreciate your feedback. We kindly request you to review them and confirm if the approach and presentation meet your satisfaction. Your feedback is invaluable to us, and we are fully committed to making any necessary adjustments based on your preferences.</p>\n<p>We kindly ask for your response within the next 3 days. If we do not receive any feedback within this timeframe, we will assume that the {{ frappe.db.get_value(\"Project\", doc.project, \"service_name\") }} meets your approval.</p>\n<p>Thank you for your cooperation and collaboration in this process. We look forward to receiving your feedback and working together to achieve the best possible outcomes for you.</p>\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no or ''}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>",
+ "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>Greetings from Business Catalyst. Please find the link to the final draft of the {{ frappe.db.get_value(\"Project\", doc.project, \"service_name\") }}.</p> \n\n<p>We would greatly appreciate your feedback. We kindly request you to review them and confirm if the approach and presentation meet your satisfaction. Your feedback is invaluable to us, and we are fully committed to making any necessary adjustments based on your preferences.</p>\n\n<p>We kindly ask for your response within the next 3 days. If we do not receive any feedback within this timeframe, we will assume that the {{ frappe.db.get_value(\"Project\", doc.project, \"service_name\") }} meets your approval.</p>\n\n<p>Thank you for your cooperation and collaboration in this process. We look forward to receiving your feedback and working together to achieve the best possible outcomes for you.</p>\n\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no or ''}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>\n",
  "message_type": "Markdown",
- "modified": "2025-02-10 12:56:33.858091",
+ "modified": "2025-02-11 10:00:08.254179",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Service Delivery - Digital Solutions: Final Draft Submitted",
  "owner": "soundarya@fosscrm.com",
+ "property_value": "1",
  "recipients": [
   {
    "receiver_by_document_field": "custom_customer_email"
@@ -25,5 +27,6 @@
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
+ "set_property_after_alert": "custom_email_sent",
  "subject": "Business Catalyst | Final Draft Submitted"
 }

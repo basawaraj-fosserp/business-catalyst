@@ -2,9 +2,10 @@
 
 <p>Greetings from Business Catalyst. We are delighted to inform you that we have successfully completed your {{ frappe.db.get_value("Project", doc.project, "service_name") }}. We hope that you are satisfied with our delivery and would reach out to us for any further assistance. You can access the account by clicking on the link below.</p>
 
-(Link to the account)
+<p>(Link to the account)</p>
 
 <p>We would greatly appreciate it if you could take a moment to share your thoughts and suggestions by filling out the attached <a href="https://docs.google.com/forms/d/1Aua6EGstx6v2WQLJ4y3fKuzKz0AtxAlwGOPD8u3gHUQ/viewform?edit_requested=true#responses">feedback form</a>.</p>
+
 <p>If you would like any further assistance, please let us know. We specialise in assisting MSMEs to enhance growth and profitability through tailored services, reducing costs and increasing turnover.</p>
 
 <p><br></p>
