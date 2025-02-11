@@ -11,8 +11,10 @@ def execute(filters=None):
 	return columns, data
 
 
-
 def get_opportunity_data(filters = None):
+	cond = ""
+	if filters.get("aggregator"):
+		cond += f" and  agg.aggregator_name = '{filters.get('aggregator')}'"
 
 	data = frappe.db.sql(""" Select
 					  opp.name,
@@ -33,24 +35,50 @@ def get_opportunity_data(filters = None):
 					  From `tabOpportunity` as opp
 					  Left Join `tabOpportunity Item` as opp_item ON opp_item.parent = opp.name
 					  Left Join `tabLead` as lead on lead.name = opp.party_name
+					  where 1=1
 					  """, as_dict = 1)
-	
-	project_data = get_project_data(filters)
 
-	return data
+	abinbev_data = frappe.db.sql(f"""
+			Select opp.name , agg.aggregator_name as op_aggregator_name
+			From `tabOpportunity` as opp
+			Left Join `tabAggregator List Child Table` as agg ON agg.parent = opp.name
+			Where 1=1 {cond}
+	""", as_dict=1)
+	abinbev_data_map = {}
+	for row in abinbev_data:
+		abinbev_data_map[row.name] = row
+
+	final_data = []
+
+	project_data = get_project_data(filters)
+	project_data_map = {}
+	for row in project_data:
+		project_data_map[row.opportunity] = row
+
+	for row in data:
+		if project_data_map.get(row.name):
+			row.update(project_data_map.get(row.name))
+		if abinbev_data_map.get(row.name):
+			row.update(abinbev_data_map.get(row.name))
+			final_data.append(row)
+	return final_data
 
 def get_project_data(filters):
-	data = frappe.db.sql("""
-						Select pro.name, pro.custom_msme_no, pro.sales_order, ag.aggregator_name
+	cond = ""
+	if filters.get("aggregator"):
+		cond += f" and ag.aggregator_name = '{filters.get('aggregator')}'"
+	data = frappe.db.sql(f"""
+						Select pro.name as project, pro.custom_msme_no, pro.sales_order, ag.aggregator_name, 
+						pro.status as project_status,
+						pro.percent_complete
 						From `tabProject` as pro
 						Left Join `tabSales Order` as so ON so.name = pro.sales_order
-						Left Join `tabAggregator List Child Table` as ag ON ag.parent = pro.name
-						Where ag.parenttype = 'Project'
+						Left Join `tabAggregator List Child Table` as ag ON ag.parent = pro.name and ag.parenttype = 'Project'
+						where 1=1 {cond}
 					  """, as_dict = 1)
-	
 
 	so_qo_data = frappe.db.sql("""
-							Select so.name, qo.name, qo.opportunity
+							Select so.name as so, qo.name as quotation, qo.opportunity
 							from `tabSales Order` as so
 							left Join `tabSales Order Item` as soi ON soi.parent = so.name
 							Left Join `tabQuotation` as qo ON qo.name = soi.prevdoc_docname
@@ -60,7 +88,7 @@ def get_project_data(filters):
 	
 	pro_map = {}
 	for row in so_qo_data:
-		pro_map[row.name] = row
+		pro_map[row.so] = row
 	
 	for row in data:
 		if pro_map.get(row.sales_order):
@@ -90,6 +118,13 @@ def get_columns():
 			"label" : "MSME Name",
 			"fieldtype" : "Link",
 			"options" : "Lead",
+			"width" : 150
+		},
+		{
+			"fieldname" : "sales_order",
+			"label" : "Sales Order",
+			"fieldtype" : "Link",
+			"options" : "Sales Order",
 			"width" : 150
 		},
 		{
@@ -149,6 +184,25 @@ def get_columns():
 		{
 			"fieldname" : "custom_tagged_se_salesperson",
 			"label" : "Tagged Advisor (Sales Person)",
+			"fieldtype" : "Data",
+			"width" : 150
+		},
+		{
+			"fieldname" : "project",
+			"label" : "Project",
+			"fieldtype" : "Link",
+			"options" : "Project",
+			"width" : 150
+		},
+		{
+			"fieldname" : "percent_complete",
+			"label" : "Completion Percentage",
+			"fieldtype" : "Data",
+			"width" : 150
+		},
+		{
+			"fieldname" : "project_status",
+			"label" : "Project Status",
 			"fieldtype" : "Data",
 			"width" : 150
 		}

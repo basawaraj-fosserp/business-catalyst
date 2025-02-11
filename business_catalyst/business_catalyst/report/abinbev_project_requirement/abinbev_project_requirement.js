@@ -3,6 +3,11 @@
 
 frappe.query_reports["AbinBev Project Requirement"] = {
 	"filters": [
-
+		{
+			'fieldname' : "aggregator",
+			'label' : "Aggregator",
+			'fieldtype' : "Link",
+			'options' : "Aggregator List"
+		}
 	]
 };
