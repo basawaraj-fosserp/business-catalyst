@@ -30,7 +30,7 @@ def get_opportunity_data(filters = None):
 					  opp.custom_business_category,
 					  opp.custom_business_type1,
 					  opp.custom_annual_turnover,
-					  opp.custom_tagged_advisor,
+					  opp.custom_tagged_advisor  as custom_tagged_se_salesperson,
 					  opp_item.item_code
 					  From `tabOpportunity` as opp
 					  Left Join `tabOpportunity Item` as opp_item ON opp_item.parent = opp.name
