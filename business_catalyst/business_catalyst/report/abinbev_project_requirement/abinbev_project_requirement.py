@@ -241,6 +241,13 @@ def get_columns():
 			"width" : 150
 		},
 		{
+			"fieldname" : "service_name",
+			"label" : "Service Name",
+			"fieldtype" : "Link",
+			"options" : "Item",
+			"width" : 230
+		},
+		{
 			"fieldname" : "op_aggregator_name",
 			"label" : "Aggregator Name",
 			"fieldtype" : "Data",
