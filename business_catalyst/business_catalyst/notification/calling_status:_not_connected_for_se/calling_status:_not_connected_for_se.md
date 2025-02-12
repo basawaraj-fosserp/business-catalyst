@@ -1,10 +1,20 @@
+<style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td{
+        padding-left : 3px;
+    }
+</style>
+
 <p>Hello,</p>
 
 <p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. We tried to reach you about your interest in our Business Support Services, but couldn’t connect. We specialise in assisting MSMEs to enhance growth and profitability through tailored services, reducing costs and increasing turnover. </p>
 
 <p><br></p>
 
-<p>Here’s a snapshot of our key services:</p>
+<p>Here’s a snapshot of our key services:</p>v15
 
 <p><br></p>
 

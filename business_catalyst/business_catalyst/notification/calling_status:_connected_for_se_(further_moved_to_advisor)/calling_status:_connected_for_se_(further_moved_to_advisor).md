@@ -1,3 +1,12 @@
+<style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td{
+        padding-left : 3px;
+    }
+</style>
 <p>Dear{{doc.lead_name}},</p>
 
 <p>Greetings from Business Catalyst! </p>

@@ -1,8 +1,18 @@
+<style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td{
+        padding-left : 3px;
+    }
+</style>
+
 <p>Dear {{ frappe.db.get_value("Project", doc.project, "customer") }},</p>
 
 <p>Greetings from Business Catalyst. We are delighted to inform you that we have successfully completed your {{ frappe.db.get_value("Project", doc.project, "service_name") }}. We hope that you are satisfied with our delivery and would reach out to us for any further assistance. You can access the account by clicking on the link below.</p>
 
-<p><a href={{ doc.custom_drive_folder_link_ }}>(Link to the account)</a></p>
+<p><a href={{ doc.custom_drive_folder_link_ or  ''}}>(Link to the account)</a></p>
 
 <p>We would greatly appreciate it if you could take a moment to share your thoughts and suggestions by filling out the attached <a href="https://docs.google.com/forms/d/1Aua6EGstx6v2WQLJ4y3fKuzKz0AtxAlwGOPD8u3gHUQ/viewform?edit_requested=true#responses">feedback form</a>.</p>
 
@@ -14,7 +24,7 @@
 
 <p><br></p>
 
-<table border="1">
+<table border="1" cellspacing="5">
     <tr>
         <th>
             <center>Services</center>

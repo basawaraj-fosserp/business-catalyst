@@ -1,3 +1,12 @@
+<style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td{
+        padding-left : 3px;
+    }
+</style>
 <p>Hello,</p>
 
 <p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. 

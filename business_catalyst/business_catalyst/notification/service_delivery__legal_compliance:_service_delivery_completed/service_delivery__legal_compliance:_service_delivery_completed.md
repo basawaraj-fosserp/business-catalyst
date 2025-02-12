@@ -1,3 +1,12 @@
+<style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    td{
+        padding-left : 3px;
+    }
+</style>
 <p>Dear {{ frappe.db.get_value("Project", doc.project, "customer") }},</p>
 
 <p>Greetings from Business Catalyst. We are delighted to inform you that we have successfully completed your {{ frappe.db.get_value("Project", doc.project, "service_name") }}. We hope that you are satisfied with our delivery and would reach out to us for any further assistance. Please find the attached certificate for your reference.</p>
