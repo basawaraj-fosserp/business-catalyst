@@ -111,7 +111,7 @@ def get_columns():
 			"label" : "Opportunity",
 			"fieldtype" : "Link",
 			"options" : "Opportunity",
-			"width" : 150
+			"width" : 200
 		},
 		{
 			"fieldname" : "party_name",
