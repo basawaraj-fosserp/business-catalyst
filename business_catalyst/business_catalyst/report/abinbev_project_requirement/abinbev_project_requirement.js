@@ -8,6 +8,7 @@ frappe.query_reports["AbinBev Project Requirement"] = {
 			'label' : "Aggregator",
 			'fieldtype' : "Link",
 			'options' : "Aggregator List"
+			"default" : "AB InBev ONDC"
 		}
 	]
 };

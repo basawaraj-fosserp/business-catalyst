@@ -2,7 +2,7 @@
 
 <p>Greetings from Business Catalyst. We are delighted to inform you that we have successfully completed your {{ frappe.db.get_value("Project", doc.project, "service_name") }}. We hope that you are satisfied with our delivery and would reach out to us for any further assistance. Please find the attached certificate for your reference.</p>
 
-<p><a href = "https://forms.gle/8nPmg9YWjaqg4eY58">(Link to the outcome)</a></p>
+<p><a href = "{{ doc.custom_link_of_output }}">Link to the outcome</a></p>
 
 <p>We would greatly appreciate it if you could take a moment to share your thoughts and suggestions by filling out the attached <a href="https://docs.google.com/forms/d/1Aua6EGstx6v2WQLJ4y3fKuzKz0AtxAlwGOPD8u3gHUQ/viewform?edit_requested=true#responses">feedback form</a>.</p>
 
