@@ -7,9 +7,10 @@
         padding-left : 3px;
     }
 </style>
+
 <p>Hello,</p>
 
-<p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst. 
+<p>I’m {{ doc.custom_tagged_se_salesperson or frappe.db.get_value("User", frappe.session.user, "full_name")  or '' }} from Business Catalyst. 
 It was a pleasure speaking with you today. As per your request, we will call you on {{doc.custom_call_back}}. 
 We specialise in assisting MSMEs to enhance growth and profitability through tailored services, reducing costs and increasing turnover. </p>
 

@@ -7,11 +7,12 @@
         padding-left : 3px;
     }
 </style>
+
 <p>Dear{{doc.lead_name}},</p>
 
 <p>Greetings from Business Catalyst! </p>
 
-<p>I’m {{doc.custom_tagged_se_salesperson}} from Business Catalyst.
+<p>I’m {{doc.custom_tagged_se_salesperson or frappe.db.get_value("User", frappe.session.user, "full_name")  or ''}} from Business Catalyst.
 It was a pleasure speaking with you today. 
 Our team will be reaching out shortly to provide more insights into our services and help identify the best solutions to meet your needs.</p>
 
