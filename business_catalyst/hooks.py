@@ -141,6 +141,9 @@ doc_events = {
 	},
 	"Sales Order" :{
 		"validate" : "business_catalyst.business_catalyst.docevents.sales_order.validate"
+	},
+    "Task" : {
+        "validate" : "business_catalyst.business_catalyst.docevents.task.validate"
 	}
 }
 

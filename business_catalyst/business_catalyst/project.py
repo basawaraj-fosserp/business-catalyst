@@ -119,27 +119,6 @@ def project_from_so():
 				make_project(row, i.item_code, target_doc=None)
 				frappe.db.commit()
 
-#from business_catalyst.business_catalyst.project import project_from_so
 
 
 
-# # First Step
-# soi_list = frappe.db.get_list("Sales Order Item", pluck="name")
-# for row in soi_list:
-#    soi = frappe.get_doc("Sales Order Item", row)
-#    if soi.custom_project and frappe.db.exists("Project", soi.custom_project):
-#        so = frappe.db.get_value("Project", soi.custom_project, "sales_order")
-#        if so != soi.parent:
-#            frappe.db.set_value("Sales Order Item", row, "custom_project", '')
-#    if not frappe.db.exists("Project", soi.custom_project):
-#        frappe.db.set_value("Sales Order Item", row, "custom_project", '')
-
-# Second Step
-# pro_list = frappe.db.get_list("Project", pluck="name")
-# for row in pro_list:
-# 	pro_doc = frappe.get_doc("Project", row)
-# 	if pro_doc.sales_order:
-# 		doc = frappe.get_doc("Sales Order", pro_doc.sales_order)
-# 		for row in doc.items:
-# 			if row.item_code == pro_doc.service_name:
-# 				frappe.db.set_value(row.doctype, row.name, "custom_project", pro_doc.name)
