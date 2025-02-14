@@ -7,11 +7,11 @@
 
 <p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>
 
-<p>{% set user = frappe.db.get_value("Advisor",frappe.db.get_value("Project", doc.project, "custom_advisor"), "user")  %}
+<p>{% set user = frappe.db.get_value("Advisor",frappe.db.get_value("Project", doc.project, "custom_advisor"), "user") or frappe.db.get_value("User", frappe.session.user, "full_name") %}
 {% set phone = frappe.db.get_value("User", user, "phone") %}
 {% set mobile_no = frappe.db.get_value("User", user, "mobile_no") %}</p>
 
-<p>({{ frappe.db.get_value("Project", doc.project, "custom_advisor") }} & {{phone or mobile_no}})</p>
+<p>( {{ frappe.db.get_value("Project", doc.project, "custom_advisor") }} & {{phone or mobile_no}} )</p>
 
 <p><a href="https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view">Inline Image</a></p>
 
