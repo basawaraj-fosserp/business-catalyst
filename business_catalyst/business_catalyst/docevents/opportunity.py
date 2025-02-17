@@ -85,10 +85,15 @@ def make_quotation(source_name, target_doc=None):
 
 def create_quotation_from_opportunity():
 	from business_catalyst.business_catalyst.docevents.opportunity import make_quotation
-	opportunity_list = frappe.db.get_list("Opportunity", pluck="name", page_length=20)
+	opportunity_list = frappe.db.sql("""
+							Select opp.name
+								  From `tabOpportunity` as opp
+								  Left Join `tabAggregator List Child Table` as agg ON agg.parent = opp.name and agg.aggregator_name = "Vriddhi"
+						""", as_dict = 1)
 	for row in opportunity_list:
-		doc = make_quotation(row, target_doc=None)
-		doc.save()
+		if not frappe.db.exists("Quotation" , {"party_name" : row.name }):
+			doc = make_quotation(row, target_doc=None)
+			doc.save()
 
 
 def create_opportunity(source_name, target_doc=None):

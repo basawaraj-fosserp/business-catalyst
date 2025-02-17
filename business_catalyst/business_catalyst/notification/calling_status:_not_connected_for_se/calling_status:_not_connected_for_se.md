@@ -14,7 +14,7 @@
 
 <p><br></p>
 
-<p>Here’s a snapshot of our key services:</p>v15
+<p>Here’s a snapshot of our key services:</p>
 
 <p><br></p>
 

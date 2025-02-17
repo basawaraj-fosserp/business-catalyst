@@ -6,7 +6,7 @@ from business_catalyst.api import get_regional_head
 
 
 def migrate_in_json():
-    filename = "output_file_part_2.xlsx"
+    filename = "Vriddhi DB Migration Lead.xlsx.xlsx"
     init_path = "/home/frappe/frappe-bench/sites"+get_file_path(filename)[1:]
 
     excel_file = init_path

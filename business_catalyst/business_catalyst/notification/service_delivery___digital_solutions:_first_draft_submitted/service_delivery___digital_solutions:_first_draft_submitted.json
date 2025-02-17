@@ -14,15 +14,15 @@
  "is_standard": 1,
  "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>Greetings from Business Catalyst. Please find the link to the first draft of the {{ frappe.db.get_value(\"Project\", doc.project ,\"service_name\") }}.</p>\n\n<p>We would greatly appreciate your feedback. We kindly request you to review them and confirm if the approach and presentation meet your satisfaction. Your feedback is invaluable to us, and we are fully committed to making any necessary adjustments based on your preferences.</p>\n\n<p>We kindly ask for your response within the next 3 days. If we do not receive any feedback within this timeframe, we will assume that the {{ frappe.db.get_value(\"Project\", doc.project ,\"service_name\") }} meets your approval.</p>\n\n<p>Thank you for your cooperation and collaboration in this process. We look forward to receiving your feedback and working together to achieve the best possible outcomes for you.</p>\n\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>\n",
  "message_type": "Markdown",
- "modified": "2025-02-11 10:00:37.121094",
- "modified_by": "Administrator",
+ "modified": "2025-02-17 16:04:51.752877",
+ "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "Service Delivery - Digital Solutions: First Draft Submitted",
  "owner": "soundarya@fosscrm.com",
  "property_value": "1",
  "recipients": [
   {
-   "cc": "nagaveni@fosserp.com",
+   "cc": "amarnath@catalysts.org \narya.raj@catalysts.org ",
    "receiver_by_document_field": "custom_customer_email",
    "receiver_by_role": ""
   }
