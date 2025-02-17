@@ -46,6 +46,29 @@ frappe.query_reports["Lead Progress Report"] = {
 			fieldname : "to_date_ad",
 			label : "To Date (AD)",
 			fieldtype : "Date",
- 		}
+ 		},
+		 {
+			fieldname : "calling_status_se",
+			label : "Calling Status (SE)",
+			fieldtype : "Select",
+			options : [
+				"Connected",
+				"Not Connected",
+				"Call Back",
+				"SLA Passed",
+				"Others",
+				"Closed after multiple attempts"]
+		},
+		{
+			fieldname : "calling_status_ad",
+			label : "Calling Status (AD)",
+			fieldtype : "Select",
+			options : [	
+				"Connected",
+				"Call Back",
+				"Not Connected",
+				"SLA Passed",
+				"Closed after multiple attempts"]
+		},
 	]
 };

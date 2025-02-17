@@ -34,6 +34,12 @@ def get_lead_data(filters):
 	if filters.get("to_date_ad"):
 		cond += f" and lead.custom_calling_datead <= '{filters.get('to_date_ad')}'"
 
+	if filters.get("calling_status_se"):
+		cond += f" and lead.custom_calling_status = '{filters.get('calling_status_se')}'"
+
+	if filters.get("calling_status_ad"):
+		cond += f" and lead.custom_calling_status_for_advisor = '{filters.get('calling_status_ad')}'"
+
 	data = frappe.db.sql(f"""
 					SELECT 
 						lead.name AS lead,
