@@ -102,7 +102,7 @@ def create_quotation_from_opportunity():
 
 def create_quotation_in_background():
 	frappe.enqueue(
-		method="create_quotation_from_opportunity",
+		method="business_catalyst.business_catalyst.docevents.opportunity.create_quotation_from_opportunity",
 		queue="long",
 		timeout=7200,
 	)
