@@ -51,7 +51,7 @@ frappe.query_reports["Lead Progress Report"] = {
 			fieldname : "calling_status_se",
 			label : "Calling Status (SE)",
 			fieldtype : "Select",
-			options : [
+			options : ["",
 				"Connected",
 				"Not Connected",
 				"Call Back",
@@ -63,7 +63,7 @@ frappe.query_reports["Lead Progress Report"] = {
 			fieldname : "calling_status_ad",
 			label : "Calling Status (AD)",
 			fieldtype : "Select",
-			options : [	
+			options : [	"",
 				"Connected",
 				"Call Back",
 				"Not Connected",
