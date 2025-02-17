@@ -26,6 +26,26 @@ frappe.query_reports["Lead Progress Report"] = {
 			label : "Advisor",
 			fieldtype : "Link",
 			options : "Advisor"
-		}
+		},
+		{
+			fieldname : "from_date_se",
+			label : "From Date (SE)",
+			fieldtype : "Date",
+ 		},
+		{
+			fieldname : "to_date_se",
+			label : "To Date (SE)",
+			fieldtype : "Date",
+ 		},
+		{
+			fieldname : "from_date_ad",
+			label : "From Date (AD)",
+			fieldtype : "Date",
+ 		},
+		{
+			fieldname : "to_date_ad",
+			label : "To Date (AD)",
+			fieldtype : "Date",
+ 		}
 	]
 };

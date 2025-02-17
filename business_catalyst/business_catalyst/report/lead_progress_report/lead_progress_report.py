@@ -21,6 +21,19 @@ def get_lead_data(filters):
 		cond += f" and lead.custom_tagged_se_salesperson = '{filters.get('support_executive')}'"
 	if filters.get("advisor"):
 		cond += f" and opp.custom_tagged_advisor = '{filters.get('advisor')}'"
+
+	if filters.get("from_date_se"):
+		cond += f" and lead.custom_calling_date >= '{filters.get('from_date_se')}'"
+	
+	if filters.get("to_date_se"):
+		cond += f" and lead.custom_calling_date <= '{filters.get('to_date_se')}'"
+
+	if filters.get("from_date_ad"):
+		cond += f" and lead.custom_calling_datead >= '{filters.get('from_date_ad')}'"
+	
+	if filters.get("to_date_ad"):
+		cond += f" and lead.custom_calling_datead <= '{filters.get('to_date_ad')}'"
+
 	data = frappe.db.sql(f"""
 					Select lead.name as lead,
 					  lead.custom_calling_datead,
@@ -62,13 +75,13 @@ def get_column(filters):
 		{
 			"fieldname" : "custom_calling_date",
 			"fieldtype" : "Date",
-			"label" : "Calling Status(SE)",
+			"label" : "Calling Date(SE)",
 			"width" : 200
 		},
 		{
 			"fieldname" : "custom_calling_datead",
 			"fieldtype" : "Date",
-			"label" : "Calling Status(AD)",
+			"label" : "Calling Date(AD)",
 			"width" : 200
 		},
 		{
