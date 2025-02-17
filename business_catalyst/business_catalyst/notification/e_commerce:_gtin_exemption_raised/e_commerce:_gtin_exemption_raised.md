@@ -1,6 +1,7 @@
 <p>Dear {{ frappe.db.get_value("Project", doc.project, "customer") }},</p>
 
 <p>We have raised GTIN Exemption for your product on {{ frappe.db.get_value("Project", doc.project ,"service_name") }} on {{ doc.completed_on  or '' }}. We now await to hear from the department on its approval.</p>
+
 <p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>
 
 <p>{% set user = frappe.db.get_value("Advisor",frappe.db.get_value("Project", doc.project, "custom_advisor"), "user")  %}

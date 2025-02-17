@@ -7,6 +7,7 @@
         padding-left : 3px;
     }
 </style>
+
 <p>Dear {{ frappe.db.get_value("Project", doc.project, "customer") }},</p>
 
 <p>We have officially submitted your application to the department on {{ doc.completed_on  or '' }}. We now await to hear from the department. Rest assured, we will keep you updated on all developments.</p>

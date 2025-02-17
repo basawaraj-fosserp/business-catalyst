@@ -12,9 +12,9 @@
  "event": "Save",
  "idx": 0,
  "is_standard": 1,
- "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>We have raised GTIN Exemption for your product on {{ frappe.db.get_value(\"Project\", doc.project ,\"service_name\") }} on {{ doc.completed_on  or '' }}. We now await to hear from the department on its approval.</p>\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>\n",
+ "message": "<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>We have raised GTIN Exemption for your product on {{ frappe.db.get_value(\"Project\", doc.project ,\"service_name\") }} on {{ doc.completed_on  or '' }}. We now await to hear from the department on its approval.</p>\n\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>\n",
  "message_type": "Markdown",
- "modified": "2025-02-11 16:37:03.925279",
+ "modified": "2025-02-17 16:08:01.043209",
  "modified_by": "soundarya@fosscrm.com",
  "module": "Business Catalyst",
  "name": "E-Commerce: GTIN Exemption Raised",
@@ -22,7 +22,7 @@
  "property_value": "1",
  "recipients": [
   {
-   "cc": "nagaveni@fosserp.com",
+   "cc": "amarnath@catalysts.org \narya.raj@catalysts.org ",
    "receiver_by_document_field": "custom_customer_email"
   }
  ],

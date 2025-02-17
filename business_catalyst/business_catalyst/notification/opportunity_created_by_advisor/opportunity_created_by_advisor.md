@@ -6,7 +6,7 @@
 
 <p>Dear {{doc.custom_first_name}}</p>
 
-<p>My name is {{doc.custom_tagged_se_salesperson}} from Business Catalyst.
+<p>My name is {{doc.custom_tagged_advisor_sales_person}} from Business Catalyst.
 Thank you for connecting with us.<br>
 Based on your enquiry regarding {{doc.items[0].item_code}}, please find below the details on the services here:</p>
 

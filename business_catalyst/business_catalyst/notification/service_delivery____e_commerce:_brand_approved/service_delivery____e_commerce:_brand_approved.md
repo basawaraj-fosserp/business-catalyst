@@ -1,6 +1,7 @@
 <p>Dear {{ frappe.db.get_value("Project", doc.project, "customer") }},</p>
 
 <p>Your Brand was approved by the {{ frappe.db.get_value("Project", doc.project ,"service_name") }} on doc.project ,"service_name") }} on {{ doc.completed_on  or '' }}. We are currently working on your sample listing and will share once ready.</p>
+
 <p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>
 
 <p>{% set user = frappe.db.get_value("Advisor",frappe.db.get_value("Project", doc.project, "custom_advisor"), "user")  %}
