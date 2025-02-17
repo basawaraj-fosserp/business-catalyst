@@ -35,25 +35,28 @@ def get_lead_data(filters):
 		cond += f" and lead.custom_calling_datead <= '{filters.get('to_date_ad')}'"
 
 	data = frappe.db.sql(f"""
-					Select lead.name as lead,
-					  lead.custom_calling_datead,
-					  lead.lead_name,
-					  lead.custom_calling_date,
-					  lead.custom_tagged_se_salesperson,
-					  opp.custom_tagged_advisor,
-					  lead.custom_calling_status,
-					  lead.custom_calling_status_for_advisor,
-					  quo.name as quotation,
-					  opp.name  as opportunity,
-					  quo.custom_payment_status as payment_status,
-					  quo.grand_total as payment_amount,
-					  oi.item_group
-					  From `tabLead` as lead
-					  Left Join `tabOpportunity` as opp ON opp.party_name = lead.name
-					  Left Join `tabOpportunity Item` as oi ON oi.parent = opp.name
-					  Left Join `tabQuotation` as quo ON quo.opportunity = opp.name
-					  Where quo.docstatus = 1 {cond}
-			""", as_dict = 1)
+					SELECT 
+						lead.name AS lead,
+						lead.custom_calling_datead,
+						lead.lead_name,
+						lead.custom_calling_date,
+						lead.custom_tagged_se_salesperson,
+						opp.custom_tagged_advisor,
+						lead.custom_calling_status,
+						lead.custom_calling_status_for_advisor,
+						quo.name AS quotation,
+						opp.name AS opportunity,
+						quo.custom_payment_status AS payment_status,
+						quo.grand_total AS payment_amount,
+						oi.item_group
+					FROM `tabLead` AS lead
+					LEFT JOIN `tabOpportunity` AS opp ON opp.party_name = lead.name
+					LEFT JOIN `tabOpportunity Item` AS oi ON oi.parent = opp.name
+					LEFT JOIN `tabQuotation` AS quo ON quo.opportunity = opp.name AND quo.docstatus = 1
+					
+					where 1=1 {cond}
+				""", as_dict=1)	
+
 	
 	return data
 
