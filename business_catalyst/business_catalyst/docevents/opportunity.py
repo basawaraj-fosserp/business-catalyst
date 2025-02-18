@@ -193,4 +193,10 @@ def submit_quotation_in_background():
 		doc = frappe.get_doc("Quotation", row)
 		doc.submit()
 		frappe.db.commit()
-		
+
+def sub_quotation_in_background():
+	frappe.enqueue(
+		method="business_catalyst.business_catalyst.docevents.opportunity.submit_quotation_in_background",
+		queue="long",
+		timeout=7200,
+	)
