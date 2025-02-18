@@ -17,7 +17,7 @@ def create_sales_order():
 			so = make_sales_order(source_name = row.name)
 			so.payment_schedule[0].due_date = getdate()
 			so.delivery_date = getdate()
-			
+			print(row)
 			so.save()
 			frappe.db.commit()      
 

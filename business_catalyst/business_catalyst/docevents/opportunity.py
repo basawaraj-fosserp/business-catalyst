@@ -192,8 +192,14 @@ def submit_quotation_in_background():
 	}, pluck="name")
 	for row in quotation:
 		doc = frappe.get_doc("Quotation", row)
-		doc.submit()
-		frappe.db.commit()
+		opp = frappe.get_doc("Opportunity", doc.opportunity)
+		is_vridhhi = False
+		for d in opp.custom_aggregator:
+			if d.aggregator_name == "Vriddhi":
+				is_vridhhi = True
+		if is_vridhhi:
+			doc.submit()
+			frappe.db.commit()
 
 def sub_quotation_in_background():
 	frappe.enqueue(
