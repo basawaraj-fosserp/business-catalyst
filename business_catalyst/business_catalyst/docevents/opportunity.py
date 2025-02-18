@@ -90,10 +90,11 @@ def create_quotation_from_opportunity():
 					From `tabOpportunity` as opp
 					Left Join `tabAggregator List Child Table` as agg ON agg.parent = opp.name and agg.aggregator_name = 'Vriddhi' and agg.parenttype ='Opportunity'
 					Where opp.status = 'Open' and agg.aggregator_name = 'Vriddhi' and (opp.custom_primary_email_id != "" or opp.custom_primary_email_id IS NOT NULL)
+					Group by opp.name
 	""", as_dict = 1)
 	count = 0
 	for row in opportunity_list:
-		if not frappe.db.exists("Quotation" , {"party_name" : row.name }):
+		if not frappe.db.exists("Quotation" , {"opportunity" : row.name }):
 			doc = make_quotation(row, target_doc=None)
 			doc.save()
 			count+=1
@@ -181,3 +182,15 @@ def create_opportunity_cbt(source_name, target_doc=None):
 	target_doc.save()
 	frappe.db.commit()
 	print(source_name)
+
+def submit_quotation_in_background():
+	quotation = frappe.db.get_list("Quotation", {
+		"owner" : "Administrator",
+		"creation" : [">", "2025-02-17 16:52:00.000000"],
+		"status" : "Draft"
+	}, pluck="name")
+	for row in quotation:
+		doc = frappe.get_doc("Quotation", row)
+		doc.submit()
+		frappe.db.commit()
+		
