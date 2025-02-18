@@ -112,3 +112,5 @@ We have worked in 25 countries, offering support for various programs and servic
 <p>Business Catalyst Team</p>
 
 <p>Bengaluru, Karnataka - 560094</p>
+
+<p><a href="https://drive.google.com/file/d/1C7ggen-Hu10chXx6k46juiPwkzTKQdcY/view?usp=drive_link">Brochure</a></p>

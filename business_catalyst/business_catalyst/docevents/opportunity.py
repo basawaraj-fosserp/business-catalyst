@@ -187,6 +187,7 @@ def submit_quotation_in_background():
 	quotation = frappe.db.get_list("Quotation", {
 		"owner" : "Administrator",
 		"creation" : [">", "2025-02-17 16:52:00.000000"],
+		"docstatus" : 0,
 		"status" : "Draft"
 	}, pluck="name")
 	for row in quotation:
@@ -200,3 +201,4 @@ def sub_quotation_in_background():
 		queue="long",
 		timeout=7200,
 	)
+
