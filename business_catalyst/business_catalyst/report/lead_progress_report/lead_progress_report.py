@@ -39,7 +39,9 @@ def get_lead_data(filters):
 
 	if filters.get("calling_status_ad"):
 		cond += f" and lead.custom_calling_status_for_advisor = '{filters.get('calling_status_ad')}'"
-
+		
+	if filters.get("aggregator_name"):
+		cond += f" and agg.aggregator_name = '{filters.get('aggregator_name')}'"
 	data = frappe.db.sql(f"""
 					SELECT 
 						lead.name AS lead,
@@ -54,14 +56,17 @@ def get_lead_data(filters):
 						opp.name AS opportunity,
 						quo.custom_payment_status AS payment_status,
 						quo.grand_total AS payment_amount,
+					  	agg.aggregator_name,
 						oi.item_group
 					FROM `tabLead` AS lead
 					LEFT JOIN `tabOpportunity` AS opp ON opp.party_name = lead.name
+					Left Join `tabAggregator List Child Table` as agg ON agg.parent = opp.name
 					LEFT JOIN `tabOpportunity Item` AS oi ON oi.parent = opp.name
 					LEFT JOIN `tabQuotation` AS quo ON quo.opportunity = opp.name AND quo.docstatus = 1
 					
 					where 1=1 {cond}
 				""", as_dict=1)	
+
 
 	
 	return data
@@ -124,6 +129,13 @@ def get_column(filters):
 			"fieldtype" : "Link",
 			"label" : "Opportunity",
 			"options" : "Opportunity",
+			"width" : 200
+		},
+		{
+			"fieldname" : "aggregator_name",
+			"fieldtype" : "Link",
+			"label" : "Aggregator",
+			"options" : "Aggregator List",
 			"width" : 200
 		},
 		{

@@ -96,7 +96,7 @@ We specialise in assisting MSMEs to enhance growth and profitability through tai
 
 <p><br></p>
 
-<p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>
+<!--<p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>-->
 
 <p><br></p>
 

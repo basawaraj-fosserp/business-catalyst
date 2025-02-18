@@ -103,7 +103,7 @@ We have worked in 25 countries, offering support for various programs and servic
 
 <p><br></p>
 
-<p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>
+<!--<p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>-->
 
 <p><br></p>
 

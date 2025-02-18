@@ -41,7 +41,7 @@ Based on your enquiry regarding {{doc.items[0].item_code}}, please find below th
 <p>{% endif %}
 {% endif %}</p></p>
 
-<p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>
+<!--<p><a href="https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view">In line image</a></p>-->
 
 <p><br></p>
 

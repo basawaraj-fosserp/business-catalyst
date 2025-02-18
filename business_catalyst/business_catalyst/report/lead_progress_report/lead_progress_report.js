@@ -70,5 +70,12 @@ frappe.query_reports["Lead Progress Report"] = {
 				"SLA Passed",
 				"Closed after multiple attempts"]
 		},
+		{
+			fieldname : "aggregator_name",
+			fieldtype : "Link",
+			label : "Aggregator",
+			options : "Aggregator List",
+			width : 200
+		},
 	]
 };
