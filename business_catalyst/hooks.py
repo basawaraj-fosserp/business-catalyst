@@ -144,6 +144,9 @@ doc_events = {
 	},
     "Task" : {
         "validate" : "business_catalyst.business_catalyst.docevents.task.validate"
+	},
+    "*" : {
+        "validate" : "business_catalyst.business_catalyst.docevents.email_notification.validate"
 	}
 }
 
