@@ -1,6 +1,17 @@
 frappe.ui.form.on('Lead', {
     onload:frm=>{
         cur_frm.$wrapper.find(".form-shared").addClass("hidden")
+        if(!frappe.user.has_role('System Manager')){
+            cur_frm.fields_dict.custom_aggregator.get_query = function (doc) {
+                return {
+                    filters: {
+                        aggregator: ['not in', ("Vriddhi")]
+                    },
+                }
+            }
+        }
+        console.log(frappe.user.has_role('System Manager'))
+
     },
     refresh:frm => {
         if(frappe.user.has_role('Support Executive') && !frappe.user.has_role('Advisor')){
@@ -16,6 +27,15 @@ frappe.ui.form.on('Lead', {
             },
             __("View")
         );
+        if(!frappe.user.has_role('System Manager')){
+            cur_frm.fields_dict.custom_aggregator.get_query = function (doc) {
+                return {
+                    filters: {
+                        aggregator: ['not in', ("Vriddhi")]
+                    },
+                }
+            }
+        }
         
     },
     make_opportunity_bc: async function (frm) {
