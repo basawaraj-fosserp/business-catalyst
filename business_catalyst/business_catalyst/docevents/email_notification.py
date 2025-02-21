@@ -164,9 +164,9 @@ def validate(self, method):
         recipients = ["viral.kansodiya77@gmail.com", frappe.session.user, email_id]
    
 
-    frappe.sendmail(
-					recipients=recipients,
-					subject=subject,
-					message=content,
-				)
+    # frappe.sendmail(
+	# 				recipients=recipients,
+	# 				subject=subject,
+	# 				message=content,
+	# 			)
     
