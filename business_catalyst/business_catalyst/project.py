@@ -101,7 +101,6 @@ def make_project(source_name, item_code, target_doc=None):
 	)
 	doc.service_name = item_code
 	doc.project_name = "{} : {}".format(source_name , item_code)
-	doc.expected_end_date = getdate()
 	if not frappe.db.get_value("Item", item_code, "form_template"):
 		frappe.throw(f"project Template is not exist for service <b>{item_code}</b>")
 	doc.project_template = frappe.db.get_value("Item", item_code, "form_template")
