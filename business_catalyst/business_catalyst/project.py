@@ -101,6 +101,7 @@ def make_project(source_name, item_code, target_doc=None):
 	)
 	doc.service_name = item_code
 	doc.project_name = "{} : {}".format(source_name , item_code)
+	doc.expected_end_date = getdate()
 	if not frappe.db.get_value("Item", item_code, "form_template"):
 		frappe.throw(f"project Template is not exist for service <b>{item_code}</b>")
 	doc.project_template = frappe.db.get_value("Item", item_code, "form_template")
@@ -108,14 +109,27 @@ def make_project(source_name, item_code, target_doc=None):
 
 #create bulk project from bulk Sales Order
 def project_from_so():
-	so_list = frappe.db.get_list("Sales Order", {"docstatus" : 1} ,pluck="name", order_by='name ASC')
+	so_list = frappe.db.get_list("Sales Order", 
+									{ 
+										"docstatus" : 1,
+										"owner" : "Administrator",
+										"creation" : [ ">" , "2025-02-17 16:52:00"],
+										"status" : "To Deliver and Bill"
+									},
+								pluck="name", order_by='name DESC')
+								
 	for row in so_list:
-		doc = frappe.get_doc("Sales Order", row)
+		doc = frappe.get_doc("Sales Order", row.name)
 		for i in doc.items:
 			if not i.custom_project:
-				make_project(row, i.item_code, target_doc=None)
+				make_project(row.name, i.item_code, target_doc=None)
 				frappe.db.commit()
 
 
-
-
+sales_order = frappe.db.sql(""" 
+			  	SELECT so.name
+				FROM `tabSales Order` as  so
+				LEFT JOIN `tabSales Order Item` as soi ON so.name = soi.parent
+				WHERE (soi.custom_project IS NULL or soi.custom_project = '') and so.owner = 'Administrator' and so.creation > '2025-02-17 16:52:00' and so.status = 'To Deliver and Bill' 
+			  	Group By so.name
+			  """, as_dict=1)
