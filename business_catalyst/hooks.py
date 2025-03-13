@@ -76,7 +76,7 @@ doctype_calendar_js = {"Lead" : "public/js/lead_calendar.js"}
 
 # Uninstallation
 # ------------
-
+after_migrate = "business_catalyst.business_catalyst.docevents.custom_fields.create_field"
 # before_uninstall = "business_catalyst.uninstall.before_uninstall"
 # after_uninstall = "business_catalyst.uninstall.after_uninstall"
 
@@ -137,10 +137,13 @@ doc_events = {
 	},
 	"Project": {
 		"validate": "business_catalyst.business_catalyst.project.validate",
-		"on_trash" : "business_catalyst.business_catalyst.project.on_trash"
+		"on_trash" : "business_catalyst.business_catalyst.project.on_trash",
+        "after_insert" : "business_catalyst.business_catalyst.project.set_ref_in_quotation"
 	},
 	"Sales Order" :{
-		"validate" : "business_catalyst.business_catalyst.docevents.sales_order.validate"
+		"validate" : "business_catalyst.business_catalyst.docevents.sales_order.validate",
+        "after_insert" : "business_catalyst.business_catalyst.docevents.sales_order.set_ref_in_quotation",
+        "on_trash" : "business_catalyst.business_catalyst.docevents.sales_order.on_trash"
 	},
     "Task" : {
         "validate" : "business_catalyst.business_catalyst.docevents.task.validate"

@@ -146,3 +146,18 @@ def set_tagged_advisor(self):
 @frappe.whitelist()
 def is_project_available(sales_order):
     return frappe.db.exists("Project", {"sales_order" : sales_order} )
+
+
+#after_insert
+def set_ref_in_quotation(self, method):
+    for row in self.items:
+        if row.prevdoc_docname:
+            if not frappe.db.get_value("Quotation", row.prevdoc_docname, "sales_order"):
+                frappe.db.set_value("Quotation", row.prevdoc_docname, "sales_order", self.name)
+    
+def on_trash(self, method):
+    for row in self.items:
+        if row.prevdoc_docname:
+            frappe.db.set_value("Quotation", row.prevdoc_docname, "sales_order", '')
+
+                

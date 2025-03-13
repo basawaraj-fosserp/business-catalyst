@@ -48,6 +48,9 @@ def on_trash(self, method):
 		for row in doc.items:
 			if row.item_code == self.service_name:
 				frappe.db.set_value(row.doctype, row.name, "custom_project", '')
+			frappe.db.set_value("Quotation", row.prevdoc_docname, "project", '')
+			frappe.db.set_value("Quotation", row.prevdoc_docname, "service_category", '')
+			
 
 def set_aggregator(self):
 	if self.sales_order:
@@ -132,3 +135,14 @@ sales_order = frappe.db.sql("""
 				WHERE (soi.custom_project IS NULL or soi.custom_project = '') and so.owner = 'Administrator' and so.creation > '2025-02-17 16:52:00' and so.status = 'To Deliver and Bill' 
 			  	Group By so.name
 			  """, as_dict=1)
+
+def set_ref_in_quotation(self, method):
+	if self.sales_order:
+		doc = frappe.get_doc("Sales Order", self.sales_order)
+		for row in doc.items:
+			if row.prevdoc_docname:
+				if not frappe.db.get_value("Quotation", row.prevdoc_docname, "project"):
+					frappe.db.set_value("Quotation", row.prevdoc_docname, "project", self.name)
+				if not frappe.db.get_value("Quotation", row.prevdoc_docname, "service_category"):
+					frappe.db.set_value("Quotation", row.prevdoc_docname, "service_category", self.custom_service_category)
+				break
