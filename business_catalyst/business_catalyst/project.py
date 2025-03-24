@@ -41,6 +41,7 @@ def validate(self, method):
 		self.custom_company_name = frappe.db.get_value("Lead", self.custom_msme_no, "company_name")
 	set_aggregator(self)
 	set_start_date_end_date(self)
+	calculate_estimated_amount(self)
 
 def on_trash(self, method):
 	if self.sales_order:
@@ -146,3 +147,16 @@ def set_ref_in_quotation(self, method):
 				if not frappe.db.get_value("Quotation", row.prevdoc_docname, "service_category"):
 					frappe.db.set_value("Quotation", row.prevdoc_docname, "service_category", self.custom_service_category)
 				break
+
+def calculate_estimated_amount(self):
+	base_amount = 0
+	doc = frappe.get_doc("Sales Order", self.sales_order)
+	for row in doc.items:
+		if row.item_code == self.service_name:
+			service_amount = row.base_net_amount
+			for d in doc.taxes:
+				tax_rate = frappe.db.get_value("Account", d.account_head, "tax_rate")
+				base_amount += (row.base_net_amount * tax_rate / 100)
+			break
+
+	self.estimated_costing = base_amount + service_amount
