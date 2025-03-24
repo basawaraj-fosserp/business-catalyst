@@ -160,3 +160,4 @@ def calculate_estimated_amount(self):
 			break
 
 	self.estimated_costing = base_amount + service_amount
+	self.total_sales_amount = service_amount
