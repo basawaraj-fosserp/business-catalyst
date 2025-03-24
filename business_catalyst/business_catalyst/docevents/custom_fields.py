@@ -25,6 +25,13 @@ def create_field():
                 "fieldtype" : "Data",
                 "read_only" : 1,
                 "insert_after" : "project"
+            },
+            {
+                "fieldname" : "outstanding_amount",
+                "label" : "Outstanding Amount",
+                "fieldtype" : "Currency",
+                "read_only" : 1,
+                "insert_after" : "paid_amount"
             }
         ]
     }

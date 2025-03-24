@@ -127,6 +127,11 @@ after_migrate = "business_catalyst.business_catalyst.docevents.custom_fields.cre
 # Hook on document methods and events
 
 doc_events = {
+	"Quotation" : {
+		"validate" : [
+			"business_catalyst.business_catalyst.docevents.quotation.validate"
+		]
+	},
 	"Lead": {
 		"validate": [
 			"business_catalyst.api.validate_address",
