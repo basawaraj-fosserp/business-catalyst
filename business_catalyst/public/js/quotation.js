@@ -51,6 +51,10 @@ frappe.ui.form.on("Quotation",{
         }
     },
     paid_amount: function(frm) {
+        if(frm.doc.__islocal){
+            frappe.validate = false
+            frappe.msgprint("First Save the Document")
+        }
         let remaining_amount = frm.doc.paid_amount;
         let outstanding_amount = 0
         frm.doc.items.forEach(e=>{

@@ -13,7 +13,7 @@
  "is_standard": 1,
  "message": "<style>\n    table{\n        border-spacing : 0px;\n    }\n</style>\n\n<p>Dear {{doc.custom_first_name}}</p>\n\n<p>My name is {{doc.custom_tagged_advisor_sales_person}} from Business Catalyst.\nThank you for connecting with us.<br>\nBased on your enquiry regarding {{doc.items[0].item_code}}, please find below the details on the services here:</p>\n\n<p><br></p>\n\n<table border=1 width=\"100%\">\n    <tr>\n        <th>Service Name</th>\n        <th>Description</th>\n        <th>Duration</th>\n    </tr>\n{% for row in doc.items %}\n    <tr>\n\n        <td>{{ row.item_code }}</td>\n        <td>{{ row.description }}</td>\n        <td>{{ frappe.db.get_value(\"Item\", row.item_code, \"custom_duration\") }}</td>\n\n    </tr>\n{% endfor %}\n</table>\n\n<p><br></p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\", doc.custom_tagged_advisor, \"user\") %}\n{% if user %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}\n{% if phone or mobile_no %}\n    <p>For further information, please call us at {{ phone or mobile_no }}</p>\n\n<p>{% endif %}\n{% endif %}</p></p>\n\n<!--<p><a href=\"https://drive.google.com/file/d/1qJwIoIaxjVe5V2mluDCfaQGISliHZIme/view\">In line image</a></p>-->\n\n<p><br></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>\n",
  "message_type": "Markdown",
- "modified": "2025-02-18 13:17:32.986568",
+ "modified": "2025-03-25 18:31:06.392915",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Opportunity Created by Advisor",

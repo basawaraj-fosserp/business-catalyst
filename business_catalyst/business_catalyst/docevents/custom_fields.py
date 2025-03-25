@@ -39,6 +39,13 @@ def create_field():
                 "fieldtype" : "Currency",
                 "read_only" : 1,
                 "insert_after" : "paid_amount"
+            },
+            {
+                "fieldname" : "allocated_amount",
+                "label" : "Total Allocated Amount",
+                "fieldtype" : "Currency",
+                "read_only" : 1,
+                "insert_after" : "custom_proforma_invoice_date"
             }
         ],
     "Quotation Item" : [
@@ -51,7 +58,7 @@ def create_field():
         },
         {
             "fieldname" : "paid_amount",
-            "label" : "Paid Amount",
+            "label" : "Allocated Amount",
             "fieldtype" : "Currency",
             "read_only" : 0,
             "insert_after" : "total_amount"
@@ -74,7 +81,7 @@ def create_field():
         },
         {
             "fieldname" : "paid_amount",
-            "label" : "Paid Amount",
+            "label" : "Allocated Amount",
             "fieldtype" : "Currency",
             "read_only" : 0,
             "insert_after" : "total_amount"

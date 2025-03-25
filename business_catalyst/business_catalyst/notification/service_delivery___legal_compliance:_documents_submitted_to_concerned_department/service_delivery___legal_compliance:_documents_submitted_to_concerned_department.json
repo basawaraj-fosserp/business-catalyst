@@ -14,7 +14,7 @@
  "is_standard": 1,
  "message": "<style>\n    table {\n      border-collapse: collapse;\n      border-spacing: 0;\n    }\n    td{\n        padding-left : 3px;\n    }\n</style>\n\n<p>Dear {{ frappe.db.get_value(\"Project\", doc.project, \"customer\") }},</p>\n\n<p>We have officially submitted your application to the department on {{ doc.completed_on  or '' }}. We now await to hear from the department. Rest assured, we will keep you updated on all developments.</p>\n\n<p>Our team is ever ready to guide you through the process. In case of queries, do write back or call</p>\n\n<p>{% set user = frappe.db.get_value(\"Advisor\",frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\"), \"user\")  %}\n{% set phone = frappe.db.get_value(\"User\", user, \"phone\") %}\n{% set mobile_no = frappe.db.get_value(\"User\", user, \"mobile_no\") %}</p>\n\n<p>({{ frappe.db.get_value(\"Project\", doc.project, \"custom_advisor\") }} & {{phone or mobile_no}})</p>\n\n<p><a href=\"https://drive.google.com/file/d/18-96LzZ5WnqHMx1WlRfL2Cs13CLPJI_M/view\">Inline Image</a></p>\n\n<p>Regards,</p>\n\n<p>Business Catalyst Team</p>\n\n<p>Bengaluru, Karnataka - 560094</p>\n",
  "message_type": "Markdown",
- "modified": "2025-02-18 13:18:40.071114",
+ "modified": "2025-03-25 18:31:06.151981",
  "modified_by": "Administrator",
  "module": "Business Catalyst",
  "name": "Service Delivery - Legal Compliance: Documents submitted to Concerned Department",
