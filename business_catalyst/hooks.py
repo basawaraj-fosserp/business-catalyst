@@ -130,6 +130,9 @@ doc_events = {
 	"Quotation" : {
 		"validate" : [
 			"business_catalyst.business_catalyst.docevents.quotation.validate"
+		],
+		"after_insert" : [
+			"business_catalyst.business_catalyst.docevents.quotation.after_insert"
 		]
 	},
 	"Lead": {

@@ -49,5 +49,35 @@ frappe.ui.form.on("Quotation",{
                 __("Create")
             );
         }
+    },
+    paid_amount: function(frm) {
+        let remaining_amount = frm.doc.paid_amount;
+        let outstanding_amount = 0
+        frm.doc.items.forEach(e=>{
+            if(!e.total_amount){
+                frappe.model.set_value(e.doctype, e.name, 'total_amount', e.base_net_amount+e.cgst_amount+e.sgst_amount+e.igst_amount)
+            }
+        })
+        // Iterate over child table rows
+        frm.doc.items.forEach(row => {
+            if (remaining_amount > 0) {
+                // Calculate amount to allocate to current row              
+                let allocated_amount = Math.min(row.total_amount, remaining_amount);
+
+                // Update child table field
+                outstanding_amount  = row.total_amount - allocated_amount
+                frappe.model.set_value(row.doctype, row.name, 'paid_amount', allocated_amount);
+                frappe.model.set_value(row.doctype, row.name, 'outstanding_amount', outstanding_amount);
+
+
+                // Reduce remaining amount
+                remaining_amount -= allocated_amount;
+            } else {
+                // If no remaining amount, set paid_amount to 0
+                frappe.model.set_value(row.doctype, row.name, 'paid_amount', 0);
+            }
+        });
+
+        frm.refresh_field('items');
     }
 })

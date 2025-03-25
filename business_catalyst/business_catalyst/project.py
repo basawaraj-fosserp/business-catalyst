@@ -129,13 +129,13 @@ def project_from_so():
 				frappe.db.commit()
 
 
-sales_order = frappe.db.sql(""" 
-			  	SELECT so.name
-				FROM `tabSales Order` as  so
-				LEFT JOIN `tabSales Order Item` as soi ON so.name = soi.parent
-				WHERE (soi.custom_project IS NULL or soi.custom_project = '') and so.owner = 'Administrator' and so.creation > '2025-02-17 16:52:00' and so.status = 'To Deliver and Bill' 
-			  	Group By so.name
-			  """, as_dict=1)
+# sales_order = frappe.db.sql(""" 
+# 			  	SELECT so.name
+# 				FROM `tabSales Order` as  so
+# 				LEFT JOIN `tabSales Order Item` as soi ON so.name = soi.parent
+# 				WHERE (soi.custom_project IS NULL or soi.custom_project = '') and so.owner = 'Administrator' and so.creation > '2025-02-17 16:52:00' and so.status = 'To Deliver and Bill' 
+# 			  	Group By so.name
+# 			  """, as_dict=1)
 
 def set_ref_in_quotation(self, method):
 	if self.sales_order:
@@ -153,11 +153,8 @@ def calculate_estimated_amount(self):
 	doc = frappe.get_doc("Sales Order", self.sales_order)
 	for row in doc.items:
 		if row.item_code == self.service_name:
-			service_amount = row.base_net_amount
-			for d in doc.taxes:
-				tax_rate = frappe.db.get_value("Account", d.account_head, "tax_rate")
-				base_amount += (row.base_net_amount * tax_rate / 100)
+			self.estimated_costing = row.total_amount
+			self.total_sales_amount = row.base_net_amount
+			self.paid_amount = row.paid_amount
+			self.outstanding_amount = row.outstanding_amount
 			break
-
-	self.estimated_costing = base_amount + service_amount
-	self.total_sales_amount = service_amount
