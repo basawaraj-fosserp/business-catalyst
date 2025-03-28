@@ -133,7 +133,10 @@ doc_events = {
 		],
 		"after_insert" : [
 			"business_catalyst.business_catalyst.docevents.quotation.after_insert"
-		]
+		],
+        "on_submit" : [
+			"business_catalyst.business_catalyst.docevents.quotation.on_submit"
+		], 
 	},
 	"Lead": {
 		"validate": [

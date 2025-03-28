@@ -17,10 +17,6 @@ def validate(self, method):
             frappe.throw(f"Row {row.idx}#: Not allow to allocate amount more then {row.total_amount}" )
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
-
-    if self.allocated_amount > self.paid_amount:
-        frappe.throw("Total allocated amount should not be greater than the total paid amount.")
-
         
 def after_insert(self, method):
     self.outstanding_amount = self.grand_total - self.paid_amount
@@ -39,3 +35,10 @@ def after_insert(self, method):
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
     self.validate()
+
+def on_submit(self, method):
+    if self.allocated_amount > self.paid_amount:
+        frappe.throw("Total allocated amount should not be greater than the total paid amount.")
+
+    if self.allocated_amount != self.paid_amount:
+        frappe.throw("Total allocated amount should be same as paid amount")

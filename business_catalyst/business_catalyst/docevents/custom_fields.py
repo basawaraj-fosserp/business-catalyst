@@ -53,22 +53,26 @@ def create_field():
             "fieldname" : "total_amount",
             "label" : "Total Amount",
             "fieldtype" : "Currency",
-            "read_only" : 0,
-            "insert_after" : "taxable_value"
+            "read_only" : 1,
+            "insert_after" : "taxable_value",
+            "allow_on_submit" : 1
+
         },
         {
             "fieldname" : "paid_amount",
             "label" : "Allocated Amount",
             "fieldtype" : "Currency",
             "read_only" : 0,
-            "insert_after" : "total_amount"
+            "insert_after" : "total_amount",
+            "allow_on_submit" : 1
         },
         {
             "fieldname" : "outstanding_amount",
             "label" : "Outstanding Amount",
             "fieldtype" : "Currency",
-            "read_only" : 0,
-            "insert_after" : "paid_amount"
+            "read_only" : 1,
+            "insert_after" : "paid_amount",
+            "allow_on_submit" : 1
         }
     ],
     "Sales Order Item" : [
