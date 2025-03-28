@@ -107,11 +107,18 @@ def create_field():
             "insert_after" : "custom_advisor"
         },
         {
-        "fieldname" : "outstanding_amount",
-        "label" : "Outstanding Amount",
-        "fieldtype" : "Currency",
-        "insert_after" : "paid_amount"
-        }
+            "fieldname" : "outstanding_amount",
+            "label" : "Outstanding Amount",
+            "fieldtype" : "Currency",
+            "insert_after" : "paid_amount"
+        },
+        {
+            "fieldname" : "allocated_amount",
+            "label" : "Allocated Amount",
+            "fieldtype" : "Currency",
+            "read_only" : 1,
+            "insert_after" : "total_amount"
+        },
     ]
 
     }
