@@ -114,7 +114,7 @@ def create_field():
         },
         {
             "fieldname" : "allocated_amount",
-            "label" : "Allocated Amount",
+            "label" : "Total Amount",
             "fieldtype" : "Currency",
             "read_only" : 1,
             "insert_after" : "total_amount"
