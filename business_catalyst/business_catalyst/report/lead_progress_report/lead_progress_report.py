@@ -51,6 +51,7 @@ def get_lead_data(filters):
 						lead.custom_tagged_se_salesperson,
 						opp.custom_tagged_advisor,
 						lead.custom_calling_status,
+						lead.custom_tagged_advisor_sales_person,
 						lead.custom_calling_status_for_advisor,
 						quo.name AS quotation,
 						opp.name AS opportunity,
@@ -101,7 +102,14 @@ def get_column(filters):
 		{
 			"fieldname" : "custom_tagged_advisor",
 			"fieldtype" : "Link",
-			"label" : "Tagged Advisor",
+			"label" : "Tagged Advisor(Opportunity)",
+			"options" : "Advisor",
+			"width" : 150
+		},
+		{
+			"fieldname" : "custom_tagged_advisor_sales_person",
+			"fieldtype" : "Link",
+			"label" : "Tagged Advisor(Lead)",
 			"options" : "Advisor",
 			"width" : 150
 		},
