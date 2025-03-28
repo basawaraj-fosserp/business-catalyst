@@ -117,7 +117,7 @@ def create_field():
             "label" : "Total Amount",
             "fieldtype" : "Currency",
             "read_only" : 1,
-            "insert_after" : "total_amount"
+            "insert_after" : "outstanding_amount"
         },
     ]
 
