@@ -59,7 +59,7 @@ def on_submit(self, method):
 
 def update_project(self):
     doc = frappe.get_doc("Quotation", self.name)
-    so_ref = frappe.db.sql(f""" Select parent From `tabSales Order Item` Where prevdoc_docname = '{self.name} and docstatus = 1 '""", as_dict = 1)
+    so_ref = frappe.db.sql(f""" Select parent From `tabSales Order Item` Where prevdoc_docname = '{self.name}' and docstatus = 1 """, as_dict = 1)
     
     so_ref = list(set([row.parent for row in so_ref]))
 
