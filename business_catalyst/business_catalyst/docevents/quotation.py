@@ -41,20 +41,20 @@ def calculate_payment_amount(self):
         if self.total_taxes_and_charges == 0:
             total_amount_item = row.base_net_amount
         outstanding_amount_item = total_amount_item - row.paid_amount
-        frappe.db.sql(f"""
-                    Update `tabQuotation Item`
-                    Set total_amount = '{total_amount_item}', outstanding_amount = '{outstanding_amount_item}'
-                    Where name = '{row.name}'
-                """, as_dict=1)
-        outstanding_amount += outstanding_amount_item
-        allocated_amount += row.paid_amount
+        # frappe.db.sql(f"""
+        #             Update `tabQuotation Item`
+        #             Set total_amount = '{total_amount_item}', outstanding_amount = '{outstanding_amount_item}'
+        #             Where name = '{row.name}'
+        #         """, as_dict=1)
+        self.outstanding_amount += outstanding_amount_item
+        self.allocated_amount += row.paid_amount
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
-    frappe.db.sql(f"""
-                    Update `tabQuotation` 
-                    Set outstanding_amount = '{outstanding_amount}', allocated_amount = '{allocated_amount}'
-                    where name = '{self.name}'
-                  """)
+    # frappe.db.sql(f"""
+    #                 Update `tabQuotation` 
+    #                 Set outstanding_amount = '{outstanding_amount}', allocated_amount = '{allocated_amount}'
+    #                 where name = '{self.name}'
+    #               """)
 
     update_project(self)
 
