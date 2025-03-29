@@ -34,13 +34,23 @@ def calculate_payment_amount(self):
     outstanding_amount = 0
     allocated_amount =0
     for row in self.items:
-        row.total_amount = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
-        row.outstanding_amount = row.total_amount - row.paid_amount
+        total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
+        outstanding_amount_item = row.total_amount - row.paid_amount
+        frappe.db.sql(f"""
+                    Update `tabQutation Item`
+                    Set total_amount = '{total_amount_item}', outstanding_amount = '{outstanding_amount_item}'
+                    Where name = '{row.name}'
+                """, as_dict=1)
         outstanding_amount += row.outstanding_amount
         allocated_amount += row.paid_amount
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
-    self.db_update()
+    frappe.db.sql(f"""
+                    Update `tabQuotation` 
+                    Set outstanding_amount = '{outstanding_amount}', allocated_amount = '{allocated_amount}'
+                    where name = '{self.name}'
+                  """)
+
     update_project(self)
 
 
