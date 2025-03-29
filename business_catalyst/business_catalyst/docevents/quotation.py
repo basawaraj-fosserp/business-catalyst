@@ -34,7 +34,12 @@ def calculate_payment_amount(self):
     outstanding_amount = 0
     allocated_amount =0
     for row in self.items:
-        total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
+        if row.cgst_amount and row.sgst_amount:
+            total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
+        if self.total_taxes_and_charges > 0:
+            total_amount_item = row.base_net_amount * 0.18 + row.base_net_amount
+        if self.total_taxes_and_charges == 0:
+            total_amount_item = row.base_net_amount
         outstanding_amount_item = row.total_amount - row.paid_amount
         frappe.db.sql(f"""
                     Update `tabQuotation Item`
