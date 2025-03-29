@@ -37,7 +37,7 @@ def calculate_payment_amount(self):
         total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
         outstanding_amount_item = row.total_amount - row.paid_amount
         frappe.db.sql(f"""
-                    Update `tabQutation Item`
+                    Update `tabQuotation Item`
                     Set total_amount = '{total_amount_item}', outstanding_amount = '{outstanding_amount_item}'
                     Where name = '{row.name}'
                 """, as_dict=1)
