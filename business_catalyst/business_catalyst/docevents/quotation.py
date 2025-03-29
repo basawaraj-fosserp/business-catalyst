@@ -34,27 +34,17 @@ def calculate_payment_amount(self):
     outstanding_amount = 0
     allocated_amount =0
     for row in self.items:
-        if row.cgst_amount and row.sgst_amount:
+        if row.cgst_amount and row.sgst_amount or row.igst_amount:
             total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
         if self.total_taxes_and_charges > 0:
             total_amount_item = row.base_net_amount * 0.18 + row.base_net_amount
         if self.total_taxes_and_charges == 0:
             total_amount_item = row.base_net_amount
         outstanding_amount_item = total_amount_item - row.paid_amount
-        # frappe.db.sql(f"""
-        #             Update `tabQuotation Item`
-        #             Set total_amount = '{total_amount_item}', outstanding_amount = '{outstanding_amount_item}'
-        #             Where name = '{row.name}'
-        #         """, as_dict=1)
         self.outstanding_amount += outstanding_amount_item
         self.allocated_amount += row.paid_amount
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
-    # frappe.db.sql(f"""
-    #                 Update `tabQuotation` 
-    #                 Set outstanding_amount = '{outstanding_amount}', allocated_amount = '{allocated_amount}'
-    #                 where name = '{self.name}'
-    #               """)
 
     update_project(self)
 
@@ -69,6 +59,15 @@ def on_submit(self, method):
 
 def update_project(self):
     doc = frappe.get_doc("Quotation", self.name)
+    so_ref = frappe.db.sql(f""" Select parent From `tabSales Order Item` Where prevdoc_docname = '{self.name} and docstatus = 1 '""", as_dict = 1)
+    
+    so_ref = list(set([row.parent for row in so_ref]))
+
+    for r in so_ref:
+        frappe.db.set_value("Sales Order", r, 'custom_payment_status', self.custom_payment_status)
+        if project := frappe.db.exists("Project", { "sales_order" : r }):
+            frappe.db.set_value("Project", project, "custom_payment_status", self.custom_payment_status)
+
     for row in doc.items:
         soi_list = frappe.db.sql(f"""
                                     Select name, custom_project
