@@ -45,7 +45,8 @@ def create_field():
                 "label" : "Total Allocated Amount",
                 "fieldtype" : "Currency",
                 "read_only" : 1,
-                "insert_after" : "custom_proforma_invoice_date"
+                "insert_after" : "custom_proforma_invoice_date",
+                "allow_on_submit" : 1,
             }
         ],
     "Quotation Item" : [
