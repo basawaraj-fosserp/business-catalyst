@@ -66,11 +66,12 @@ def update_project(self):
     for r in so_ref:
         frappe.db.set_value("Sales Order", r, 'custom_payment_status', self.custom_payment_status)
         frappe.db.set_value("Sales Order", r, 'custom_partial_payment_received_date', self.custom_partial_payment_received_date)
+        frappe.db.set_value("Sales Order", r, 'custom_payment_received_date', self.custom_payment_received_date)
         doc = frappe.get_doc("Sales Order", r)
         for row in doc.items:
             frappe.db.set_value("Project", row.custom_project, "custom_payment_status", self.custom_payment_status)
             frappe.db.set_value("Project", row.custom_project, "custom_partial_payment_received_date", self.custom_partial_payment_received_date)
-
+            frappe.db.set_value("Project", row.custom_project, "custom_payment_received_date", self.custom_payment_received_date)
     for row in doc.items:
         soi_list = frappe.db.sql(f"""
                                     Select name, custom_project
