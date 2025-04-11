@@ -36,9 +36,9 @@ def calculate_payment_amount(self):
     for row in self.items:
         if row.cgst_amount and row.sgst_amount or row.igst_amount:
             total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
-        if self.total_taxes_and_charges > 0:
+        elif self.total_taxes_and_charges > 0:
             total_amount_item = row.base_net_amount * 0.18 + row.base_net_amount
-        if self.total_taxes_and_charges == 0:
+        elif self.total_taxes_and_charges == 0:
             total_amount_item = row.base_net_amount
         outstanding_amount_item = total_amount_item - row.paid_amount
         self.outstanding_amount += outstanding_amount_item
