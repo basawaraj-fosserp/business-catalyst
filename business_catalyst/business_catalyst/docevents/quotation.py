@@ -1,6 +1,6 @@
 import frappe
 
-def validate(self, method):
+def before_save(self, method):
     self.outstanding_amount = self.grand_total - self.paid_amount
     
     if len(self.items) == 1:
@@ -17,6 +17,7 @@ def validate(self, method):
             frappe.throw(f"Row {row.idx}#: Not allow to allocate amount more then {row.total_amount}" )
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
+
         
 def after_insert(self, method):
     calculate_payment_amount(self)
@@ -34,15 +35,15 @@ def calculate_payment_amount(self):
     outstanding_amount = 0
     allocated_amount =0
     for row in self.items:
-        if row.cgst_amount and row.sgst_amount or row.igst_amount:
+        if (row.cgst_amount and row.sgst_amount) or row.igst_amount:
             total_amount_item = row.base_net_amount + row.cgst_amount + row.igst_amount + row.sgst_amount
         elif self.total_taxes_and_charges > 0:
             total_amount_item = row.base_net_amount * 0.18 + row.base_net_amount
         elif self.total_taxes_and_charges == 0:
             total_amount_item = row.base_net_amount
         outstanding_amount_item = total_amount_item - row.paid_amount
-        self.outstanding_amount += outstanding_amount_item
-        self.allocated_amount += row.paid_amount
+        outstanding_amount += outstanding_amount_item
+        allocated_amount += row.paid_amount
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
 

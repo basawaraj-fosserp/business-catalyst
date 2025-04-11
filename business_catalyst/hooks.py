@@ -128,8 +128,8 @@ after_migrate = "business_catalyst.business_catalyst.docevents.custom_fields.cre
 
 doc_events = {
 	"Quotation" : {
-		"validate" : [
-			"business_catalyst.business_catalyst.docevents.quotation.validate"
+		"before_save" : [
+			"business_catalyst.business_catalyst.docevents.quotation.before_save"
 		],
 		"after_insert" : [
 			"business_catalyst.business_catalyst.docevents.quotation.after_insert"
