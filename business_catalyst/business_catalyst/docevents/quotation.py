@@ -83,7 +83,7 @@ def update_project(self):
         for d in soi_list:
             frappe.db.sql(f"""
                         Update `tabSales Order Item`
-                        Set paid_amount = '{row.paid_amount}', outstanding_amount = '{row.outstanding_amount}' , total_amount = '{row.total_amount}'
+                        Set paid_amount = '{row.paid_amount}', outstanding_amount = '{row.total_amount - row.paid_amount}' , total_amount = '{row.total_amount}'
                         where name = '{d.name}'
                     """, as_dict = 1)
             
