@@ -59,7 +59,7 @@ def on_submit(self, method):
         frappe.throw("Total allocated amount should be same as paid amount")
 
 def update_project(self):
-    doc = frappe.get_doc("Quotation", self.name)
+    qo_doc = frappe.get_doc("Quotation", self.name)
     so_ref = frappe.db.sql(f""" Select parent From `tabSales Order Item` Where prevdoc_docname = '{self.name}' and docstatus = 1 """, as_dict = 1)
     
     so_ref = list(set([row.parent for row in so_ref]))
@@ -73,7 +73,8 @@ def update_project(self):
             frappe.db.set_value("Project", row.custom_project, "custom_payment_status", self.custom_payment_status)
             frappe.db.set_value("Project", row.custom_project, "custom_partial_payment_received_date", self.custom_partial_payment_received_date)
             frappe.db.set_value("Project", row.custom_project, "custom_payment_received_date", self.custom_payment_received_date)
-    for row in doc.items:
+    
+    for row in qo_doc.items:
         soi_list = frappe.db.sql(f"""
                                     Select name, custom_project
                                     From `tabSales Order Item`
@@ -85,6 +86,7 @@ def update_project(self):
                         Set paid_amount = '{row.paid_amount}', outstanding_amount = '{row.outstanding_amount}' , total_amount = '{row.total_amount}'
                         where name = '{d.name}'
                     """, as_dict = 1)
+            
             if d.custom_project:
                 frappe.db.sql(f""" 
                             Update `tabProject` as pro
