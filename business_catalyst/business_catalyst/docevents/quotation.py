@@ -91,6 +91,6 @@ def update_project(self):
                 frappe.db.sql(f""" 
                             Update `tabProject` as pro
                             Left Join `tabSales Order Item` as soi ON soi.custom_project = pro.name
-                            Set pro.paid_amount = soi.paid_amount , pro.outstanding_amount = soi.outstanding_amount, pro.allocated_amount = soi.total_amount
+                            Set pro.paid_amount = '{row.paid_amount}' , pro.outstanding_amount = '{row.total_amount - row.paid_amount}' , pro.allocated_amount = '{row.total_amount}'
                             Where pro.name = '{d.custom_project}'
                             """, as_dict=1)
