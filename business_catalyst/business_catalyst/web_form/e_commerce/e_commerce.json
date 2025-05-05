@@ -24,7 +24,7 @@
  "name": "e-commerce",
  "owner": "soundarya@fosscrm.com",
  "published": 1,
- "route": "e-commerce",
+ "route": "e-commerce-form",
  "show_attachments": 0,
  "show_list": 0,
  "show_sidebar": 0,
