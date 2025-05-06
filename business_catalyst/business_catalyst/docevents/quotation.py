@@ -1,7 +1,7 @@
 import frappe
 from frappe.utils import flt
 
-def before_save(self, method):
+def validate(self, method):
     self.outstanding_amount = flt(self.grand_total) - flt(self.paid_amount)
     
     if len(self.items) == 1:
