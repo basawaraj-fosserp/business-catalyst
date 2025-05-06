@@ -47,8 +47,8 @@ def calculate_payment_amount(self):
         allocated_amount += row.paid_amount
     self.outstanding_amount = outstanding_amount
     self.allocated_amount = allocated_amount
-
     update_project(self)
+    self.save()
 
 
 
