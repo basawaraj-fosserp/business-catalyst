@@ -31,7 +31,9 @@ def calculate_payment_amount(self):
     
     if len(self.items) == 1:
         for row in self.items:
-            row.paid_amount = flt(self.paid_amount)
+            # row.paid_amount = flt(self.paid_amount)
+            row.db_set("paid_amount", flt(self.paid_amount))
+
 
     outstanding_amount = 0
     allocated_amount =0
@@ -45,10 +47,9 @@ def calculate_payment_amount(self):
         outstanding_amount_item = total_amount_item - row.paid_amount
         outstanding_amount += outstanding_amount_item
         allocated_amount += row.paid_amount
-    self.outstanding_amount = outstanding_amount
-    self.allocated_amount = allocated_amount
+    self.db_set("outstanding_amount", outstanding_amount)
+    self.db_set("allocated_amount", allocated_amount)
     update_project(self)
-    self.save()
 
 
 
@@ -95,3 +96,4 @@ def update_project(self):
                             Set pro.paid_amount = '{row.paid_amount}' , pro.outstanding_amount = '{row.total_amount - row.paid_amount}' , pro.allocated_amount = '{row.total_amount}'
                             Where pro.name = '{d.custom_project}'
                             """, as_dict=1)
+    frappe.db.commit()
