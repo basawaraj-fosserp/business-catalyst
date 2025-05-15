@@ -54,7 +54,7 @@ def create_field():
                 "fieldtype" : "Check",
                 "read_only" : 1,
                 "hidden":1
-            }
+            },
             {
                 "fieldname" : "service_email_sent",
                 "label" : "Service Email Sent",
