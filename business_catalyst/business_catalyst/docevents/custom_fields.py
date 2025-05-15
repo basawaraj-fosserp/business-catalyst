@@ -47,6 +47,20 @@ def create_field():
                 "read_only" : 1,
                 "insert_after" : "custom_proforma_invoice_date",
                 "allow_on_submit" : 1,
+            },
+            {
+                "fieldname" : "enrolled",
+                "label" : "LMS Enrolled",
+                "fieldtype" : "Check",
+                "read_only" : 1,
+                "hidden":1
+            }
+            {
+                "fieldname" : "service_email_sent",
+                "label" : "Service Email Sent",
+                "fieldtype" : "Check",
+                "read_only" : 1,
+                "hidden":1
             }
         ],
     "Quotation Item" : [
