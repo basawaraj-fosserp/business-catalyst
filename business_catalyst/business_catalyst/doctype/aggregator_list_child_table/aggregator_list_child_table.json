@@ -1,0 +1,35 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-18 11:22:13.843075",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "aggregator_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "aggregator_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Aggregator Name",
+   "options": "Aggregator List"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-03 11:42:22.081625",
+ "modified_by": "Administrator",
+ "module": "Business Catalyst",
+ "name": "Aggregator List Child Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
