@@ -42,6 +42,7 @@ def validate(self, method):
 	set_aggregator(self)
 	set_start_date_end_date(self)
 	calculate_estimated_amount(self)
+	set_refund_value(self)
 
 def on_trash(self, method):
 	if self.sales_order:
@@ -76,7 +77,12 @@ def set_start_date_end_date(self):
 	max_duration = max(end_date_list)
 	self.expected_end_date = add_days(getdate(), max_duration)
 
-
+def set_refund_value(self):
+	if self.status == 'Cancelled' and self.sales_order:
+		doc = frappe.get_doc("Sales Order", self.sales_order)
+		for row in doc.items:
+			if row.prevdoc_docname:
+				frappe.db.set_value("Quotation", row.prevdoc_docname, "refund_amount", self.refund_amount, update_modified=False)
 
 
 #create bulk project from bulk Sales Order

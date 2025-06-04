@@ -61,6 +61,14 @@ def create_field():
                 "fieldtype" : "Check",
                 "read_only" : 1,
                 "hidden":1
+            },
+            {
+                "fieldname" : "refund_amount",
+                "label" : "Refund Amount",
+                "fieldtype" : "Currency",
+                "read_only" : 1,
+                "insert_after" : "outstanding_amount",
+                "allow_on_submit" : 1
             }
         ],
     "Quotation Item" : [
@@ -133,6 +141,14 @@ def create_field():
             "fieldtype" : "Currency",
             "read_only" : 1,
             "insert_after" : "outstanding_amount"
+        },
+        {
+            "fieldname" : "refund_amount",
+            "label" : "Refund Amount",
+            "fieldtype" : "Currency",
+            "read_only" : 0,
+            "insert_after" : "status",
+            "depends_on" : "eval:doc.status == 'Cancelled'"
         },
     ]
 
