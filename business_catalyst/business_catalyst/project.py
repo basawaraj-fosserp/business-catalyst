@@ -74,7 +74,7 @@ def set_aggregator(self):
 					self.aggregator = []
 					for d in opp_doc.custom_aggregator:
 						self.append("aggregator", {
-							"aggregator_name" : row.aggregator_name
+							"aggregator_name" : d.aggregator_name
 						})
 
 def set_start_date_end_date(self):
