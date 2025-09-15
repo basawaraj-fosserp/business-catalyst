@@ -62,17 +62,20 @@ def on_trash(self, method):
 def set_aggregator(self):
 	if self.sales_order:
 		doc = frappe.get_doc("Sales Order", self.sales_order)
-		quotation_list = [ row.prevdoc_docname if frappe.db.exists("Quotation", row.prevdoc_docname) else '' for row in doc.items]
+		quotation_list = [
+			row.prevdoc_docname if frappe.db.exists("Quotation", row.prevdoc_docname) else ''
+			for row in doc.items
+		]
 		for row in quotation_list:
 			if oppo := frappe.db.get_value("Quotation", row, "opportunity"):
 				opp_doc = frappe.get_doc("Opportunity", oppo)
 				self.custom_advisor = opp_doc.custom_tagged_advisor
 				if opp_doc.custom_aggregator:
-					for row in opp_doc.custom_aggregator:
-						if row.get("row.aggregator_name"):
-							self.append("aggregator", {
-								"aggregator_name" : row.aggregator_name
-							})
+					self.aggregator = []
+					for d in opp_doc.custom_aggregator:
+						self.append("aggregator", {
+							"aggregator_name" : row.aggregator_name
+						})
 
 def set_start_date_end_date(self):
 	project_template_doc = frappe.get_doc("Project Template", self.project_template)
