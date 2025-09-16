@@ -9,7 +9,7 @@ def get_services_name(doctype, txt, searchfield, start, page_len, filters):
 	if not filters.get("sales_order"):
 		return []
 
-	# Get service names from project to exclude
+	# Get service names from linked Projects (to exclude)
 	project_service = frappe.db.get_list(
 		"Project",
 		{"sales_order": filters.get("sales_order")},
@@ -17,50 +17,71 @@ def get_services_name(doctype, txt, searchfield, start, page_len, filters):
 		pluck="service_name",
 	)
 
-	cond = ""
+	# Prepare conditions for Sales Order Items
+	so_cond = ""
+	so_params = {"salesorder": filters.get("sales_order")}
+
 	if project_service:
-		cond += " and item_code not in ({})".format(
-			", ".join([f'"{l}"' for l in project_service])
-		)
+		so_cond += " and item_code not in %(excluded)s"
+		so_params["excluded"] = tuple(project_service)
 
 	if txt:
-		cond += " and item_code like %(txt)s"
+		so_cond += " and item_code like %(txt)s"
+		so_params["txt"] = f"%{txt}%"
 
-	# Get SO items
+	# Fetch Sales Order Items
 	data = frappe.db.sql(
-		"""
-		Select item_code, item_name, uom
+		f"""
+		Select distinct item_code, item_name, uom
 		From `tabSales Order Item`
-		Where parent = %(salesorder)s {cond}
-	""".format(cond=cond),
-		{"salesorder": filters.get("sales_order"), "txt": "%%%s%%" % txt},
+		Where parent = %(salesorder)s {so_cond}
+		""",
+		so_params,
 		as_dict=True,
 	)
 
 	final_data = []
 
 	for row in data:
-		# Check if this item is a Product Bundle
+		# Prepare bundle condition
+		bundle_cond = ""
+		bundle_params = {"bundle_item": row.item_code}
+
+		if project_service:
+			bundle_cond += " and pbi.item_code not in %(excluded)s"
+			bundle_params["excluded"] = tuple(project_service)
+
+		if txt:
+			bundle_cond += " and pbi.item_code like %(txt)s"
+			bundle_params["txt"] = f"%{txt}%"
+
+		# If this item is a Product Bundle
 		if frappe.db.exists("Product Bundle", {"new_item_code": row.item_code}):
 			product_bundle_items = frappe.db.sql(
-				"""
-				Select pbi.item_code, pbi.description as item_name, pbi.uom
-				From `tabProduct Bundle` as pb
-				Left Join `tabProduct Bundle Item` as pbi
+				f"""
+				Select distinct pbi.item_code, pbi.description as item_name, pbi.uom
+				From `tabProduct Bundle` pb
+				Left Join `tabProduct Bundle Item` pbi
 					on pb.name = pbi.parent
-				Where pb.new_item_code = %s
-			""",
-				(row.item_code,),
+				Where pb.new_item_code = %(bundle_item)s {bundle_cond}
+				""",
+				bundle_params,
 				as_dict=True,
 			)
-
-			# Extend bundle items instead of original row
 			final_data.extend(product_bundle_items)
 		else:
 			final_data.append(row)
 
-	# Convert dicts to tuples (frappe expects tuple data for link field queries)
-	return [(d["item_code"], d["item_name"], d.get("uom")) for d in final_data]
+	# Remove duplicates if any
+	seen = set()
+	result = []
+	for d in final_data:
+		key = d["item_code"]
+		if key not in seen:
+			seen.add(key)
+			result.append((d["item_code"], d["item_name"], d.get("uom")))
+
+	return result
 
 
 def validate(self, method):
