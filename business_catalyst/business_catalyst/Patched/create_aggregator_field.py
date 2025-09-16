@@ -2,7 +2,7 @@ import frappe
 
 def execute():
     frappe.get_doc({
-        "doctype" : "Custom Field",
+        "dt" : "Custom Field",
         "label" : "Aggregator Text",
         "fieldname" : "aggregator_text",
         "insert_after" : "aggregator",
