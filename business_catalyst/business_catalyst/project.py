@@ -6,22 +6,62 @@ from frappe.utils import getdate, flt, today, add_days
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
 def get_services_name(doctype, txt, searchfield, start, page_len, filters):
-	project_service = frappe.db.get_list("Project", {"sales_order":filters.get('sales_order')}, 'service_name', pluck="service_name")
-	if filters.get('sales_order'):
-		cond= ""
-		if project_service:
-			cond += " and item_code not in {} ".format(
-				"(" + ", ".join([f'"{l}"' for l in project_service]) + ")")
+	if not filters.get("sales_order"):
+		return []
 
-		if txt:
-			cond += " and item_code like %(txt)s"
-		data = frappe.db.sql(f"""
-				Select item_code, item_name, uom
-				From `tabSales Order Item`
-				Where parent = %(salesorder)s {cond}
-		""",{"salesorder" : filters.get('sales_order') , "txt":"%%%s%%" % txt})
+	# Get service names from project to exclude
+	project_service = frappe.db.get_list(
+		"Project",
+		{"sales_order": filters.get("sales_order")},
+		"service_name",
+		pluck="service_name",
+	)
 
-		return data
+	cond = ""
+	if project_service:
+		cond += " and item_code not in ({})".format(
+			", ".join([f'"{l}"' for l in project_service])
+		)
+
+	if txt:
+		cond += " and item_code like %(txt)s"
+
+	# Get SO items
+	data = frappe.db.sql(
+		"""
+		Select item_code, item_name, uom
+		From `tabSales Order Item`
+		Where parent = %(salesorder)s {cond}
+	""".format(cond=cond),
+		{"salesorder": filters.get("sales_order"), "txt": "%%%s%%" % txt},
+		as_dict=True,
+	)
+
+	final_data = []
+
+	for row in data:
+		# Check if this item is a Product Bundle
+		if frappe.db.exists("Product Bundle", {"new_item_code": row.item_code}):
+			product_bundle_items = frappe.db.sql(
+				"""
+				Select pbi.item_code, pbi.description as item_name, pbi.uom
+				From `tabProduct Bundle` as pb
+				Left Join `tabProduct Bundle Item` as pbi
+					on pb.name = pbi.parent
+				Where pb.new_item_code = %s
+			""",
+				(row.item_code,),
+				as_dict=True,
+			)
+
+			# Extend bundle items instead of original row
+			final_data.extend(product_bundle_items)
+		else:
+			final_data.append(row)
+
+	# Convert dicts to tuples (frappe expects tuple data for link field queries)
+	return [(d["item_code"], d["item_name"], d.get("uom")) for d in final_data]
+
 
 def validate(self, method):
 	if self.is_new():
