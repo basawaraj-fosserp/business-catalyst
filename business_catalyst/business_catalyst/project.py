@@ -248,5 +248,5 @@ def update_project():
 		if project_agg_text:
 			continue
 		project_doc = frappe.get_doc("Project", project_name)
-		project_doc.custom_update_project = 1
+		project_doc.custom_update_project = 1rmet
 		project_doc.save()
