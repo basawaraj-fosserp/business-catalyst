@@ -172,3 +172,20 @@ def calculate_estimated_amount(self):
 			self.paid_amount = row.paid_amount
 			self.outstanding_amount = row.outstanding_amount
 			break
+
+def update_project():
+	project_data = frappe.db.sql(f"""
+						Select pro.name
+						From `tabProject` as pro
+						Left Join `tabAggregator List Child Table` as agg ON
+						agg.parent = pro.name
+						Where agg.parenttype is Null and parentfield IS NULL
+	
+					""", as_dict=1)
+	for project_name in project_data:
+		project_doc = frappe.get_doc("Project", project_name)
+		if project_doc.aggregator:
+			continue
+
+		project_doc.custom_update_project = 1
+		project_doc.save()
