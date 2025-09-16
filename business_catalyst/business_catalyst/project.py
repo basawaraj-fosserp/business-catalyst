@@ -244,9 +244,9 @@ def update_project():
 	
 					""", as_dict=1)
 	for project_name in project_data:
-		project_doc = frappe.get_doc("Project", project_name)
-		if project_doc.aggregator:
+		project_agg_text = frappe.db.get_value("Project", project_name, "aggregator_text")
+		if project_agg_text:
 			continue
-
+		project_doc = frappe.get_doc("Project", project_name)
 		project_doc.custom_update_project = 1
 		project_doc.save()
