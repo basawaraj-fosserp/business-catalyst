@@ -127,16 +127,21 @@ def set_aggregator(self):
 			row.prevdoc_docname if frappe.db.exists("Quotation", row.prevdoc_docname) else ''
 			for row in doc.items
 		]
+		aggregator_list = []
 		for row in quotation_list:
 			if oppo := frappe.db.get_value("Quotation", row, "opportunity"):
 				opp_doc = frappe.get_doc("Opportunity", oppo)
 				self.custom_advisor = opp_doc.custom_tagged_advisor
 				if opp_doc.custom_aggregator:
 					self.aggregator = []
+					
 					for d in opp_doc.custom_aggregator:
 						self.append("aggregator", {
 							"aggregator_name" : d.aggregator_name
 						})
+						aggregator_list.append(d.aggregator_name)
+
+		self.aggregator_text = ", ".join(aggregator_list)
 
 def set_start_date_end_date(self):
 	project_template_doc = frappe.get_doc("Project Template", self.project_template)
