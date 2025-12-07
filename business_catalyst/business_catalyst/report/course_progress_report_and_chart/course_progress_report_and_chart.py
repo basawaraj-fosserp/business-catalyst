@@ -17,25 +17,42 @@ def execute(filters=None):
 def get_data(filters=None):
 	summary = []
 	query_filter = {}
+	conditions = []
+	values = {}
+
 	if filters:
-		query_filter = {"course": filters.course}
+		if filters.get("course"):
+			conditions.append("course = %(course)s")
+			values["course"] = filters.course
+
 	if filters.get("current_lesson"):
-		query_filter.update({
-			"current_lesson" : filters.get("current_lesson")
-		})
+		conditions.append("current_lesson = %(current_lesson)s")
+		values["current_lesson"] = filters.get("current_lesson")
+
 	if filters.get("current_lesson_like"):
-		query_filter.update({
-			"current_lesson": ["like", filters.get("current_lesson_like")]
-		})
-		
+		conditions.append("current_lesson LIKE %(current_lesson_like)s")
+		values["current_lesson_like"] = filters.get("current_lesson_like")
 
-	memberships = frappe.get_all(
-		"LMS Enrollment",
-		query_filter,
-		["name", "course", "member", "member_name", "progress", "current_lesson"],
-		order_by="course",
+	# Build SQL WHERE clause safely
+	where_clause = " AND ".join(conditions) if conditions else "1=1"
+
+	memberships = frappe.db.sql(
+		f"""
+		SELECT 
+			name,
+			course,
+			member,
+			member_name,
+			progress,
+			current_lesson
+		FROM `tabLMS Enrollment`
+		WHERE {where_clause}
+		ORDER BY course
+		""",
+		values,
+		as_dict=True
 	)
-
+	
 	for membership in memberships:
 		summary.append(
 			frappe._dict(
