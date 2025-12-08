@@ -51,7 +51,7 @@ def get_data(filters=None):
 		values,
 		as_dict=True
 	)
-	
+
 	for membership in memberships:
 		summary.append(
 			frappe._dict(
@@ -61,6 +61,7 @@ def get_data(filters=None):
 					"member": membership.member,
 					"member_name": membership.member_name,
 					"progress": cint(membership.progress),
+					"current_lesson" : membership.current_lesson
 				}
 			)
 		)
