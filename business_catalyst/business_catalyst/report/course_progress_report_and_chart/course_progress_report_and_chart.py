@@ -31,6 +31,7 @@ def get_data(filters=None):
 
 	if filters.get("current_lesson_like"):
 		conditions.append("current_lesson LIKE %(current_lesson_like)s")
+		values["current_lesson_like"] = filters.get("current_lesson_like")
 
 	# Build SQL WHERE clause safely
 	where_clause = " AND ".join(conditions) if conditions else "1=1"
