@@ -150,6 +150,14 @@ def create_field():
             "insert_after" : "status",
             "depends_on" : "eval:doc.status == 'Cancelled'"
         },
+    ],
+    "LMS Course" : [
+        {
+            "fieldname" : "only_allow_this_course",
+            "label" : "Only Allow This Course",
+            "fieldtype" : "Check",
+            "insert_after" : "disable_self_learning"
+        }
     ]
 
     }
