@@ -21,6 +21,10 @@ def get_courses(filters=None, start=0):
     fields = get_course_fields()
     user = frappe.session.user
     premiumCource = frappe.db.get_list("LMS Course", {"only_allow_this_course" : 1}, pluck="name")
+    enrolledCourse = frappe.db.get_list("LMS Enrollment", {"member" : frappe.session.user}, "course")
+
+    premiumCource = premiumCource + enrolledCourse
+    
     is_enrolled_for_premium = False
     if premiumCource:
         conditions = " course in {} ".format(
