@@ -41,7 +41,7 @@ def get_courses(filters=None, start=0):
         
         if is_enrolled_for_premium:
             filters.update({
-                "name" : ["in" , premiumCource] 
+                "name" : ["in" , enrolledCourse] 
             })
 
     courses = frappe.get_all(
