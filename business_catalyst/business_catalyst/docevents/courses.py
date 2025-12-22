@@ -19,11 +19,15 @@ def get_courses(filters=None, start=0):
 
     filters, or_filters, show_featured = update_course_filters(filters)
     fields = get_course_fields()
+    
     user = frappe.session.user
-    premiumCource = frappe.db.get_list("LMS Course", {"only_allow_this_course" : 1}, pluck="name")
-    enrolledCourse = frappe.db.get_list("LMS Enrollment", {"member" : frappe.session.user}, "course")
 
-    premiumCource = premiumCource + enrolledCourse
+    premiumCource = frappe.db.get_list("LMS Course", {"only_allow_this_course" : 1}, pluck="name")
+
+    enrolledCourse = frappe.db.get_list("LMS Enrollment", {"member" : user}, "course")
+
+    enrolledCourse = [row.course for row in enrolledCourse]
+     
     
     is_enrolled_for_premium = False
     if premiumCource:
@@ -41,7 +45,7 @@ def get_courses(filters=None, start=0):
         
         if is_enrolled_for_premium:
             filters.update({
-                "name" : ["in" , premiumCource] 
+                "name" : ["in" , enrolledCourse] 
             })
 
     courses = frappe.get_all(
