@@ -198,7 +198,7 @@ doc_events = {
 #
 override_whitelisted_methods = {
 	"erpnext.crm.doctype.opportunity.opportunity.make_quotation": "business_catalyst.business_catalyst.docevents.opportunity.make_quotation",
-    "lms.lms.utils.get_courses" : "business_catalyst.business_catalyst.docevents.courses.get_courses"
+    # "lms.lms.utils.get_courses" : "business_catalyst.business_catalyst.docevents.courses.get_courses"
 }
 #
 # each overriding function accepts a `data` argument;
